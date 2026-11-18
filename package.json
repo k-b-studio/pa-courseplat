@@ -1,0 +1,58 @@
+{
+	"name": "pa-courseplat",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"test": "vitest run",
+		"test:unit": "vitest run tests/unit",
+		"test:db": "vitest run --config vitest.db.config.ts",
+		"test:e2e": "playwright test",
+		"db:migrate": "tsx --env-file-if-exists=.env scripts/migrate.ts",
+		"db:snapshot": "tsx --env-file-if-exists=.env scripts/db-snapshot.ts",
+		"seed": "tsx --env-file-if-exists=.env scripts/seed.ts",
+		"demo:reset": "tsx --env-file-if-exists=.env scripts/demo-reset.ts",
+		"make:samples": "tsx --env-file-if-exists=.env scripts/make-samples.ts",
+		"fixtures:record": "tsx --env-file-if-exists=.env scripts/record-fixtures.ts",
+		"eval:judge": "tsx --env-file-if-exists=.env scripts/eval-judge.ts",
+		"check:secrets": "tsx --env-file-if-exists=.env scripts/check-secrets.ts"
+	},
+	"devDependencies": {
+		"@electric-sql/pglite": "^0.5.16",
+		"@playwright/test": "^1.65.1",
+		"@sveltejs/adapter-vercel": "^6.0.0",
+		"@sveltejs/kit": "^2.70.4",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@tailwindcss/vite": "^4.3.5",
+		"@types/node": "^26.1.0",
+		"docx": "^9.15.4",
+		"pdf-lib": "^1.17.1",
+		"postgres": "^4.1.1",
+		"svelte": "^5.58.0",
+		"svelte-check": "^4.7.8",
+		"tailwindcss": "^4.3.5",
+		"tsx": "^4.23.15",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.8",
+		"vitest": "^4.1.8"
+	},
+	"dependencies": {
+		"@fontsource/prompt": "^5.3.0",
+		"@fontsource/sarabun": "^5.3.0",
+		"@google/genai": "^3.6.0",
+		"@supabase/ssr": "^0.12.7",
+		"@supabase/supabase-js": "^2.119.1",
+		"isomorphic-dompurify": "^4.8.0",
+		"mammoth": "^1.13.0",
+		"openai": "^7.60.0",
+		"zod": "^4.6.7"
+	}
+}

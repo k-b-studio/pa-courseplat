@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "overview": {
+    "focus": "ภาคการศึกษานี้เน้นการเชื่อมแนวคิดและตัวแบบของกระบวนการนโยบายสาธารณะเข้ากับบริบทการเมืองและการบริหารของไทย โดยใช้กรณีศึกษานโยบายจริง เช่น หลักประกันสุขภาพถ้วนหน้าและการจัดการภัยพิบัติ และเพิ่มหัวข้อนโยบายเชิงพฤติกรรม (behavioural public policy) นิสิตจะได้ฝึกเขียน policy brief ที่ใช้หลักฐานรองรับและนำเสนอกรณีศึกษาเป็นกลุ่ม",
+    "language": "th",
+    "deliveryMode": "onsite",
+    "workloadHoursPerWeek": 6,
+    "keywords": ["policy cycle", "agenda setting", "multiple streams", "policy instruments", "regulation", "implementation", "policy evaluation", "nudge"],
+    "prerequisiteNote": "ควรผ่าน 2400114 ความรู้เบื้องต้นเกี่ยวกับรัฐประศาสนศาสตร์ มาก่อน"
+  },
+  "objectives": [
+    { "id": "clo-1", "text": "อธิบายแนวคิด ทฤษฎี และตัวแบบสำคัญของกระบวนการนโยบายสาธารณะได้", "ploCodes": ["PLO1D"] },
+    { "id": "clo-2", "text": "วิเคราะห์บทบาทของรัฐ เครื่องมือนโยบาย และผลกระทบของการแทรกแซงโดยรัฐในบริบทไทยได้", "ploCodes": ["PLO1D", "PLO2D"] },
+    { "id": "clo-3", "text": "เขียนข้อเสนอเชิงนโยบาย (policy brief) ที่มีหลักฐานรองรับและสื่อสารได้กระชับ", "ploCodes": ["PLO3D"] },
+    { "id": "clo-4", "text": "อภิปรายประเด็นนโยบายโดยคำนึงถึงประโยชน์สาธารณะและหลักธรรมาภิบาล", "ploCodes": ["PLO5D"] }
+  ],
+  "approach": {
+    "methods": ["lecture", "discussion", "case_study", "group_project"],
+    "description": "บรรยายสลับกับการอภิปรายในชั้นเรียนทุกสัปดาห์ นิสิตอ่านเอกสารที่กำหนดล่วงหน้าและร่วมวิเคราะห์กรณีศึกษานโยบายของไทย ช่วงท้ายภาคการศึกษาเป็นการนำเสนอกรณีศึกษากลุ่มและให้ข้อเสนอแนะระหว่างกลุ่ม",
+    "attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค การมาสายเกิน 15 นาทีนับเป็นการขาดครึ่งครั้ง",
+    "aiPolicy": "allowed_with_disclosure",
+    "aiPolicyNote": "ใช้ AI ช่วยค้นคว้าและเกลาภาษาได้ โดยต้องระบุเครื่องมือและขอบเขตการใช้ในภาคผนวกของงาน ห้ามให้ AI เขียน policy brief แทน",
+    "lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งล่วงหน้า"
+  },
+  "weeklyPlan": [
+    { "week": 1, "topic": "แนะนำรายวิชา: นโยบายสาธารณะคืออะไร และทำไมต้องศึกษา", "details": "ความหมายและขอบเขตของนโยบายสาธารณะ ข้อตกลงในชั้นเรียน", "concepts": ["public policy", "definition of policy"], "instructorIds": ["@thanakrit"], "readingIds": ["r-1"], "activity": "แบบสอบถามความคาดหวังต่อรายวิชา", "noClass": false },
+    { "week": 2, "topic": "สภาพแวดล้อมของนโยบายสาธารณะไทย: สถาบัน ผู้กระทำ และเครือข่ายนโยบาย", "details": "รัฐสภา คณะรัฐมนตรี ระบบราชการ กลุ่มผลประโยชน์ สื่อ และภาคประชาสังคม", "concepts": ["policy actors", "policy networks", "institutions"], "instructorIds": ["@thanakrit"], "readingIds": ["r-2"], "activity": "", "noClass": false },
+    { "week": 3, "topic": "ความล้มเหลวของตลาดและเหตุผลของการแทรกแซงโดยรัฐ", "details": "สินค้าสาธารณะ ผลกระทบภายนอก การผูกขาด ข้อมูลไม่สมมาตร และความล้มเหลวของรัฐ", "concepts": ["market failure", "public goods", "externalities", "government failure"], "instructorIds": ["@thanakrit"], "readingIds": ["r-1"], "activity": "", "noClass": false },
+    { "week": 4, "topic": "ตัวแบบกระบวนการนโยบาย (Stages model / Policy cycle)", "details": "การก่อตัว การกำหนด การนำไปปฏิบัติ และการประเมินผล ข้อดีและข้อจำกัดของตัวแบบขั้นตอน", "concepts": ["policy cycle", "stages heuristic"], "instructorIds": ["@thanakrit"], "readingIds": ["r-1", "r-4"], "activity": "", "noClass": false },
+    { "week": 5, "topic": "การก่อตัวของนโยบายและการกำหนดวาระ (Agenda setting)", "details": "วาระสาธารณะกับวาระของรัฐบาล บทบาทของสื่อและเหตุการณ์สำคัญ", "concepts": ["agenda setting", "problem framing"], "instructorIds": ["@thanakrit"], "readingIds": ["r-3"], "activity": "", "noClass": false },
+    { "week": 6, "topic": "ทฤษฎีกระแสหลายสาย (Multiple Streams Framework) ของ Kingdon", "details": "กระแสปัญหา กระแสนโยบาย กระแสการเมือง หน้าต่างนโยบาย และผู้ประกอบการนโยบาย", "concepts": ["multiple streams", "policy window", "policy entrepreneur"], "instructorIds": ["@thanakrit"], "readingIds": ["r-3"], "activity": "อภิปรายกรณีนโยบายไทยที่เกิดจากหน้าต่างนโยบาย", "noClass": false },
+    { "week": 7, "topic": "เครื่องมือนโยบาย: กฎระเบียบ ภาษี เงินอุดหนุน และการให้ข้อมูล", "details": "การเลือกเครื่องมือนโยบายและผลกระทบที่ตามมา", "concepts": ["policy instruments", "regulation", "subsidies"], "instructorIds": ["@thanakrit"], "readingIds": ["r-4"], "activity": "", "noClass": false },
+    { "week": 8, "topic": "สอบกลางภาค", "details": "", "concepts": [], "instructorIds": [], "readingIds": [], "activity": "", "noClass": true },
+    { "week": 9, "topic": "การออกกฎระเบียบ การผ่อนคลายกฎระเบียบ และการเปิดเสรีกลไกตลาด", "details": "การควบคุมการเข้าดำเนินกิจการโดยรัฐ การกำกับดูแลอิสระ และผลกระทบของการเปิดเสรี", "concepts": ["regulation", "deregulation", "liberalization"], "instructorIds": ["@thanakrit"], "readingIds": ["r-2"], "activity": "", "noClass": false },
+    { "week": 10, "topic": "การนำนโยบายไปปฏิบัติ: แนวทางบนลงล่างและล่างขึ้นบน", "details": "ปัจจัยความสำเร็จและความล้มเหลว บทบาทของข้าราชการระดับปฏิบัติ (street-level bureaucrats)", "concepts": ["implementation", "top-down", "bottom-up", "street-level bureaucracy"], "instructorIds": ["@thanakrit"], "readingIds": ["r-4"], "activity": "", "noClass": false },
+    { "week": 11, "topic": "การประเมินผลนโยบายเบื้องต้น", "details": "ประเภทของการประเมินผล เกณฑ์ประสิทธิภาพ ประสิทธิผล และความเป็นธรรม", "concepts": ["policy evaluation", "effectiveness", "equity"], "instructorIds": ["@thanakrit"], "readingIds": ["r-1"], "activity": "", "noClass": false },
+    { "week": 12, "topic": "นโยบายเชิงพฤติกรรมและแนวคิด Nudge", "details": "การออกแบบทางเลือก (choice architecture) และข้อถกเถียงด้านจริยธรรม", "concepts": ["behavioural public policy", "nudge", "choice architecture"], "instructorIds": ["@thanakrit"], "readingIds": ["r-5"], "activity": "ส่ง policy brief", "noClass": false },
+    { "week": 13, "topic": "กรณีศึกษา: นโยบายหลักประกันสุขภาพถ้วนหน้า", "details": "การก่อตัว การผลักดัน และการนำไปปฏิบัติ วิเคราะห์ด้วยตัวแบบที่เรียนมา", "concepts": ["universal health coverage", "case study"], "instructorIds": ["@thanakrit"], "readingIds": ["r-2"], "activity": "", "noClass": false },
+    { "week": 14, "topic": "กรณีศึกษา: นโยบายการจัดการน้ำท่วมและภัยพิบัติ", "details": "การประสานงานระหว่างหน่วยงานและบทเรียนเชิงนโยบาย", "concepts": ["disaster management", "coordination", "case study"], "instructorIds": ["@thanakrit"], "readingIds": [], "activity": "", "noClass": false },
+    { "week": 15, "topic": "นำเสนอกรณีศึกษากลุ่ม", "details": "กลุ่มละ 15 นาที และตอบคำถาม 5 นาที", "concepts": [], "instructorIds": ["@thanakrit"], "readingIds": [], "activity": "การนำเสนอกลุ่ม", "noClass": false },
+    { "week": 16, "topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค", "details": "", "concepts": [], "instructorIds": ["@thanakrit"], "readingIds": [], "activity": "", "noClass": false }
+  ],
+  "evaluation": {
+    "gradingScheme": "letter",
+    "referencing": "criterion",
+    "items": [
+      { "id": "e-1", "title": "การมีส่วนร่วมในชั้นเรียน", "type": "participation", "weightPercent": 10, "individual": true, "dueWeek": null, "description": "การอภิปรายและการเตรียมตัวอ่านเอกสารล่วงหน้า" },
+      { "id": "e-2", "title": "สอบกลางภาค", "type": "midterm_exam", "weightPercent": 25, "individual": true, "dueWeek": 8, "description": "ข้อสอบอัตนัย 3 ข้อ" },
+      { "id": "e-3", "title": "Policy brief", "type": "policy_brief", "weightPercent": 20, "individual": true, "dueWeek": 12, "description": "ดูรายละเอียดในงานที่มอบหมาย" },
+      { "id": "e-4", "title": "นำเสนอกรณีศึกษากลุ่ม", "type": "presentation", "weightPercent": 15, "individual": false, "dueWeek": 15, "description": "" },
+      { "id": "e-5", "title": "สอบปลายภาค", "type": "final_exam", "weightPercent": 30, "individual": true, "dueWeek": null, "description": "ข้อสอบอัตนัย ครอบคลุมทั้งภาคการศึกษา" }
+    ],
+    "cutoffs": [
+      { "grade": "A", "minPercent": 80 }, { "grade": "B+", "minPercent": 75 }, { "grade": "B", "minPercent": 70 },
+      { "grade": "C+", "minPercent": 65 }, { "grade": "C", "minPercent": 60 }, { "grade": "D+", "minPercent": 55 },
+      { "grade": "D", "minPercent": 50 }, { "grade": "F", "minPercent": 0 }
+    ]
+  },
+  "resources": {
+    "readings": [
+      { "id": "r-1", "citation": "Dye, T. R. (2017). Understanding public policy (15th ed.). Pearson.", "title": "Understanding Public Policy", "authors": "Thomas R. Dye", "year": 2017, "type": "book", "required": true, "url": null, "isbn": "9780134169972", "doi": null },
+      { "id": "r-2", "citation": "ศุภชัย ยาวะประภาษ. นโยบายสาธารณะ. สำนักพิมพ์แห่งจุฬาลงกรณ์มหาวิทยาลัย.", "title": "นโยบายสาธารณะ", "authors": "ศุภชัย ยาวะประภาษ", "year": null, "type": "book", "required": true, "url": null, "isbn": null, "doi": null },
+      { "id": "r-3", "citation": "Kingdon, J. W. (2011). Agendas, alternatives, and public policies (Updated 2nd ed.). Longman.", "title": "Agendas, Alternatives, and Public Policies", "authors": "John W. Kingdon", "year": 2011, "type": "book", "required": false, "url": null, "isbn": null, "doi": null },
+      { "id": "r-4", "citation": "Howlett, M., Ramesh, M., & Perl, A. (2020). Studying public policy: Principles and processes (4th ed.). Oxford University Press.", "title": "Studying Public Policy: Principles and Processes", "authors": "Michael Howlett, M. Ramesh, Anthony Perl", "year": 2020, "type": "book", "required": false, "url": null, "isbn": null, "doi": null },
+      { "id": "r-5", "citation": "Thaler, R. H., & Sunstein, C. R. (2021). Nudge: The final edition. Penguin Books.", "title": "Nudge: The Final Edition", "authors": "Richard H. Thaler, Cass R. Sunstein", "year": 2021, "type": "book", "required": false, "url": null, "isbn": null, "doi": null }
+    ],
+    "materials": ["สไลด์ประกอบการบรรยายรายสัปดาห์", "เอกสารกรณีศึกษาที่แจกในชั้นเรียน"],
+    "platforms": [
+      { "name": "MyCourseVille", "url": null, "note": "ประกาศ เอกสาร และส่งงานทั้งหมด" }
+    ]
+  },
+  "work": [
+    { "id": "w-1", "title": "Policy brief: วิเคราะห์ปัญหานโยบายสาธารณะไทย 1 ประเด็น", "type": "policy_brief", "description": "เลือกปัญหานโยบายสาธารณะของไทย 1 ประเด็น นิยามปัญหา วิเคราะห์สาเหตุด้วยแนวคิดที่เรียน และเสนอทางเลือกนโยบายพร้อมหลักฐานรองรับ", "deliverable": "เอกสาร 2 หน้า A4 ส่งทาง MyCourseVille", "individual": true, "groupSize": null, "dueWeek": 12, "evaluationItemId": "e-3", "estimatedHours": 12 },
+    { "id": "w-2", "title": "นำเสนอกรณีศึกษานโยบายกลุ่ม", "type": "presentation", "description": "วิเคราะห์นโยบายไทย 1 นโยบายตลอดกระบวนการนโยบาย ตั้งแต่การก่อตัวจนถึงการประเมินผล", "deliverable": "การนำเสนอ 15 นาที พร้อมสไลด์", "individual": false, "groupSize": "4–5", "dueWeek": 15, "evaluationItemId": "e-4", "estimatedHours": 15 }
+  ],
+  "keyDates": [
+    { "label": "สอบกลางภาค", "week": 8, "date": null },
+    { "label": "ส่ง policy brief", "week": 12, "date": null },
+    { "label": "นำเสนอกลุ่ม", "week": 15, "date": null },
+    { "label": "สอบปลายภาค", "week": null, "date": null }
+  ]
+}

@@ -1,0 +1,177 @@
+/* Fonts: Prompt for headings, Sarabun for body (self-hosted via Fontsource; Thai + Latin subsets) */
+@import '@fontsource/prompt/400.css';
+@import '@fontsource/prompt/500.css';
+@import '@fontsource/prompt/600.css';
+@import '@fontsource/sarabun/400.css';
+@import '@fontsource/sarabun/500.css';
+@import '@fontsource/sarabun/600.css';
+@import '@fontsource/sarabun/700.css';
+
+@import 'tailwindcss';
+
+@theme {
+	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-heading: 'Prompt', 'Sarabun', ui-sans-serif, system-ui, sans-serif;
+
+	/* One accent: deep academic teal */
+	--color-accent: #1f5f73;
+	--color-accent-hover: #174a5a;
+	--color-accent-light: #e4f0f3;
+	--color-accent-dark: #123a46;
+
+	/* Neutrals: off-white page */
+	--color-ink: #22252a;
+	--color-ink-muted: #5f6672;
+	--color-surface: #ffffff;
+	--color-page: #f7f5f0;
+	--color-line: #e4e1d9;
+	--color-line-strong: #cfcac0;
+
+	/* Semantic */
+	--color-info: #2a64a8;
+	--color-info-bg: #e9f1fb;
+	--color-success: #2b7a4b;
+	--color-success-bg: #e8f5ec;
+	--color-warning: #b07d0c;
+	--color-warning-bg: #fcf4df;
+	--color-warning-ink: #7f5a00;
+	--color-danger: #b8423f;
+	--color-danger-bg: #fbebea;
+	--color-danger-ink: #962f2c;
+
+	/* Evaluation types: the same colour on every course (spec 04) */
+	--color-ev-exam: #1f5f73;
+	--color-ev-quiz: #5a8fa3;
+	--color-ev-paper: #c0763b;
+	--color-ev-project: #7b5ea7;
+	--color-ev-presentation: #b0577a;
+	--color-ev-participation: #6f8f3e;
+	--color-ev-other: #8a8578;
+
+	--radius-card: 14px;
+	--shadow-card: 0 1px 2px rgb(30 30 20 / 0.05);
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background-color: var(--color-page);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	line-height: 1.7;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+	font-family: var(--font-heading);
+	line-height: 1.4;
+}
+
+/* One chevron for every single select, kept clear of the text */
+select:not([multiple]):not([size]) {
+	appearance: none;
+	-webkit-appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6672'%3E%3Cpath d='M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.6rem center;
+	background-size: 1.1rem;
+	padding-right: 2.1rem;
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 2px;
+}
+
+@layer components {
+	.card {
+		background: var(--color-surface);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-card);
+		box-shadow: var(--shadow-card);
+	}
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
+		border-radius: 0.6rem;
+		padding: 0.45rem 0.95rem;
+		font-weight: 600;
+		font-size: 0.925rem;
+		line-height: 1.4;
+		border: 1px solid transparent;
+		cursor: pointer;
+		transition: background-color 0.15s;
+	}
+	.btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	.btn-primary {
+		background: var(--color-accent);
+		color: #fff;
+	}
+	.btn-primary:hover:not(:disabled) {
+		background: var(--color-accent-hover);
+	}
+	.btn-secondary {
+		background: var(--color-surface);
+		color: var(--color-ink);
+		border-color: var(--color-line-strong);
+	}
+	.btn-secondary:hover:not(:disabled) {
+		background: var(--color-page);
+	}
+	.btn-danger {
+		background: var(--color-danger);
+		color: #fff;
+	}
+	.btn-ghost {
+		background: transparent;
+		color: var(--color-accent);
+	}
+	.btn-ghost:hover:not(:disabled) {
+		background: var(--color-accent-light);
+	}
+	.input {
+		width: 100%;
+		border: 1px solid var(--color-line-strong);
+		border-radius: 0.55rem;
+		padding: 0.4rem 0.65rem;
+		background: #fff;
+		font-size: 0.95rem;
+		line-height: 1.5;
+		min-width: 0;
+	}
+	.input:focus {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 0;
+		border-color: var(--color-accent);
+	}
+	.label {
+		display: block;
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--color-ink-muted);
+		margin-bottom: 0.2rem;
+	}
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		border-radius: 999px;
+		padding: 0.05rem 0.6rem;
+		font-size: 0.8rem;
+		line-height: 1.6;
+		border: 1px solid var(--color-line);
+		background: var(--color-surface);
+		white-space: nowrap;
+	}
+}

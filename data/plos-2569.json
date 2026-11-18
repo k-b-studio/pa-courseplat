@@ -1,0 +1,185 @@
+{
+  "_source": "หลักสูตรรัฐศาสตรบัณฑิต (หลักสูตรปรับปรุง พ.ศ. 2569) หมวดที่ 2 ข้อ 7 และหมวดที่ 4 ข้อ 3 (creditgpax/curriculum/polsci-2569.pdf). Thai restored from the PDF text layer; verify before production use.",
+  "curriculumId": "polsci-2569",
+  "plos": [
+    {
+      "code": "PLO1",
+      "major": null,
+      "textTH": "ประยุกต์ใช้แนวคิด ทฤษฎี และองค์ความรู้ทางรัฐศาสตร์และสังคมศาสตร์ร่วมสมัยเพื่ออธิบายปรากฏการณ์ทางการเมืองและสังคมบนฐานของการศึกษาเชิงประจักษ์"
+    },
+    {
+      "code": "PLO2",
+      "major": null,
+      "textTH": "วิเคราะห์และวิพากษ์ปรากฏการณ์ทางการเมืองและสังคมในหลากหลายมิติ เพื่อใช้ในการวางแผน นโยบาย และยุทธศาสตร์"
+    },
+    {
+      "code": "PLO3",
+      "major": null,
+      "textTH": "มีทักษะการเขียน การสื่อสารและการอภิปรายทางรัฐศาสตร์และสังคมศาสตร์"
+    },
+    {
+      "code": "PLO4",
+      "major": null,
+      "textTH": "มีทักษะดิจิทัล รวมถึงการสืบค้นข้อมูลและสารสนเทศเพื่อการค้นคว้าและวิจัยพื้นฐานทางรัฐศาสตร์และสังคมศาสตร์ บนฐานของจริยธรรมทางวิชาการ"
+    },
+    {
+      "code": "PLO5",
+      "major": null,
+      "textTH": "แสดงความรับผิดชอบต่อสังคม ความเป็นผู้นำ การเคารพความหลากหลาย และการดำรงตนตามหลักคุณธรรมและจริยธรรม"
+    },
+    {
+      "code": "PLO1D",
+      "major": "PA",
+      "textTH": "ประยุกต์ใช้แนวคิด ทฤษฎีและองค์ความรู้ทางรัฐประศาสนศาสตร์ เพื่ออธิบายการบริหารจัดการภาครัฐในหลากหลายมิติ และนำไปสู่ผลลัพธ์ของการบริหารจัดการประเด็นสาธารณะที่มีประสิทธิภาพ ประสิทธิผล และสร้างความเป็นธรรมเพิ่มขึ้น",
+      "teachingMethods": [
+        "lecture",
+        "discussion",
+        "case_study",
+        "modular"
+      ],
+      "assessmentMethods": [
+        "written_exam",
+        "oral_exam",
+        "report",
+        "presentation"
+      ]
+    },
+    {
+      "code": "PLO2D",
+      "major": "PA",
+      "textTH": "วิเคราะห์และวิพากษ์ประเด็นและปัญหาการบริหารจัดการภาครัฐในหลากหลายมิติ เพื่อใช้ในการวางแผนนโยบายและยุทธศาสตร์",
+      "teachingMethods": [
+        "lecture",
+        "discussion",
+        "workshop_seminar",
+        "case_study",
+        "role_play",
+        "problem_based",
+        "game_based",
+        "field_visit"
+      ],
+      "assessmentMethods": [
+        "written_exam",
+        "report",
+        "presentation"
+      ]
+    },
+    {
+      "code": "PLO3D",
+      "major": "PA",
+      "textTH": "มีทักษะการเขียน การสื่อสาร และการอภิปรายเกี่ยวกับการบริหารจัดการภาครัฐในหลากหลายมิติ",
+      "teachingMethods": [
+        "lecture",
+        "discussion",
+        "workshop_seminar",
+        "case_study"
+      ],
+      "assessmentMethods": [
+        "written_exam",
+        "report",
+        "presentation",
+        "attendance",
+        "participation"
+      ]
+    },
+    {
+      "code": "PLO4D",
+      "major": "PA",
+      "textTH": "มีทักษะดิจิทัล รวมถึงการสืบค้นข้อมูลและสารสนเทศ เพื่อการวิจัยและวิเคราะห์ปรากฏการณ์ด้านการบริหารภาครัฐ บนฐานของจริยธรรมทางวิชาการ",
+      "teachingMethods": [
+        "lecture",
+        "discussion",
+        "workshop_seminar"
+      ],
+      "assessmentMethods": [
+        "written_exam",
+        "report",
+        "presentation"
+      ]
+    },
+    {
+      "code": "PLO5D",
+      "major": "PA",
+      "textTH": "แสดงออกถึงความรับผิดชอบต่อสังคม ความเป็นผู้นำ ความรับผิดชอบต่อหน้าที่ โดยสามารถประยุกต์ใช้หลักธรรมาภิบาล และคำนึงถึงประโยชน์สาธารณะ บนพื้นฐานของหลักคุณธรรมและจริยธรรม",
+      "teachingMethods": [
+        "lecture",
+        "discussion",
+        "workshop_seminar",
+        "role_play",
+        "field_visit"
+      ],
+      "assessmentMethods": [
+        "report",
+        "presentation",
+        "self_assessment",
+        "peer_reflection",
+        "portfolio_reflection"
+      ]
+    }
+  ],
+  "officialCourseExamples": {
+    "_note": "ตัวอย่างรายวิชาบังคับที่รับผิดชอบผลลัพธ์การเรียนรู้ (examples, not an exhaustive curriculum map)",
+    "PLO1": [
+      "2400114"
+    ],
+    "PLO1D": [
+      "2404213",
+      "2404220",
+      "2404324",
+      "2404436"
+    ],
+    "PLO2D": [
+      "2404312",
+      "2404412",
+      "2404310",
+      "2404368",
+      "2404411"
+    ],
+    "PLO3D": [
+      "2404419",
+      "2404414"
+    ],
+    "PLO4D": [
+      "2404419",
+      "2404414"
+    ],
+    "PLO5D": [
+      "2404415",
+      "2404220",
+      "2404310"
+    ]
+  },
+  "vocabularies": {
+    "teachingMethods": {
+      "lecture": "การบรรยาย",
+      "discussion": "การอภิปราย",
+      "case_study": "การใช้กรณีศึกษา",
+      "modular": "การสอนแบบโมดูลาร์",
+      "workshop_seminar": "การสัมมนาเชิงปฏิบัติการ",
+      "role_play": "การให้แสดงบทบาทสมมติ",
+      "problem_based": "การใช้ปัญหาเป็นฐาน",
+      "game_based": "การใช้เกม",
+      "field_visit": "การศึกษาดูงาน",
+      "independent_study": "การศึกษาค้นคว้าโดยอิสระ",
+      "brainstorming": "การระดมสมอง",
+      "guest_speaker": "การเรียนรู้จากบุคคลต้นแบบ/วิทยากร",
+      "internship": "การฝึกงาน",
+      "flipped": "ห้องเรียนกลับด้าน (เพิ่มเติม)",
+      "group_project": "โครงงานกลุ่ม (เพิ่มเติม)",
+      "policy_lab": "ห้องปฏิบัติการนโยบาย (เพิ่มเติม)"
+    },
+    "assessmentMethods": {
+      "written_exam": "การสอบข้อเขียน",
+      "oral_exam": "การสอบปากเปล่า",
+      "report": "การประเมินรายงาน",
+      "presentation": "การประเมินการนำเสนอผลงาน",
+      "homework": "การประเมินการบ้าน",
+      "attendance": "การประเมินการเข้าชั้นเรียน",
+      "participation": "การมีส่วนร่วมในชั้นเรียน",
+      "self_assessment": "การประเมินตนเอง",
+      "peer_reflection": "การประเมินจากการสะท้อนผลการทำงานร่วมกัน",
+      "portfolio_reflection": "การประเมินผลงาน/บทเรียนที่ถอดประสบการณ์จากนิสิต",
+      "internship_eval": "ประเมินการฝึกงาน"
+    }
+  }
+}

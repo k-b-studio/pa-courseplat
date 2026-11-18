@@ -1,0 +1,287 @@
+{
+  "_source": "creditgpax src/lib/data/curricula/*.json (PA slices only)",
+  "curricula": [
+    {
+      "id": "polsci-2564",
+      "nameTH": "รัฐศาสตรบัณฑิต (หลักสูตรปรับปรุง พ.ศ. 2564)",
+      "nameEN": "Bachelor of Arts in Political Science (B.A.) — Revised 2564",
+      "cohorts": [
+        66,
+        67,
+        68
+      ],
+      "cohortsOpenEnded": false,
+      "totalCreditsMin": 135,
+      "facultyCore": {
+        "credits": 36,
+        "codes": [
+          "2400105",
+          "2400111",
+          "2400112",
+          "2400113",
+          "2400114",
+          "2400115",
+          "2400116",
+          "2400117",
+          "2400118",
+          "2400119",
+          "2900111",
+          "2900112"
+        ]
+      },
+      "paMajorRequired": {
+        "credits": 39,
+        "codes": [
+          "2404213",
+          "2404220",
+          "2404310",
+          "2404312",
+          "2404324",
+          "2404364",
+          "2404368",
+          "2404411",
+          "2404412",
+          "2404414",
+          "2404415",
+          "2404419",
+          "2404436"
+        ]
+      },
+      "paElectives": {
+        "credits": 24,
+        "noMinor": {
+          "children": [
+            {
+              "id": "pa-track",
+              "nameTH": "กลุ่มวิชา (เลือก 1 สาย)",
+              "credits": 18,
+              "chooseOneGroup": [
+                {
+                  "id": "pa-fiscal",
+                  "nameTH": "สายบริหารงานคลัง",
+                  "ids": [
+                    "2601115",
+                    "2404422",
+                    "2404426",
+                    "2404429",
+                    "2404428",
+                    "2404430"
+                  ],
+                  "nameEN": "Fiscal Administration track"
+                },
+                {
+                  "id": "pa-personnel",
+                  "nameTH": "สายบริหารงานบุคคล",
+                  "ids": [
+                    "2601112",
+                    "2404317",
+                    "2404315",
+                    "2404353",
+                    "2404416",
+                    "2404425"
+                  ],
+                  "alternates": {
+                    "2601112": [
+                      "2601115"
+                    ]
+                  },
+                  "nameEN": "Personnel Administration track"
+                },
+                {
+                  "id": "pa-policy",
+                  "nameTH": "สายนโยบายและการวางแผน",
+                  "ids": [
+                    "2601112",
+                    "2404422",
+                    "2404429",
+                    "2404470",
+                    "2404318",
+                    "2404431"
+                  ],
+                  "alternates": {
+                    "2601112": [
+                      "2601115"
+                    ]
+                  },
+                  "nameEN": "Policy and Planning track"
+                }
+              ],
+              "note": "สายละ 6 วิชา 18 หน่วยกิต. ผู้ที่สอบผ่าน 2601115 การบัญชีการเงิน (สายบริหารงานคลัง) แล้วย้ายสาย ไม่ต้องลง 2601112 การบัญชีการเงินเบื้องต้น ระบบนับ 2601115 แทนให้",
+              "nameEN": "Track electives (choose one track)"
+            },
+            {
+              "id": "pa-other",
+              "nameTH": "วิชาเลือกอื่น (ต้องมีสัมมนา 1 วิชา)",
+              "credits": 6,
+              "match": {
+                "type": "prefix",
+                "prefixes": [
+                  "24"
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "must-include-seminar"
+                }
+              ],
+              "nameEN": "Other electives"
+            }
+          ]
+        },
+        "withMinor": {
+          "minorCredits": 18,
+          "children": [
+            {
+              "id": "pa-other",
+              "nameTH": "วิชาเลือกอื่น (2404480 สัมมนารัฐประศาสนศาสตร์ + การบัญชีการเงินเบื้องต้น)",
+              "nameEN": "Other required electives (2404480 + Intro Financial Accounting)",
+              "credits": 6,
+              "match": {
+                "type": "courses",
+                "ids": [
+                  "2404480",
+                  "2601112"
+                ]
+              },
+              "note": "ตามคู่มือวิชาโท 2564: นิสิต PA ที่เรียนโทต้องลง 2404480 และการบัญชีการเงินเบื้องต้น (เอกสารพิมพ์ 2600112 — รหัสจริงคือ 2601112)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "polsci-2569",
+      "nameTH": "รัฐศาสตรบัณฑิต (หลักสูตรปรับปรุง พ.ศ. 2569)",
+      "nameEN": "Bachelor of Arts in Political Science (B.A.) — Revised 2569",
+      "cohorts": [
+        69
+      ],
+      "cohortsOpenEnded": true,
+      "totalCreditsMin": 129,
+      "facultyCore": {
+        "credits": 36,
+        "codes": [
+          "2400101",
+          "2400108",
+          "2400109",
+          "2400110",
+          "2400112",
+          "2400113",
+          "2400114",
+          "2400116",
+          "2400213",
+          "2400214",
+          "2900113",
+          "2900114"
+        ]
+      },
+      "paMajorRequired": {
+        "credits": 42,
+        "codes": [
+          "2404213",
+          "2404220",
+          "2404310",
+          "2404312",
+          "2404324",
+          "2404364",
+          "2404368",
+          "2404411",
+          "2404412",
+          "2404414",
+          "2404415",
+          "2404419",
+          "2404436",
+          "2601112"
+        ]
+      },
+      "paElectives": {
+        "credits": 21,
+        "noMinor": {
+          "children": [
+            {
+              "id": "pa-track",
+              "nameTH": "กลุ่มวิชา (เลือก 1 สาย)",
+              "credits": 15,
+              "chooseOneGroup": [
+                {
+                  "id": "pa-fiscal",
+                  "nameTH": "สายบริหารงานคลัง",
+                  "ids": [
+                    "2404422",
+                    "2404430",
+                    "2601115",
+                    "2404426",
+                    "2404428"
+                  ],
+                  "nameEN": "Fiscal Administration track"
+                },
+                {
+                  "id": "pa-personnel",
+                  "nameTH": "สายบริหารงานบุคคล",
+                  "ids": [
+                    "2404317",
+                    "2404416",
+                    "2404425",
+                    "2404315",
+                    "2404353"
+                  ],
+                  "nameEN": "Personnel Administration track"
+                },
+                {
+                  "id": "pa-policy",
+                  "nameTH": "สายนโยบายและการวางแผน",
+                  "ids": [
+                    "2404318",
+                    "2404422",
+                    "2404470",
+                    "2404429",
+                    "2404431"
+                  ],
+                  "nameEN": "Policy and Planning track"
+                }
+              ],
+              "nameEN": "Track electives (choose one track)"
+            },
+            {
+              "id": "pa-other",
+              "nameTH": "วิชาเลือกอื่น (ต้องมี 2404480 สัมมนารัฐประศาสนศาสตร์)",
+              "credits": 6,
+              "match": {
+                "type": "prefix",
+                "prefixes": [
+                  "24"
+                ]
+              },
+              "constraints": [
+                {
+                  "type": "must-include",
+                  "ids": [
+                    "2404480"
+                  ]
+                }
+              ],
+              "nameEN": "Other electives"
+            }
+          ]
+        },
+        "withMinor": {
+          "minorCredits": 18,
+          "children": [
+            {
+              "id": "pa-seminar",
+              "nameTH": "2404480 สัมมนารัฐประศาสนศาสตร์",
+              "credits": 3,
+              "match": {
+                "type": "courses",
+                "ids": [
+                  "2404480"
+                ]
+              },
+              "nameEN": "2404480 Public Administration Seminar"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
