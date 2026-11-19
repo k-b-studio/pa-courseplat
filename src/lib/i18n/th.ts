@@ -27,7 +27,9 @@ export const t = {
 		profile: 'โปรไฟล์',
 		signOut: 'ออกจากระบบ',
 		switchDemo: 'สลับบัญชีตัวอย่าง',
-		menu: 'เมนู'
+		menu: 'เมนู',
+		/** the header's label for a signed-in account with no Thai name yet (Kim, 2026-11-19) */
+		account: 'Account'
 	},
 
 	roles: { student: 'นิสิต', viewer: 'ผู้เยี่ยมชม', instructor: 'อาจารย์', staff: 'เจ้าหน้าที่' } as Record<string, string>,
@@ -573,6 +575,14 @@ export function personName(p: { title_th?: string | null; name_th?: string | nul
 	const name = p.name_th ?? p.nameTh ?? '';
 	if (!name) return t.common.deletedUser;
 	return title && title !== 'คุณ' ? `${title}${name}` : title === 'คุณ' ? `คุณ${name}` : name;
+}
+
+/**
+ * The signed-in user's own name in the header. A real Chula account that is not in the staff directory has no Thai
+ * name; personName() would call it a deleted user, which is only right for someone else's deleted account.
+ */
+export function selfName(p: { title_th?: string | null; name_th?: string | null } | null | undefined): string {
+	return p?.name_th?.trim() ? personName(p) : t.nav.account;
 }
 
 /** Thai date: "11 ม.ค. 2570". Date-only strings are calendar dates; timestamps show Bangkok time. */

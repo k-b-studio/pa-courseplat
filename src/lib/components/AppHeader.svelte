@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import { DEMO_BUTTONS, canTeach, homeRouteFor, isStaffRole } from '$lib/domain/accounts';
 	import Icon from '$lib/components/Icon.svelte';
-	import { personName, t } from '$lib/i18n/th';
+	import { selfName, t } from '$lib/i18n/th';
 	import type { IconName } from '$lib/icons';
 	import type { Profile } from '$lib/types';
 
@@ -22,7 +22,7 @@
 		).filter((i) => i.show)
 	);
 	const current = (href: string) => page.url.pathname === href || page.url.pathname.startsWith(href + '/');
-	const displayName = $derived(personName(profile) || profile.email);
+	const displayName = $derived(selfName(profile));
 </script>
 
 <header class="bg-night text-white">

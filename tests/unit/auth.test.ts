@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { STAFF_EMAIL, STUDENT_EMAIL, homeRouteFor, isStaffEmail, isStudentEmail } from '$lib/domain/accounts';
 import { cohortFromEmail, curriculumFor, curriculumForCohort } from '$lib/domain/curriculum';
+import { selfName, t } from '$lib/i18n/th';
 
 describe('spec 03 AC 1 — cohort and curriculum', () => {
 	it('reads the cohort from a PolSci student address', () => {
@@ -41,5 +42,17 @@ describe('home route by role', () => {
 		expect(homeRouteFor({ role: 'viewer', major: null })).toBe('/courses');
 		expect(homeRouteFor({ role: 'instructor', major: null })).toBe('/teach');
 		expect(homeRouteFor({ role: 'staff', major: null })).toBe('/admin');
+	});
+});
+
+describe('the header names the signed-in user', () => {
+	it('shows the Thai name with its title when there is one', () => {
+		expect(selfName({ title_th: 'อ.ดร.', name_th: 'ณัฐธิดา แก้วมณี' })).toBe('อ.ดร.ณัฐธิดา แก้วมณี');
+	});
+	it('shows "Account" for a real account with no Thai name, never "deleted user"', () => {
+		for (const p of [{ title_th: null, name_th: null }, { name_th: '  ' }, null]) {
+			expect(selfName(p)).toBe('Account');
+			expect(selfName(p)).not.toBe(t.common.deletedUser);
+		}
 	});
 });
