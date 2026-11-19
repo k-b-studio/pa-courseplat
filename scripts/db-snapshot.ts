@@ -10,7 +10,14 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { connect, dbUrl, describeUrl } from './lib/pg';
 
 type Snapshot = Record<string, Record<string, unknown>>;
-const ALLOWED_NEW = new Set(['function:public.shared_before_user_created(event jsonb)']);
+// Everything our migrations add outside schema courseplat's own objects.
+const ALLOWED_NEW = new Set([
+	'function:public.shared_before_user_created(event jsonb)',
+	'namespace:courseplat',
+	'bucket:syllabus-uploads',
+	'storage_policy:objects.courseplat_uploads_insert',
+	'storage_policy:objects.courseplat_uploads_select'
+]);
 
 const args = process.argv.slice(2);
 const flag = (name: string) => {
@@ -44,7 +51,7 @@ if (args.includes('--compare')) {
 		console.error('DIFFERENT: creditGPAX objects changed.');
 		process.exit(1);
 	}
-	console.log('OK: identical apart from public.shared_before_user_created.');
+	console.log('OK: identical apart from public.shared_before_user_created and our own schema, bucket and storage policies.');
 	process.exit(0);
 }
 
@@ -72,8 +79,19 @@ try {
 			from pg_trigger t join pg_class c on c.oid = t.tgrelid join pg_namespace n on n.oid = c.relnamespace
 			where not t.tgisinternal and (n.nspname = 'public' or (n.nspname = 'auth' and c.relname = 'users'))`;
 		const schema = await tx<{ acl: string | null }[]>`select nspacl::text as acl from pg_namespace where nspname = 'public'`;
+		const schemas = await tx<{ name: string; owner: string }[]>`
+			select nspname as name, pg_get_userbyid(nspowner) as owner from pg_namespace
+			where nspname not like 'pg\\_%' and nspname <> 'information_schema'`;
+		const storagePolicies = await tx<Record<string, unknown>[]>`
+			select tablename, policyname, permissive, roles::text as roles, cmd, qual, with_check
+			from pg_policies where schemaname = 'storage'`;
+		const buckets = await tx<Record<string, unknown>[]>`
+			select id, name, public, file_size_limit, allowed_mime_types::text as allowed_mime_types from storage.buckets`;
 
-		const snap: Snapshot = { function: {}, policy: {}, table: {}, column: {}, trigger: {}, schema: {} };
+		const snap: Snapshot = {
+			function: {}, policy: {}, table: {}, column: {}, trigger: {}, schema: {},
+			namespace: {}, storage_policy: {}, bucket: {}
+		};
 		for (const f of functions) snap.function[`public.${f.sig.replace(/^public\./, '')}`] = { def: f.def, acl: f.acl, secdef: f.secdef };
 		// regprocedure prints arg types only; key functions by name + arg names for readability
 		const named = await tx<{ sig: string; key: string }[]>`
@@ -87,6 +105,9 @@ try {
 		for (const c of columns) snap.column[`${c.table_name}.${c.column_name}`] = c;
 		for (const t of triggers) snap.trigger[t.name] = t.def;
 		snap.schema.public = schema[0];
+		for (const n of schemas) snap.namespace[n.name] = n.owner;
+		for (const p of storagePolicies) snap.storage_policy[`${p.tablename}.${p.policyname}`] = p;
+		for (const b of buckets) snap.bucket[String(b.id)] = b;
 		return snap;
 	});
 	mkdirSync('.snapshots', { recursive: true });

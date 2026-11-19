@@ -7,6 +7,11 @@ export function dbUrl(): string {
 		console.error('SUPABASE_DB_URL is not set (.env). See .env.example.');
 		process.exit(2);
 	}
+	// Refuse the unfilled template so a placeholder never reaches the server as a password attempt.
+	if (/\[[A-Z-]+\]/.test(url)) {
+		console.error('SUPABASE_DB_URL still contains a [PLACEHOLDER]. Replace it with the real value in .env.');
+		process.exit(2);
+	}
 	return url;
 }
 

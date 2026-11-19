@@ -2,7 +2,7 @@
 
 | Phase | Status | Notes |
 |---|---|---|
-| P0 Scaffold | **Code done; local criteria pass. Shared-project steps waiting for credentials.** | See below |
+| P0 Scaffold | **Done except the four dashboard steps (Kim).** Migrations on the shared project; AC 1 passes there. | See below |
 | P1 Auth + roles | not started | |
 | P2 Student pages | not started | |
 | P3 Editor | not started | |
@@ -21,13 +21,20 @@
 - AC 6: `npm run build && npm run check:secrets` finds no secret in client assets; `.env`, `api.md`, `thaillm-api.md` untracked.
 - ThaiLLM HTTPS probe: HTTP 200.
 
-**Waiting on:**
-- `SUPABASE_SECRET_KEY` and `SUPABASE_DB_URL` in `.env` (Kim).
-- Then: `npm run db:snapshot -- --label before` → Kim confirms → `npm run db:migrate` → `npm run db:snapshot -- --label after` → `npm run db:snapshot -- --compare before after` (AC 1 on the shared project), and the dashboard steps (expose `courseplat`, switch the hook, Email provider on, redirect URLs).
+**Shared project (2026-11-19):**
+- `.env` has all six names; `SUPABASE_DB_URL` is the direct connection (DECISIONS.md).
+- `before` snapshot taken (Kim confirmed) → migrations 0001–0004 present and verified identical to the files, recorded in the ledger (DECISIONS.md: they had been applied by hand) → `db:migrate` applies nothing → `after` snapshot → `--compare before after`: **OK**, only `public.shared_before_user_created`, schema `courseplat`, bucket `syllabus-uploads` and the two `courseplat_uploads_*` storage policies added. AC 1 passes on the shared project.
+
+**Waiting on (Kim, dashboard):**
+1. Data API → Exposed schemas: add `courseplat` (today only `public`, `graphql_public`: REST answers PGRST106).
+2. Auth Hooks → Before User Created: switch to `public.shared_before_user_created`.
+3. Auth Providers → Email: enable (today only Google is on).
+4. URL Configuration → Redirect URLs: add `http://localhost:5173/auth/callback` (Vercel domain in P7).
+- Check after: REST with `Accept-Profile: courseplat` answers 200; a sign-up with a non-demo email is refused with "Accounts are for Chula PolSci students and Chula staff only" (our hook's message, not creditGPAX's).
 - AC 9's creditGPAX half (`delete_my_account()` for a test student) runs against the shared project in P1.
 
 ## How to resume
 
-1. `npm install`, then `npm run check && npm run test`.
-2. If `.env` has `SUPABASE_DB_URL`: follow "Waiting on" above, in order.
+1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.
+2. `npm run db:migrate` should say "nothing to apply"; if the dashboard steps above aren't done, do them first.
 3. Next phase: P1 (spec 03).

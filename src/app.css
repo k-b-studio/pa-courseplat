@@ -7,7 +7,8 @@
 @import '@fontsource/sarabun/600.css';
 @import '@fontsource/sarabun/700.css';
 
-@import 'tailwindcss';
+/* scan only src/ for classes (specs/, data/, fixtures/ hold no markup) */
+@import 'tailwindcss' source('.');
 
 @theme {
 	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
