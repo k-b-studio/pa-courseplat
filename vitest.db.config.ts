@@ -1,8 +1,10 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 
 // Database tests run against a real Supabase project (local stack or the shared one).
 // They need .env loaded: `npm run test:db`.
 export default defineConfig({
+	resolve: { alias: { $lib: fileURLToPath(new URL('./src/lib', import.meta.url)) } },
 	test: {
 		include: ['tests/db/**/*.test.ts'],
 		environment: 'node',

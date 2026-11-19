@@ -1,0 +1,35 @@
+{
+	"date": "2026-11-19T06:42:42.119Z",
+	"summary": [
+		{
+			"model": "typhoon",
+			"pass": true,
+			"precision": 0.75,
+			"recall": 1,
+			"fp": 2,
+			"failedCalls": 1,
+			"relationMatches": 4
+		},
+		{
+			"model": "pathumma",
+			"pass": true,
+			"precision": 0.86,
+			"recall": 1,
+			"fp": 1,
+			"failedCalls": 0,
+			"relationMatches": 4
+		},
+		{
+			"model": "openthaigpt",
+			"pass": true,
+			"precision": 0.86,
+			"recall": 1,
+			"fp": 1,
+			"failedCalls": 0,
+			"relationMatches": 5
+		}
+	],
+	"recommendation": {
+		"THAILLM_MODEL": "openthaigpt"
+	}
+}

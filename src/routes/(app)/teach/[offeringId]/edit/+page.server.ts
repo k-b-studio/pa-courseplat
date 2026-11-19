@@ -9,6 +9,7 @@ import { emptySyllabus, strictIssues, SyllabusDraft, type SyllabusDoc } from '$l
 import { aiFlags } from '$lib/server/ai/extract';
 import { ExtractionResult } from '$lib/schema/extraction';
 import { instructorsFor, plosMap } from '$lib/server/course-page';
+import { loadCautions } from '$lib/server/cautions/view';
 import { courses, sectionsFor, semesters } from '$lib/server/student';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -66,6 +67,11 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 	const parsedX = lastX?.result ? ExtractionResult.safeParse(lastX.result) : null;
 	const flags = wk.doc && parsedX?.success ? aiFlags(wk.doc, parsedX.data) : { aiPlo: [] as string[], aiWeeks: [] as number[] };
 
+	const [cautions, lastRunRes] = await Promise.all([
+		loadCautions(sb, locals.profile!.id, { offeringId: id }),
+		sb.from('caution_runs').select('status, error, created_at').eq('offering_id', id).order('created_at', { ascending: false }).limit(1).maybeSingle()
+	]);
+
 	// spec 07 R12: highlight handover notes added since this person last opened the editor
 	const { data: lastVisit } = await sb.rpc('touch_course_visit', { p_course: code });
 	const semLabel = (sid: string | null) => all.find((s) => s.id === sid)?.label ?? '';
@@ -83,7 +89,8 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		notes: ((notesRes.data ?? []) as any[]).map((n) => ({ id: n.id as string, body: n.body as string, created_at: n.created_at as string, semester: semLabel(n.semester_id), author: n.author, isNew: !!lastVisit && n.created_at > (lastVisit as string) })),
 		history,
 		flags,
-		cautions: [] as { id: string; severity: string; label: string }[] // spec 06 (P5)
+		cautions,
+		lastRun: lastRunRes.data as { status: string; error: string | null; created_at: string } | null
 	};
 };
 
@@ -128,7 +135,7 @@ export const actions: Actions = {
 		if (issues.length) return fail(400, { message: t.editor.notReady, issues });
 		const { error: e } = await sb.rpc('publish_offering', { p_offering: params.offeringId, p_expected_revision: revision });
 		if (e) return fail(400, { message: t.editor.publishFailed });
-		// Content Caution run starts here in P5 (spec 06)
+		// the editor then starts the Content Caution run (spec 06 R4) through /api/cautions/run
 		return { published: true, revision };
 	},
 

@@ -7,7 +7,7 @@
 | P2 Student pages | **Done** (Musts + the curriculum-map Should) | AC 1–6, 8, 9 pass; AC 7 needs the P4 upload (mechanism tested now) |
 | P3 Editor | **Done** (R1–R10, incl. the diff Should) | AC 5, 6, 7, 8, 11 pass; AC 4's manual half passes; caution parts come with P5 |
 | P4 AI import | **Done** (R11–R17) | Offline AC 3, 4, 9, 10, 12 (mocked), 13 pass; online fixtures recorded with gemini-3.6-flash; AC 1's 60 s target not yet shown online (see below) |
-| P5 Content Caution | next | |
+| P5 Content Caution | **Done** (R1–R9, incl. the dashboard and editor integration) | AC 1–11 pass (AC 4 offline; online wording recorded with openthaigpt); `THAILLM_MODEL=openthaigpt` from `eval:judge` |
 | P6 Staff dashboard | not started | |
 | P7 Demo hardening | not started | |
 
@@ -91,9 +91,21 @@
 **Known gaps:**
 - AC 1's "under 60 s": the recorded .docx call took 643 s (the PDF 40 s, the injection test 25 s), and a timing re-check got Gemini HTTP 503 after retries. Extraction now uses low thinking and a 2-minute request timeout; re-check the timing once before the presentation (spec 08 AC 4 rehearsal).
 
+## P5 — Content Caution (spec 06)
+
+**Built:**
+- Items in TypeScript (`itemsFromDoc`, same refs and MD5 hashes as `rebuild_syllabus_items`); normalisation and concept tags; Stage 1 rules (shared reading identifiers; identical topic text except course-admin weeks); Stage 2a candidates (concept tags + trigrams, top 40, deterministic); Stage 2b judge (ThaiLLM per pair, 3 in flight, 4 per second; Gemini corpus comparison when more than half fail; offline fixture keyed by both items' hashes); Stage 3 (relation adjustment by level/prerequisite, severity table, due-week note, pair keys); upsert with reopen on hash change and auto-dismiss (R5–R7). Every call logged in `ai_calls`, every run in `caution_runs`.
+- `POST /api/cautions/run` (`can_edit_offering` with the user's JWT, writes with the secret key). The editor runs it after publishing, after accepting an import (`?run=import`) and from "ตรวจความทับซ้อน", shows "กำลังตรวจความทับซ้อน… / ตรวจเสร็จ พบ n รายการ", markers on the week, work and reading rows, the cautions tab with the drawer, and "ตรวจด้วย AI ไม่สำเร็จ แสดงเฉพาะผลการตรวจพื้นฐาน" after a failed AI part.
+- `/cautions`: scope line, tiles, severity/status/kind/semester filters in the URL, the course × course matrix, kind bars, วิชาของฉัน cards, the list, and the drawer with both sides, resolution (intentional / coordinating with a thread / dismissed with a required note, relation relabel) and comments. `/teach` shows open high/medium counts per offering linking to `/cautions?offering=…`; instructors get the menu badge for cautions someone else's run created or reopened (R9).
+- Seed step 10: the six cautions of spec 08 (second run: nothing to change). `npm run eval:judge` (`fixtures/eval/`), `npm run fixtures:record -- --part caution [--no-ai]`.
+
+**Recorded online (2026-11-19):** `eval:judge` over 6 positives + 12 negatives for typhoon, pathumma and openthaigpt → **pin `THAILLM_MODEL=openthaigpt`** (now in `.env` and `.env.example`; details in DECISIONS). The 2404429 caution fixture's wording comes from openthaigpt for 4 of 5 pairs.
+
+**Passed:** unit (138): AC 1, 2, 10, the generic-topic rule, clip, dashboard numbers (AC 3), items parity with the SQL function on PGlite. DB tests on the shared project (`npm run test:db`, 6 passed): AC 8 with ThaiLLM mocked down → Gemini corpus finds the policy-brief pair; both failing → Stage 1 kept, earlier AI cautions kept open, run `failed` with the error. E2E Chromium + WebKit + iPhone 13 (94 passed, 2 skipped by design, 16.6 min): AC 3, AC 9 + AC 4 (empty state, then 1 high with "ไม่เกิน 1 สัปดาห์", 4 medium incl. Dye, 1 info; วิชาของฉัน links to the editor), AC 5 (badge, scope, coordination thread reaches natthida), AC 6 (week 2 change → auto-dismissed; the seeded intentional caution unchanged), AC 7 (student on iPhone too, and a viewer: menu absent, redirect + toast, no rows through the publishable key, crawl of student routes finds no caution text or labels), AC 8 in the editor.
+
 ## How to resume
 
 1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.
 2. `npm run db:migrate` → "nothing to apply"; `npm run seed` → "nothing to change".
 3. `npm run test:e2e` and `npm run test:db` (both use the shared project).
-4. Next phase: P5 (spec 06, Content Caution).
+4. Next phase: P6 (spec 07, staff dashboard, including `/admin/people`).

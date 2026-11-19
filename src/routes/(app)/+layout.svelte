@@ -6,7 +6,7 @@
 	let { data, children } = $props();
 </script>
 
-<AppHeader profile={data.profile} demoMode={data.demoMode} />
+<AppHeader profile={data.profile} demoMode={data.demoMode} cautionBadge={data.cautionBadge} />
 
 {#if data.demoMode}
 	<p class="bg-warning-bg px-4 py-1.5 text-center text-xs text-warning-ink" data-testid="demo-data-banner">{t.demoData}</p>

@@ -254,3 +254,13 @@ describe('offering listing (0005, spec 04 R1 and AC 9)', () => {
 		await expect(as(db, null, (tx) => tx.query(`select * from courseplat.offering_listing('2569-2')`))).rejects.toThrow();
 	});
 });
+
+describe('items in TypeScript match rebuild_syllabus_items (spec 06)', () => {
+	it('same refs, texts and content hashes for the example syllabus', async () => {
+		const { itemsFromDoc } = await import('../../src/lib/domain/items');
+		await db.exec(`update courseplat.offerings set syllabus = '${JSON.stringify(example).replace(/'/g, "''")}'::jsonb where id = '${O324}'; select courseplat.rebuild_syllabus_items('${O324}');`);
+		const sql = await q<{ ref: string; text: string; content_hash: string }>(`select ref, text, content_hash from courseplat.syllabus_items where offering_id = '${O324}' order by ref`);
+		const ts = itemsFromDoc(example).map((i) => ({ ref: i.ref, text: i.text, content_hash: i.contentHash })).sort((a, b) => a.ref.localeCompare(b.ref));
+		expect(ts).toEqual(sql);
+	});
+});

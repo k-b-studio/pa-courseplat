@@ -53,6 +53,9 @@ export async function resetNotStarted(code = '2404429', semester = '2569-2') {
 		await tx`delete from courseplat.offering_versions where offering_id = ${o.id}`;
 		await tx`delete from courseplat.syllabus_items where offering_id = ${o.id}`;
 		await tx`delete from courseplat.extractions where offering_id = ${o.id}`;
+		// cautions and runs a test created (seeded cautions never involve 2404429)
+		await tx`delete from courseplat.content_cautions where (a_offering_id = ${o.id} or b_offering_id = ${o.id}) and source <> 'seed'`;
+		await tx`delete from courseplat.caution_runs where offering_id = ${o.id}`;
 		await tx`update courseplat.offerings set syllabus = null, revision = 0, status = 'not_started', cloned_from = null, updated_by = null, updated_at = null, published_at = null, published_revision = null where id = ${o.id}`;
 		await removeUploads(o.id);
 	});

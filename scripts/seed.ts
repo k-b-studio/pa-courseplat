@@ -5,7 +5,7 @@
  * (Admin API, email_confirm: true; the shared sign-up hook lets them in because demo_accounts
  * is seeded first) → profiles (ensure_profile, run as each user) → offerings, sections,
  * instructors, meetings → syllabi (save_syllabus / publish_offering, run as the coordinator).
- * → handover notes. Cautions follow in P5.
+ * → handover notes → seeded cautions (fixtures/cautions/seed-2569-2.json).
  *
  * Shared project (spec 02 rule 6): writes only schema courseplat and auth users whose email is
  * in courseplat.demo_accounts. Prints counts of rows changed; a second run prints zeros.
@@ -17,6 +17,9 @@ import offeringsJson from '../fixtures/offerings.json';
 import peopleJson from '../fixtures/people.json';
 import syllabusIndex from '../fixtures/syllabi/index.json';
 import notesJson from '../fixtures/notes.json';
+import seedCautions from '../fixtures/cautions/seed-2569-2.json';
+import { itemLabel, itemsFromDoc } from '../src/lib/domain/items';
+import { canonical, pairKey } from '../src/lib/server/cautions/severity';
 import type { SyllabusDoc } from '../src/lib/schema/syllabus';
 import { adminClient, demoPassword } from './lib/admin';
 import { coursePloRows, courseRows, curriculumCourseRows, curriculumRows, ploRows } from './lib/catalog';
@@ -178,6 +181,39 @@ try {
 				 where not exists (select 1 from courseplat.course_notes where course_code = ${n.course} and semester_id = ${n.semester} and body = ${n.body})
 				returning 1`;
 			count('notes', r.length);
+		}
+	});
+
+	// 10. seeded cautions (spec 08), inserted once by pair_key ------------------------------------------
+	await sql.begin(async (tx) => {
+		const sem = seedCautions.semester;
+		const offs = await tx<{ id: string; course_code: string }[]>`select id, course_code from courseplat.offerings where semester_id = ${sem}`;
+		const offId = (c: string) => offs.find((o) => o.course_code.trim() === c)!.id;
+		const itemOf = (c: string, ref: string) => {
+			const doc = JSON.parse(readFileSync(`fixtures/syllabi/${sem}/${c}.json`, 'utf-8')) as SyllabusDoc;
+			const it = itemsFromDoc(doc).find((i) => i.ref === ref);
+			if (!it) throw new Error(`seed caution: ${c} ${ref} not found`);
+			return it;
+		};
+		for (const c of seedCautions.cautions) {
+			const sa = { code: c.a.course, semester: sem, ref: c.a.ref, item: itemOf(c.a.course, c.a.ref) };
+			const sb = { code: c.b.course, semester: sem, ref: c.b.ref, item: itemOf(c.b.course, c.b.ref) };
+			const [a, b] = canonical(sa, sb);
+			const key = pairKey(c.kind as 'topic', a, b);
+			const resolved = c.status !== 'open';
+			const by = 'resolvedBy' in c && c.resolvedBy ? byKey(c.resolvedBy) : null;
+			const r = await tx`
+				insert into courseplat.content_cautions
+				  (pair_key, semester_id, a_offering_id, a_ref, a_label, a_hash, b_offering_id, b_ref, b_label, b_hash, kind, relation, severity, similarity,
+				   reason_th, suggestion_th, source, status, resolved_by, resolved_at, resolution_note, created_at, updated_at)
+				values (${key}, ${sem}, ${offId(a.code)}, ${a.ref}, ${itemLabel(a.code, a.item)}, ${a.item.contentHash}, ${offId(b.code)}, ${b.ref}, ${itemLabel(b.code, b.item)}, ${b.item.contentHash},
+				        ${c.kind}::courseplat.caution_kind, ${c.relation}::courseplat.caution_relation, ${c.severity}::courseplat.caution_severity, ${c.similarity},
+				        ${c.reasonTH}, ${c.suggestionTH}, 'seed', ${c.status}::courseplat.caution_status, ${by}, ${resolved ? '2026-11-12T14:00:00+07:00' : null}::timestamptz,
+				        ${'resolutionNote' in c ? (c.resolutionNote ?? null) : null}, '2026-11-10T09:00:00+07:00', ${resolved ? '2026-11-12T14:00:00+07:00' : '2026-11-10T09:00:00+07:00'}::timestamptz)
+				on conflict (pair_key) do nothing
+				returning id`;
+			if (r.length && resolved) await tx`insert into courseplat.caution_events (caution_id, actor_id, status, relation, note, created_at) values (${r[0].id}, ${by}, ${c.status}::courseplat.caution_status, ${c.relation}::courseplat.caution_relation, ${'resolutionNote' in c ? (c.resolutionNote ?? null) : null}, '2026-11-12T14:00:00+07:00')`;
+			count('cautions', r.length);
 		}
 	});
 

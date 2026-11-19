@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { deserialize, enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
+	import { goto, invalidateAll } from '$app/navigation';
+	import { page } from '$app/state';
+	import Drawer from '$lib/components/caution/Drawer.svelte';
 	import DiffList from '$lib/components/editor/DiffList.svelte';
 	import ReadinessPanel from '$lib/components/editor/ReadinessPanel.svelte';
 	import SectionDetails from '$lib/components/editor/SectionDetails.svelte';
@@ -10,7 +12,7 @@
 	import { changedSections } from '$lib/domain/diff';
 	import { personName, t, thaiDate, thaiDateTime, thaiTime } from '$lib/i18n/th';
 	import { strictIssues, type SyllabusDoc } from '$lib/schema/syllabus';
-	import { untrack } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 
 	let { data } = $props();
 
@@ -29,6 +31,48 @@
 	let busy = $state(false);
 	let tab = $state<'notes' | 'history' | 'cautions'>('notes');
 	let diffWith = $state<string | null>(null);
+	let selectedCaution = $state<string | null>(null);
+	let runState = $state<'idle' | 'running' | 'done' | 'failed'>('idle');
+	let runFound = $state(0);
+	const currentCaution = $derived(data.cautions.find((c) => c.id === selectedCaution) ?? null);
+	const openCautions = $derived(data.cautions.filter((c) => c.status === 'open' || c.status === 'coordinating'));
+	// spec 06 "Editor markers": open high/medium cautions per item of this offering
+	const markers = $derived.by(() => {
+		const out: Record<string, { count: number; worst: 'high' | 'medium'; id: string }> = {};
+		for (const c of openCautions) {
+			if (c.severity === 'info') continue;
+			const ref = c.a_offering_id === data.offering.id ? c.a_ref : c.b_offering_id === data.offering.id ? c.b_ref : null;
+			if (!ref) continue;
+			const prev = out[ref];
+			out[ref] = { count: (prev?.count ?? 0) + 1, worst: prev?.worst === 'high' || c.severity === 'high' ? 'high' : 'medium', id: prev?.id ?? c.id };
+		}
+		return out;
+	});
+
+	/** spec 06 R4: after publishing, after an accepted import, or on demand */
+	async function runCheck(trigger: 'manual' | 'publish' | 'import') {
+		runState = 'running';
+		let ok = false;
+		try {
+			const res = await fetch('/api/cautions/run', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ offeringId: data.offering.id, trigger }) });
+			const out = await res.json();
+			if (!res.ok) throw new Error(out.message);
+			runFound = out.produced ?? 0;
+			ok = true;
+		} catch {
+			ok = false;
+		}
+		// report "done" only once the editor shows the new cautions
+		await invalidateAll();
+		runState = ok ? 'done' : 'failed';
+	}
+	onMount(async () => {
+		if (page.url.searchParams.get('run') === 'import') {
+			// drop ?run=import with a real navigation first, so a reload or Back never runs it twice
+			await goto(page.url.pathname, { replaceState: true, noScroll: true, keepFocus: true });
+			await runCheck('import');
+		}
+	});
 
 	const snapshot = $derived(doc ? JSON.stringify(doc) : '');
 	const dirty = $derived(!!doc && snapshot !== lastSaved);
@@ -101,6 +145,7 @@
 		if (r.type === 'success') {
 			message = null;
 			await invalidateAll();
+			runCheck('publish');
 		} else if (r.type === 'failure' && r.status === 409) conflict = r.data as { serverRevision: number; serverDoc: SyllabusDoc };
 		else message = (r.type === 'failure' && (r.data as { message?: string })?.message) || t.editor.publishFailed;
 	}
@@ -166,8 +211,24 @@
 				{:else}<li class="text-sm text-ink-muted">{t.editor.noHistory}</li>{/each}
 			</ul>
 		{:else}
-			<p class="mt-3 text-sm text-ink-muted">{t.editor.noCautions}</p>
-			<a class="mt-2 inline-block text-sm text-accent underline" href="/cautions?offering={data.offering.id}">{t.editor.allCautions}</a>
+			{#if data.lastRun?.status === 'failed'}<p class="mt-3 rounded-lg bg-warning-bg px-3 py-2 text-xs text-warning-ink" data-testid="ai-failed">{t.cautions.aiFailed}</p>{/if}
+			{#if openCautions.length}
+				<ul class="mt-3 grid gap-2" data-testid="editor-cautions">
+					{#each openCautions as c (c.id)}
+						<li>
+							<button type="button" class="w-full rounded-lg border border-line p-2 text-left text-sm hover:border-accent" onclick={() => (selectedCaution = c.id)} data-severity={c.severity}>
+								<span class="chip text-xs {c.severity === 'high' ? 'bg-danger-bg text-danger-ink' : c.severity === 'medium' ? 'bg-warning-bg text-warning-ink' : ''}">{t.cautions.severity[c.severity]}</span>
+								<span class="mt-1 block">{(c.a_offering_id === data.offering.id ? c.b_label : c.a_label).split(':')[0]}</span>
+								<span class="block truncate text-xs text-ink-muted">{c.reason_th}</span>
+							</button>
+						</li>
+					{/each}
+				</ul>
+			{:else}<p class="mt-3 text-sm text-ink-muted">{t.editor.noCautions}</p>{/if}
+			<div class="mt-3 flex flex-wrap items-center gap-2">
+				{#if doc}<button type="button" class="btn btn-secondary px-2 text-xs" onclick={() => runCheck('manual')} disabled={runState === 'running' || dirty} data-testid="run-check">{t.cautions.runCheck}</button>{/if}
+				<a class="text-sm text-accent underline" href="/cautions?offering={data.offering.id}">{t.editor.allCautions}</a>
+			</div>
 		{/if}
 	</div>
 {/snippet}
@@ -213,6 +274,7 @@
 			<span class="text-sm {status === 'error' ? 'text-danger-ink' : 'text-ink-muted'}" data-testid="save-status" aria-live="polite">
 				{#if status === 'saving'}{t.editor.saving}{:else if status === 'error'}{message}{:else if dirty}{t.editor.unsaved}{:else if savedAt}{t.editor.saved(thaiTime(savedAt))}{/if}
 			</span>
+			{#if runState === 'running'}<span class="text-sm text-info" data-testid="run-status">{t.cautions.running}</span>{:else if runState === 'done'}<span class="text-sm text-ink-muted" data-testid="run-status">{t.cautions.runDone(runFound)}</span>{:else if runState === 'failed'}<span class="text-sm text-danger-ink" data-testid="run-status">{t.cautions.runFailed}</span>{/if}
 			<button type="button" class="btn btn-secondary ml-auto text-sm" aria-pressed={preview} onclick={() => (preview = !preview)} data-testid="preview-toggle">{preview ? t.editor.backToForm : t.editor.preview}</button>
 			{#if published}
 				<form method="POST" action="?/unpublish" use:enhance={() => async ({ update }) => update()}><button class="btn btn-ghost text-sm" type="submit">{t.editor.unpublish}</button></form>
@@ -225,7 +287,7 @@
 				{#if preview}
 					<SyllabusView ctx={{ doc, course: data.course, semester: data.semester, sections: data.sections, instructors: data.instructors, plos: data.plos }} />
 				{:else}
-					<SyllabusForm bind:doc {ctx} issues={issueCounts} bind:aiPlo bind:aiWeeks>
+					<SyllabusForm bind:doc {ctx} issues={issueCounts} bind:aiPlo bind:aiWeeks {markers} onmarker={(id) => (selectedCaution = id)}>
 						{#snippet sectionsSlot()}
 							{#each data.sections as s (s.id)}<SectionDetails section={s} editable={data.mySectionIds.includes(s.id) || data.profile.role === 'staff'} />{/each}
 						{/snippet}
@@ -258,3 +320,5 @@
 		</div>
 	</div>
 {/if}
+
+{#if currentCaution}<Drawer c={currentCaution} mine={[data.offering.id]} onclose={() => (selectedCaution = null)} />{/if}

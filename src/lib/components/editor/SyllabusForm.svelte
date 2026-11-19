@@ -20,7 +20,9 @@
 		aiPlo = $bindable([]),
 		aiWeeks = $bindable([]),
 		sectionsSlot,
-		confidence
+		confidence,
+		markers = {},
+		onmarker
 	}: {
 		doc: SyllabusDoc;
 		ctx: FormCtx;
@@ -30,6 +32,8 @@
 		aiWeeks?: number[];
 		sectionsSlot?: Snippet;
 		confidence?: Snippet<[keyof SectionMeta]>;
+		markers?: Record<string, { count: number; worst: 'high' | 'medium'; id: string }>;
+		onmarker?: (cautionId: string) => void;
 	} = $props();
 
 	const weeks = $derived(Array.from({ length: ctx.semester.weeks || 16 }, (_, i) => i + 1));
@@ -89,6 +93,13 @@
 </script>
 
 {#snippet confidenceChip(key: keyof SectionMeta)}{@render confidence?.(key)}{/snippet}
+{#snippet marker(ref: string)}
+	{#if markers[ref]}
+		<button type="button" class="inline-flex items-center gap-1 rounded-full px-2 text-xs font-medium {markers[ref].worst === 'high' ? 'bg-danger-bg text-danger-ink' : 'bg-warning-bg text-warning-ink'}" onclick={() => onmarker?.(markers[ref].id)} title={t.cautions.markerTitle(markers[ref].count)} data-testid="caution-marker" data-ref={ref}>
+			<span class="size-2 rounded-full {markers[ref].worst === 'high' ? 'bg-danger' : 'bg-warning'}"></span>{markers[ref].count}
+		</button>
+	{/if}
+{/snippet}
 
 <div class="grid gap-4" data-testid="syllabus-form">
 	<!-- 1 Course Overview -->
@@ -216,6 +227,7 @@
 				<div class="flex flex-wrap gap-2">
 					<button type="button" class="btn btn-ghost text-sm" onclick={() => parseInto(i)} disabled={!r.citation.trim()}>{t.editor.parseCitation}</button>
 					<label class="flex items-center gap-2 text-sm"><input type="checkbox" bind:checked={r.required} />{t.editor.required}</label>
+					{@render marker(`readings:${r.id}`)}
 					<button type="button" class="btn btn-ghost ml-auto text-sm" onclick={() => removeReading(i)}>{t.editor.remove}</button>
 				</div>
 				<div class="grid gap-2 sm:grid-cols-[1fr_1fr_6rem_8rem]">
@@ -255,6 +267,7 @@
 		<p class="text-xs text-ink-muted">{t.editor.workOptional}</p>
 		{#each doc.work as w, i (w.id)}
 			<div class="grid gap-2 rounded-lg border border-line p-3" id="f-work-{i}" data-testid="work-row">
+				{@render marker(`work:${w.id}`)}
 				<div class="grid gap-2 sm:grid-cols-[1fr_12rem]">
 					<input class="input" bind:value={w.title} placeholder={t.editor.title} aria-label={t.editor.title} />
 					<select class="input" bind:value={w.type} aria-label={t.editor.type}>{#each WORK_TYPES as ty (ty)}<option value={ty}>{t.workTypes[ty]}</option>{/each}</select>
@@ -294,6 +307,7 @@
 				<div class="flex flex-wrap items-center gap-2">
 					<label class="flex items-center gap-1 text-sm font-semibold">{t.editor.week}<input class="input w-16 px-2 py-1" type="number" min="1" max={weeks.length} value={w.week} oninput={(ev) => (w.week = Number(ev.currentTarget.value) || w.week)} /></label>
 					<label class="flex items-center gap-1.5 text-sm"><input type="checkbox" bind:checked={w.noClass} />{t.editor.noClass}</label>
+					{@render marker(`weeklyPlan:${w.week}`)}
 					<button type="button" class="btn btn-ghost ml-auto text-sm" onclick={() => doc.weeklyPlan.splice(i, 1)}>{t.editor.remove}</button>
 				</div>
 				<input class="input" bind:value={w.topic} placeholder={t.editor.topic} aria-label="{t.editor.topic} {w.week}" />

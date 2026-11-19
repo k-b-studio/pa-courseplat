@@ -1,0 +1,79 @@
+{
+	"_note": "Judgements for the demo upload of 2404429 in 2/2569, keyed by both items' content hashes (spec 06). Pairs and similarities follow spec 08 so severities are deterministic; wording from ThaiLLM openthaigpt where it gave spec 08's relation (4/5), authored otherwise.",
+	"subject": {
+		"course": "2404429",
+		"semester": "2569-2"
+	},
+	"judgements": [
+		{
+			"subjectRef": "work:w-1",
+			"subjectHash": "3b394510b134d7fd304d59508a731175",
+			"otherCourse": "2404324",
+			"otherSemester": "2569-2",
+			"otherRef": "work:w-1",
+			"otherHash": "81d1d8851765750fe4e13ba643d8ce71",
+			"overlap": true,
+			"similarity": 0.88,
+			"relation": "duplicate",
+			"reasonTH": "ทั้งสองรายวิชาต้องการให้นิสิตเขียน Policy brief วิเคราะห์นโยบายสาธารณะไทย 1 ประเด็น โดยมีความยาว 2 หน้า A4 ซึ่งเป็นงานเดี่ยวทั้งคู่",
+			"suggestionTH": "ปรับให้รายวิชา 2404429 ลดความยาวของ Policy brief ลง และแนะนำให้นิสิตอ้างอิงงานจากรายวิชา 2404324 หรือให้รายวิชา 2404429 ให้นิสิตนำ Policy brief จากรายวิชา 2404324 มาพัฒนาต่อยอด",
+			"wording": "thaillm"
+		},
+		{
+			"subjectRef": "weeklyPlan:2",
+			"subjectHash": "3c9d9700d97e5c9d94880378df853484",
+			"otherCourse": "2404324",
+			"otherSemester": "2569-2",
+			"otherRef": "weeklyPlan:4",
+			"otherHash": "cec4557c95c33d967dc9b382444b98f5",
+			"overlap": true,
+			"similarity": 0.84,
+			"relation": "duplicate",
+			"reasonTH": "สัปดาห์ที่ 2 ของ 2404429 ทบทวนตัวแบบ Stages model ซึ่งเป็นหัวข้อหลักในสัปดาห์ที่ 4 ของ 2404324",
+			"suggestionTH": "ปรับสัปดาห์ที่ 2 ของ 2404429 ให้เป็นการอ้างอิงสัปดาห์ที่ 4 ของ 2404324 แทนการทบทวนใหม่ เพื่อให้นิสิตไม่ต้องเรียนซ้ำ",
+			"wording": "thaillm"
+		},
+		{
+			"subjectRef": "weeklyPlan:2",
+			"subjectHash": "3c9d9700d97e5c9d94880378df853484",
+			"otherCourse": "2404324",
+			"otherSemester": "2569-2",
+			"otherRef": "weeklyPlan:6",
+			"otherHash": "5707ad5ff0f948fcb9024802e770b0f1",
+			"overlap": true,
+			"similarity": 0.8,
+			"relation": "duplicate",
+			"reasonTH": "ทั้งสองรายวิชาทบทวนตัวแบบกระบวนการนโยบาย (Stages model) และกระแสหลายสาย (Multiple Streams) ในสัปดาห์ที่ 2 และ 6 ตามลำดับ ซึ่งเป็นเนื้อหาที่ซ้ำกัน",
+			"suggestionTH": "ปรับปรุงรายวิชา 2404429 โดยลดการทบทวนตัวแบบกระบวนการนโยบาย (Stages model) และแนะนำให้นิสิตอ่านบทสรุปจากสัปดาห์ที่ 6 ของรายวิชา 2404324 แทน เพื่อให้เนื้อหาไม่ซ้ำกัน",
+			"wording": "thaillm"
+		},
+		{
+			"subjectRef": "weeklyPlan:10",
+			"subjectHash": "2d4a11a5cc75a523ac57570b7e8760e9",
+			"otherCourse": "2404318",
+			"otherSemester": "2569-2",
+			"otherRef": "weeklyPlan:3",
+			"otherHash": "545d0ef16e1159213aab2a55ca4ba67f",
+			"overlap": true,
+			"similarity": 0.78,
+			"relation": "duplicate",
+			"reasonTH": "ทั้งสองรายวิชาครอบคลุมเนื้อหาเกี่ยวกับตัวแบบเชิงตรรกะ (Logic model) ซึ่งเป็นเครื่องมือสำคัญในการติดตามและประเมินผลนโยบาย โดยรายวิชา 2404429 สัปดาห์ 10 กล่าวถึงตัวแบบเชิงตรรกะและตัวชี้วัด…",
+			"suggestionTH": "ปรับเนื้อหาของรายวิชา 2404429 สัปดาห์ 10 ให้สั้นลง และแนะนำให้นิสิตอ้างอิงเนื้อหาจากสัปดาห์ 3 ของรายวิชา 2404318 หรือให้รายวิชา 2404429 สัปดาห์ 10 นำไปประยุกต์ใช้กับเนื้อหาที่รายวิชา 2404318…",
+			"wording": "thaillm"
+		},
+		{
+			"subjectRef": "weeklyPlan:12",
+			"subjectHash": "a9db6fb761e9ff4f6ef7a88d0b58c01f",
+			"otherCourse": "2404324",
+			"otherSemester": "2569-2",
+			"otherRef": "weeklyPlan:12",
+			"otherHash": "9b227a147a4f2749e63abe338349f850",
+			"overlap": true,
+			"similarity": 0.7,
+			"relation": "related",
+			"reasonTH": "ทั้งสองวิชามีหัวข้อนโยบายเชิงพฤติกรรม (nudge) ในสัปดาห์ที่ 12",
+			"suggestionTH": "อาจให้ 2404429 เน้นการออกแบบการทดลองเชิงนโยบาย ต่อจากแนวคิด nudge ใน 2404324",
+			"wording": "authored"
+		}
+	]
+}

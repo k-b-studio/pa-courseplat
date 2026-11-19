@@ -5,7 +5,10 @@
  * extract: the .docx sample (→ fixtures/extractions/2404429.json), the scanned PDF (checked for the
  *          same structure, spec 05 AC 2) and injection-test.docx (→ fixtures/extractions/injection-test.json).
  *          Prints the modelVersion to pin as AI_MODEL, and the spec 05 AC 1 / AC 9 checks.
- * caution: added with P5 (ThaiLLM judges the 2404429 candidate pairs).
+ * caution: Stage 2a over the accepted 2404429 draft against the seeded comparison set, then the ThaiLLM
+ *          judge for the five spec 08 pairs (→ fixtures/cautions/2404429-2569-2.json). Spec 08 fixes which
+ *          pairs and similarities the fixture holds, so severities stay deterministic; the AI supplies the
+ *          Thai wording. --no-ai writes authored wording instead.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import plosJson from '../data/plos-2569.json';
@@ -16,8 +19,8 @@ import { docxToText } from '../src/lib/server/docx';
 import type { ExtractionResult } from '../src/lib/schema/extraction';
 
 const part = process.argv.includes('--part') ? process.argv[process.argv.indexOf('--part') + 1] : 'extract';
-if (part !== 'extract') {
-	console.log(`--part ${part}: not available yet`);
+if (part === 'caution') {
+	await recordCautions(process.argv.includes('--no-ai'));
 	process.exit(0);
 }
 
@@ -91,3 +94,51 @@ writeFileSync('fixtures/extractions/injection-test.json', JSON.stringify(inj.res
 console.log('AC 9 checks:', { weights: inj.result.doc.evaluation.items.map((e) => e.weightPercent), warnings: inj.result.warnings });
 
 console.log(`\nPin AI_MODEL=${main.version || model} (the alias ${base.gemini.model} resolved to it). Calls: ${calls.map((c) => `${c.model}:${c.status}`).join(', ')}`);
+
+
+// ---- caution part ------------------------------------------------------------------------------
+async function recordCautions(noAi: boolean) {
+	const { itemsFromDoc, itemLabel } = await import('../src/lib/domain/items');
+	const { candidatePairs } = await import('../src/lib/server/cautions/candidates');
+	const { judgePair } = await import('../src/lib/server/ai/judge');
+	const { syllabusSources } = await import('../fixtures/syllabi/src/index');
+	const coursesJson = (await import('../data/courses.json')).default as { courses: { code: string; nameTH: string }[] };
+	const nameOf = (c: string) => coursesJson.courses.find((x) => x.code === c)?.nameTH ?? c;
+	const draft = JSON.parse(readFileSync('fixtures/extractions/2404429.json', 'utf-8')) as ExtractionResult;
+	const subject = { offeringId: 's', code: '2404429', semester: '2569-2', name: nameOf('2404429'), items: itemsFromDoc(draft.doc) };
+	const others = [
+		...Object.entries(syllabusSources['2569-2'].syllabi).map(([code, doc]) => ({ offeringId: code, code, semester: '2569-2', name: nameOf(code), items: itemsFromDoc(doc) })),
+		...Object.entries(syllabusSources['2569-1'].syllabi).map(([code, doc]) => ({ offeringId: code, code, semester: '2569-1', name: nameOf(code), items: itemsFromDoc(doc) }))
+	];
+	const candidates = candidatePairs(subject, others);
+	// spec 08 "Expected cautions after the run"
+	const SPEC = [
+		{ s: 'work:w-1', c: '2404324', o: 'work:w-1', relation: 'duplicate', similarity: 0.88, reasonTH: 'งาน policy brief วิเคราะห์ปัญหานโยบายไทย 1 ประเด็น ความยาว 2 หน้า ซ้ำกับงาน policy brief ของ 2404324', suggestionTH: 'อาจปรับงานของ 2404429 เป็น options memo เปรียบเทียบทางเลือกนโยบาย หรือให้ต่อยอดจาก policy brief ที่นิสิตทำใน 2404324' },
+		{ s: 'weeklyPlan:2', c: '2404324', o: 'weeklyPlan:4', relation: 'duplicate', similarity: 0.84, reasonTH: 'ทบทวนตัวแบบขั้นตอนนโยบาย (Stages model) ซึ่งสอนแล้วใน 2404324 สัปดาห์ที่ 4', suggestionTH: 'อาจลดเวลาทบทวนเหลือ 30 นาที และอ้างอิงเนื้อหาจาก 2404324 สัปดาห์ 4' },
+		{ s: 'weeklyPlan:2', c: '2404324', o: 'weeklyPlan:6', relation: 'duplicate', similarity: 0.8, reasonTH: 'ทบทวนกระแสหลายสาย (Multiple Streams) ซึ่งเป็นหัวข้อหลักของ 2404324 สัปดาห์ที่ 6', suggestionTH: 'ทบทวนสั้น ๆ แล้วใช้กรอบนี้วิเคราะห์กรณีจริงแทนการบรรยายซ้ำ' },
+		{ s: 'weeklyPlan:10', c: '2404318', o: 'weeklyPlan:3', relation: 'duplicate', similarity: 0.78, reasonTH: 'ตัวแบบเชิงตรรกะ (Logic model) และตัวชี้วัดสอนใน 2404318 สัปดาห์ที่ 3 เช่นกัน', suggestionTH: 'ประสานกับผู้สอน 2404318 เพื่อแบ่งความลึก เช่น 2404429 เน้นการใช้ตัวแบบประเมินนโยบายกับกรณีจริง' },
+		{ s: 'weeklyPlan:12', c: '2404324', o: 'weeklyPlan:12', relation: 'related', similarity: 0.7, reasonTH: 'ทั้งสองวิชามีหัวข้อนโยบายเชิงพฤติกรรม (nudge) ในสัปดาห์ที่ 12', suggestionTH: 'อาจให้ 2404429 เน้นการออกแบบการทดลองเชิงนโยบาย ต่อจากแนวคิด nudge ใน 2404324' }
+	] as const;
+	const thai = aiConfigFrom({ ...process.env, AI_OFFLINE: 'false' });
+	const judgements = [];
+	for (const p of SPEC) {
+		const c = candidates.find((x) => x.subject.ref === p.s && x.otherOffering.code === p.c && x.other.ref === p.o);
+		if (!c) throw new Error(`Stage 2a did not produce ${p.s} × ${p.c} ${p.o}`);
+		let reasonTH: string = p.reasonTH;
+		let suggestionTH: string = p.suggestionTH;
+		let wording: 'thaillm' | 'authored' = 'authored';
+		if (!noAi) {
+			const j = await judgePair(thai, {
+				a: { code: subject.code, name: subject.name, level: 4, semester: '2569-2', label: itemLabel(subject.code, c.subject), text: c.subject.text },
+				b: { code: c.otherOffering.code, name: c.otherOffering.name, level: Number(c.otherOffering.code[4]), semester: c.otherOffering.semester, label: itemLabel(c.otherOffering.code, c.other), text: c.other.text },
+				prerequisite: null
+			}, () => {});
+			console.log(`${p.s} × ${p.c} ${p.o}: judge says ${j.relation} ${j.similarity} (spec: ${p.relation} ${p.similarity})`);
+			// take ThaiLLM's wording only when it agrees with spec 08's relation, so the text never contradicts the label
+			if (j.overlap && j.relation === p.relation && j.reasonTH.trim() && j.suggestionTH.trim()) ((reasonTH = j.reasonTH), (suggestionTH = j.suggestionTH), (wording = 'thaillm'));
+		}
+		judgements.push({ subjectRef: p.s, subjectHash: c.subject.contentHash, otherCourse: p.c, otherSemester: c.otherOffering.semester, otherRef: p.o, otherHash: c.other.contentHash, overlap: true, similarity: p.similarity, relation: p.relation, reasonTH, suggestionTH, wording });
+	}
+	writeFileSync('fixtures/cautions/2404429-2569-2.json', JSON.stringify({ _note: 'Judgements for the demo upload of 2404429 in 2/2569, keyed by both items\' content hashes (spec 06). Pairs and similarities follow spec 08 so severities are deterministic; wording ' + (noAi ? 'authored' : `from ThaiLLM ${thai.thaillm.model} where it gave spec 08's relation (${judgements.filter((j) => j.wording === 'thaillm').length}/${judgements.length}), authored otherwise`) + '.', subject: { course: '2404429', semester: '2569-2' }, judgements }, null, '\t') + '\n');
+	console.log(`candidates: ${candidates.length}; wrote ${judgements.length} judgements`);
+}

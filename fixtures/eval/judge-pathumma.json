@@ -1,0 +1,185 @@
+{
+	"model": "pathumma",
+	"date": "2026-11-19T06:41:07.337Z",
+	"pass": true,
+	"precision": 0.8571428571428571,
+	"recall": 1,
+	"tp": 6,
+	"fp": 1,
+	"fn": 0,
+	"failedCalls": 0,
+	"results": [
+		{
+			"case": "P1 policy brief × policy brief",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.95,
+			"expected": "duplicate",
+			"relationMatches": true,
+			"reasonTH": "ทั้งสองงานเป็นการเขียน Policy Brief วิเคราะห์นโยบายสาธารณะไทย 1 ประเด็น ความยาว 2 หน้า A4 งานเดี่ยว ส่งในสัปดาห์ 11 และ 12 ตามลำดับ",
+			"ms": 5867
+		},
+		{
+			"case": "P2 wk2 stages model × 2404324 wk4",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.95,
+			"expected": "duplicate",
+			"relationMatches": true,
+			"reasonTH": "ทั้งสองสัปดาห์สอนตัวแบบกระบวนการนโยบาย (Stages model) ทั้งสองสัปดาห์ 2404429 และ 4 2404324 ทบทวนโครงสร้างและข้อจำกัดของโมเดลเดียวกัน แม้ 2404429 จะระบุเป็นการทบทวน แต่เนื้อหาหลักยังคงซ้ำกัน",
+			"ms": 6545
+		},
+		{
+			"case": "P3 wk2 multiple streams × 2404324 wk6",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.8,
+			"expected": "duplicate",
+			"relationMatches": true,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงทฤษฎีกระแสหลายสาย (Multiple Streams Framework) ของ Kingdon โดย 2404429 สัปดาห์ 2 ทบทวนตัวแบบกระบวนการนโยบาย (Stages model) และกระแสหลายสาย ขณะที่ 2404324 สัปดาห์ 6…",
+			"ms": 7648
+		},
+		{
+			"case": "P4 wk10 logic model × 2404318 wk3",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.9,
+			"expected": "duplicate",
+			"relationMatches": true,
+			"reasonTH": "ทั้งสองสัปดาห์สอนเกี่ยวกับตัวแบบเชิงตรรกะ (Logic model) ซึ่งเป็นแนวคิดหลักที่ใช้ในการออกแบบนโยบายและประเมินผล ทั้งสองสัปดาห์มีเนื้อหาที่คล้ายกันเกี่ยวกับปัจจัยนำเข้า กิจกรรม ผลผลิต ผลลัพธ์…",
+			"ms": 6833
+		},
+		{
+			"case": "P5 wk12 behavioural × 2404324 wk12",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.9,
+			"expected": "related",
+			"relationMatches": false,
+			"reasonTH": "ทั้งสองหลักสูตรมีเนื้อหาเกี่ยวกับนโยบายเชิงพฤติกรรมและแนวคิด Nudge ในสัปดาห์ที่ 12 ของเทอม 2569-2 ทั้งคู่สอนการออกแบบทางเลือก (choice architecture) และข้อถกเถียงด้านจริยธรรม",
+			"ms": 5737
+		},
+		{
+			"case": "P6 Dye × Dye",
+			"positive": true,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.8,
+			"reasonTH": "ทั้งสองหลักสูตรใช้หนังสือเล่มเดียวกันของ Dye ซึ่งครอบคลุมการวิเคราะห์นโยบายสาธารณะ อาจมีเนื้อหาทับซ้อนกันในหัวข้อพื้นฐาน",
+			"ms": 4679
+		},
+		{
+			"case": "N1 PM2.5 case × UHC case",
+			"positive": false,
+			"predicted": false,
+			"relation": "none",
+			"similarity": 0.2,
+			"reasonTH": "ทั้งสองสัปดาห์ศึกษานโยบายสาธารณะผ่านกรณีศึกษา แต่เนื้อหาต่างกัน: 2404429 วิเคราะห์นโยบายจัดการฝุ่น PM2.5 ขณะที่ 2404324 ศึกษานโยบายหลักประกันสุขภาพถ้วนหน้า ทั้งสองใช้กรอบทฤษฎีที่เรียนมา แต่ไม่ซ้ำกัน",
+			"ms": 7078
+		},
+		{
+			"case": "N2 budget cycle × HR planning",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.3,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงการจัดเตรียมงบประมาณและกระบวนการวางแผนทรัพยากรมนุษย์ โดยมีการวิเคราะห์ภาระงานและการกำหนดอัตรากำลังที่เหมาะสม ซึ่งมีความเกี่ยวข้องกับการจัดเตรียมงบประมาณในแง่ของการวางแผนทรัพยากร",
+			"ms": 6322
+		},
+		{
+			"case": "N3 cost-benefit × public expenditure",
+			"positive": false,
+			"predicted": true,
+			"relation": "duplicate",
+			"similarity": 0.8,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงการวิเคราะห์ต้นทุน-ผลประโยชน์ แม้จะอยู่ในบริบทที่ต่างกัน (นโยบายสาธารณะชั้นสูง vs. การบริหารการคลัง) แต่เนื้อหาหลักเกี่ยวกับการวิเคราะห์ต้นทุน-ผลประโยชน์เหมือนกัน",
+			"ms": 5748
+		},
+		{
+			"case": "N4 qualitative interviews × chi-square",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.3,
+			"reasonTH": "ทั้งสองสัปดาห์สอนเทคนิคการเก็บข้อมูลเชิงคุณภาพ (สัมภาษณ์เชิงลึก/สนทนากลุ่ม) และการวิเคราะห์ข้อมูลเชิงสถิติ (ตารางไขว้/ไคสแควร์) ซึ่งเป็นเครื่องมือที่ใช้ร่วมกันในงานวิจัยนโยบายสาธารณะ",
+			"ms": 7344
+		},
+		{
+			"case": "N5 policy communication × appraisal",
+			"positive": false,
+			"predicted": false,
+			"relation": "none",
+			"similarity": 0,
+			"reasonTH": "สัปดาห์ 14 ของ 2404429 เกี่ยวกับการสื่อสารผลการวิเคราะห์นโยบาย ในขณะที่สัปดาห์ 9 ของ 2404312 เกี่ยวกับการประเมินผลการปฏิบัติงาน ทั้งสองหัวข้อมีเป้าหมายและวิธีการที่แตกต่างกัน…",
+			"ms": 6895
+		},
+		{
+			"case": "N6 implementation analysis × training design",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.2,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงการออกแบบกระบวนการเพื่อพัฒนาความสามารถของบุคคล แต่ในบริบทที่แตกต่างกัน: 2404429 สัปดาห์ 9 วิเคราะห์การนำนโยบายไปปฏิบัติ ในขณะที่ 2404416 สัปดาห์ 4…",
+			"ms": 6089
+		},
+		{
+			"case": "N7 options project × data project",
+			"positive": false,
+			"predicted": false,
+			"relation": "none",
+			"similarity": 0.3,
+			"reasonTH": "งานวิเคราะห์ทางเลือกนโยบาย (2404429) และโครงงานวิเคราะห์ข้อมูลภาครัฐ (2404368) ต่างใช้การวิเคราะห์ข้อมูล แต่เป้าหมายต่างกัน: 2404429 ศึกษาทางเลือกนโยบายผ่านการวิเคราะห์ข้อมูลเชิงนโยบาย ขณะที่…",
+			"ms": 6929
+		},
+		{
+			"case": "N8 problem definition × organisational power",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.2,
+			"reasonTH": "ทั้งสองหัวข้อเกี่ยวข้องกับการวิเคราะห์นโยบายสาธารณะและทฤษฎีองค์การสาธารณะ แต่เน้นที่การนิยามปัญหานโยบายและอำนาจในองค์การ ซึ่งเป็นแนวคิดที่แตกต่างกัน",
+			"ms": 5230
+		},
+		{
+			"case": "N9 stakeholder analysis × taxation",
+			"positive": false,
+			"predicted": false,
+			"relation": "none",
+			"similarity": 0,
+			"reasonTH": "สัปดาห์ 6 ของ 2404429 วิเคราะห์ผู้มีส่วนได้ส่วนเสีย ไม่เกี่ยวข้องกับทฤษฎีภาษีอากรและหลักการจัดเก็บภาษีที่ดีของสัปดาห์ 4 2404213",
+			"ms": 5446
+		},
+		{
+			"case": "N10 impact evaluation × gender budgeting",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.3,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงการออกแบบประเมินผลกระทบ แต่ 2404429 สัปดาห์ 11 เน้นการออกแบบประเมินผลกระทบโดยทั่วไป ในขณะที่ 2404422 สัปดาห์ 11 เน้นการออกแบบประเมินผลกระทบในบริบทงบประมาณที่คำนึงถึงมิติเพศ…",
+			"ms": 5783
+		},
+		{
+			"case": "N11 course intro × course intro",
+			"positive": false,
+			"predicted": false,
+			"relation": "none",
+			"similarity": 0,
+			"reasonTH": "ทั้งสองสัปดาห์แนะนำรายวิชา แต่เน้นหัวข้อต่างกัน: 2404429 เน้นบทบาทนักวิเคราะห์นโยบาย ส่วน 2404312 เน้นความหมายและวิวัฒนาการการบริหารงานบุคคล",
+			"ms": 27184
+		},
+		{
+			"case": "N12 evaluative criteria × probability",
+			"positive": false,
+			"predicted": false,
+			"relation": "related",
+			"similarity": 0.2,
+			"reasonTH": "ทั้งสองสัปดาห์กล่าวถึงการวิเคราะห์ทางเลือกและแนวคิดทางสถิติ แต่เนื้อหาไม่ซ้ำกัน 2404429 สัปดาห์ 4 วิเคราะห์เกณฑ์การตัดสินใจในบริบทนโยบายสาธารณะ ในขณะที่ 2404368 สัปดาห์ 6…",
+			"ms": 4482
+		}
+	]
+}

@@ -4,7 +4,7 @@
 	import { personName, t } from '$lib/i18n/th';
 	import type { Profile } from '$lib/types';
 
-	let { profile, demoMode }: { profile: Profile; demoMode: boolean } = $props();
+	let { profile, demoMode, cautionBadge = 0 }: { profile: Profile; demoMode: boolean; cautionBadge?: number } = $props();
 
 	// menu items render only for roles that can open them; the server gate is the real check
 	const items = $derived(
@@ -62,7 +62,8 @@
 					<a
 						href={i.href}
 						class="block rounded-md px-3 py-1.5 whitespace-nowrap hover:bg-accent-light {current(i.href) ? 'bg-accent-light font-medium text-accent-dark' : 'text-ink'}"
-						aria-current={current(i.href) ? 'page' : undefined}>{i.label}</a
+						aria-current={current(i.href) ? 'page' : undefined}
+						>{i.label}{#if i.href === '/cautions' && cautionBadge > 0}<span class="ml-1.5 rounded-full bg-danger px-1.5 text-xs text-white" data-testid="caution-badge">{cautionBadge}</span>{/if}</a
 					>
 				</li>
 			{/each}

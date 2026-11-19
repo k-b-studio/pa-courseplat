@@ -1,0 +1,74 @@
+{
+	"_note": "FICTIONAL seeded cautions for 2/2569 (spec 08 \"Seeded cautions\"), source = 'seed'. Labels, hashes and pair keys are computed by the seed from the seeded syllabi.",
+	"semester": "2569-2",
+	"cautions": [
+		{
+			"kind": "assignment",
+			"a": { "course": "2404317", "ref": "work:w-1" },
+			"b": { "course": "2404416", "ref": "work:w-1" },
+			"relation": "duplicate",
+			"severity": "high",
+			"similarity": 0.86,
+			"reasonTH": "รายงานภาคสนามสัมภาษณ์หน่วยงานภาครัฐด้านบุคลากรแบบกลุ่ม 3–4 คนในทั้งสองวิชา — กำหนดส่งห่างกันไม่เกิน 1 สัปดาห์",
+			"suggestionTH": "ใช้หน่วยงานเดียวกันเป็นกรณีศึกษาร่วม หรือให้ 2404416 วิเคราะห์ความจำเป็นในการฝึกอบรมต่อจากข้อมูลที่เก็บใน 2404317",
+			"status": "open"
+		},
+		{
+			"kind": "topic",
+			"a": { "course": "2404312", "ref": "weeklyPlan:6" },
+			"b": { "course": "2404317", "ref": "weeklyPlan:2" },
+			"relation": "duplicate",
+			"severity": "medium",
+			"similarity": 0.78,
+			"reasonTH": "การวางแผนกำลังคนและการวิเคราะห์อัตรากำลังสอนทั้งใน 2404312 สัปดาห์ที่ 6 และ 2404317 สัปดาห์ที่ 2",
+			"suggestionTH": "อาจให้ 2404312 ปูพื้นฐานสั้น ๆ แล้วให้ 2404317 ลงลึกเทคนิคการวิเคราะห์อัตรากำลัง",
+			"status": "open"
+		},
+		{
+			"kind": "topic",
+			"a": { "course": "2400114", "ref": "weeklyPlan:3" },
+			"b": { "course": "2404436", "ref": "weeklyPlan:2" },
+			"relation": "builds_on",
+			"severity": "info",
+			"similarity": 0.82,
+			"reasonTH": "ทฤษฎีองค์การยุคคลาสสิก (Taylor, Weber) อยู่ในทั้งสองวิชา",
+			"suggestionTH": "2404436 อ้างอิงพื้นฐานจาก 2400114 แล้วเน้นข้อวิพากษ์และการเปรียบเทียบ",
+			"status": "intentional",
+			"resolvedBy": "@wipawadee",
+			"resolutionNote": "2400114 ปูพื้นฐาน ส่วน 2404436 วิพากษ์และเปรียบเทียบเชิงลึก ตั้งใจให้ต่อยอด"
+		},
+		{
+			"kind": "topic",
+			"a": { "course": "2404213", "ref": "weeklyPlan:9" },
+			"b": { "course": "2404422", "ref": "weeklyPlan:2" },
+			"relation": "builds_on",
+			"severity": "info",
+			"similarity": 0.74,
+			"reasonTH": "วงจรงบประมาณของไทยสอนเบื้องต้นใน 2404213 และลงลึกใน 2404422",
+			"suggestionTH": "2404422 อาจทบทวนสั้น ๆ แล้วต่อยอดกระบวนการจัดเตรียมงบประมาณ",
+			"status": "open"
+		},
+		{
+			"kind": "reading",
+			"a": { "course": "2400114", "ref": "readings:r-2" },
+			"b": { "course": "2404436", "ref": "readings:r-2" },
+			"relation": "related",
+			"severity": "info",
+			"similarity": 1,
+			"reasonTH": "ใช้เอกสารหลักเล่มเดียวกัน — ตรวจสอบว่ามอบหมายบทเดียวกันหรือไม่",
+			"suggestionTH": "ประสานกันเรื่องบทที่มอบหมาย อาจแบ่งบทกันอ่าน หรืออ้างอิงสิ่งที่นิสิตอ่านในอีกวิชาแล้ว",
+			"status": "open"
+		},
+		{
+			"kind": "topic",
+			"a": { "course": "2400114", "ref": "weeklyPlan:9" },
+			"b": { "course": "2404324", "ref": "weeklyPlan:4" },
+			"relation": "builds_on",
+			"severity": "info",
+			"similarity": 0.72,
+			"reasonTH": "กระบวนการนโยบายสาธารณะเบื้องต้นใน 2400114 เป็นพื้นฐานของตัวแบบกระบวนการนโยบายใน 2404324 (ระบบปรับเป็น 'ต่อยอด' เนื่องจากเป็นวิชาต่อเนื่องตามลำดับชั้นปี/วิชาบังคับก่อน)",
+			"suggestionTH": "2404324 อาจอ้างอิงพื้นฐานจาก 2400114 สัปดาห์ 9 แล้วลงลึกข้อจำกัดของตัวแบบ",
+			"status": "open"
+		}
+	]
+}

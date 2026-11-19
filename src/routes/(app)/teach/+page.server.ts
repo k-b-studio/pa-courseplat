@@ -15,7 +15,12 @@ export const load: PageServerLoad = async ({ locals }) => {
 		: { data: [] };
 	const imports: Record<string, { id: string; status: string }> = {};
 	for (const x of (xs ?? []) as { id: string; offering_id: string; status: string }[]) imports[x.offering_id] ??= { id: x.id, status: x.status };
+	// open cautions by severity, each count linking to the dashboard filtered to that offering (spec 05 R1)
+	const { data: cs } = ids.length ? await sb.from('content_cautions').select('a_offering_id, b_offering_id, severity').eq('status', 'open').in('severity', ['high', 'medium']) : { data: [] };
+	const cautionCounts: Record<string, { high: number; medium: number }> = {};
+	for (const c of (cs ?? []) as { a_offering_id: string; b_offering_id: string; severity: 'high' | 'medium' }[])
+		for (const o of [c.a_offering_id, c.b_offering_id]) if (ids.includes(o)) (cautionCounts[o] ??= { high: 0, medium: 0 })[c.severity]++;
 	// today in Bangkok, for "days left" before the syllabus due date
 	const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date());
-	return { groups, today, imports, isStaff: locals.profile!.role === 'staff' };
+	return { groups, today, imports, cautionCounts, isStaff: locals.profile!.role === 'staff' };
 };
