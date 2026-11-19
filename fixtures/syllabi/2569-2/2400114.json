@@ -1,0 +1,562 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ปูพื้นฐานรัฐประศาสนศาสตร์สำหรับนิสิตชั้นปีที่ 1 ตั้งแต่พัฒนาการของสาขาวิชา ทฤษฎีองค์การยุคคลาสสิก ไปจนถึงการจัดการภาครัฐแนวใหม่และธรรมาภิบาล โดยเชื่อมโยงกับโครงสร้างการบริหารราชการไทย ตอนเรียนที่ 2 เน้นกรณีศึกษาเปรียบเทียบต่างประเทศ",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"public administration",
+			"organization theory",
+			"bureaucracy",
+			"policy process",
+			"new public management",
+			"good governance"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายความหมาย ขอบเขต และพัฒนาการของรัฐประศาสนศาสตร์ได้",
+			"ploCodes": [
+				"PLO1",
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "เปรียบเทียบแนวคิดและทฤษฎีสำคัญทางรัฐประศาสนศาสตร์ตั้งแต่ยุคคลาสสิกถึงปัจจุบันได้",
+			"ploCodes": [
+				"PLO1D",
+				"PLO2"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "วิเคราะห์โครงสร้างและการทำงานของระบบบริหารราชการไทยเบื้องต้นได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-4",
+			"text": "ทำงานเป็นทีมและนำเสนอผลการศึกษาหน่วยงานภาครัฐได้อย่างเป็นระบบ",
+			"ploCodes": [
+				"PLO3",
+				"PLO5"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study",
+			"group_project"
+		],
+		"description": "บรรยายพร้อมยกตัวอย่างจากหน่วยงานภาครัฐไทย สลับกับการอภิปรายกลุ่มย่อยจากเอกสารที่มอบหมาย ทดสอบความเข้าใจจากการอ่านเป็นระยะ และทำรายงานกรณีศึกษาหน่วยงานภาครัฐเป็นกลุ่ม",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ใช้ AI ช่วยสรุปเอกสารหรือตรวจภาษาได้ โดยระบุเครื่องมือที่ใช้ท้ายรายงาน ห้ามใช้ทำแบบทดสอบในชั้นเรียน",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: รัฐประศาสนศาสตร์คืออะไร",
+			"details": "ความหมาย ขอบเขต และความสำคัญของการบริหารภาครัฐต่อชีวิตประจำวัน",
+			"concepts": [
+				"public administration",
+				"scope of public administration"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "พัฒนาการของรัฐประศาสนศาสตร์: จาก Wilson ถึงปัจจุบัน",
+			"details": "การแยกการเมืองออกจากการบริหาร และกระบวนทัศน์ของรัฐประศาสนศาสตร์",
+			"concepts": [
+				"politics-administration dichotomy",
+				"paradigms of public administration"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1",
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "ทฤษฎีองค์การยุคคลาสสิก: Taylor, Weber, Fayol",
+			"details": "การจัดการเชิงวิทยาศาสตร์ ระบบราชการแบบอุดมคติ และหลักการบริหารของ Fayol",
+			"concepts": [
+				"classical organization theory",
+				"scientific management",
+				"bureaucracy",
+				"principles of administration"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "แนวคิดมนุษยสัมพันธ์และพฤติกรรมศาสตร์",
+			"details": "การศึกษาที่ฮอว์ธอร์น และแนวคิดเรื่องการตัดสินใจของ Herbert Simon",
+			"concepts": [
+				"human relations",
+				"Hawthorne studies",
+				"bounded rationality"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "โครงสร้างการบริหารราชการแผ่นดินของไทย",
+			"details": "ราชการส่วนกลาง ส่วนภูมิภาค และส่วนท้องถิ่น",
+			"concepts": [
+				"Thai public administration",
+				"central administration",
+				"regional administration"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การบริหารงานบุคคลภาครัฐเบื้องต้น",
+			"details": "ระบบคุณธรรม ระบบอุปถัมภ์ และบทบาทของหน่วยงานกลางด้านบุคคล",
+			"concepts": [
+				"merit system",
+				"spoils system",
+				"public personnel administration"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การคลังและงบประมาณภาครัฐเบื้องต้น",
+			"details": "ที่มาของรายได้รัฐ และบทบาทของงบประมาณในการบริหารภาครัฐ",
+			"concepts": [
+				"public finance",
+				"public budgeting"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "กระบวนการนโยบายสาธารณะเบื้องต้น",
+			"details": "การก่อตัว การกำหนด การนำไปปฏิบัติ และการประเมินผลนโยบาย",
+			"concepts": [
+				"public policy",
+				"policy process",
+				"policy cycle"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การนำนโยบายไปปฏิบัติและข้าราชการระดับปฏิบัติ",
+			"details": "ช่องว่างระหว่างนโยบายกับการปฏิบัติ และดุลพินิจของเจ้าหน้าที่ผู้ให้บริการ",
+			"concepts": [
+				"implementation",
+				"street-level bureaucracy"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การจัดการภาครัฐแนวใหม่ (New Public Management)",
+			"details": "แนวคิดการบริหารแบบธุรกิจในภาครัฐ และข้อวิจารณ์",
+			"concepts": [
+				"new public management",
+				"reinventing government",
+				"managerialism"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-5",
+				"r-6"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การบริการสาธารณะแนวใหม่และธรรมาภิบาล",
+			"details": "พลเมืองในฐานะเจ้าของประเทศ ความรับผิดชอบ และความโปร่งใส",
+			"concepts": [
+				"new public service",
+				"good governance",
+				"accountability"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-7"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การปกครองท้องถิ่นและการกระจายอำนาจ",
+			"details": "องค์กรปกครองส่วนท้องถิ่นของไทย และความสัมพันธ์กับราชการส่วนกลาง",
+			"concepts": [
+				"decentralization",
+				"local government"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "จริยธรรมของผู้บริหารภาครัฐ",
+			"details": "ผลประโยชน์ทับซ้อน การต่อต้านการทุจริต และความรับผิดชอบต่อสาธารณะ",
+			"concepts": [
+				"administrative ethics",
+				"conflict of interest"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "ส่งรายงานกรณีศึกษากลุ่ม",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "รัฐบาลดิจิทัลและนวัตกรรมภาครัฐ",
+			"details": "การให้บริการดิจิทัลและการใช้ข้อมูลในการบริหารภาครัฐ",
+			"concepts": [
+				"digital government",
+				"public sector innovation"
+			],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart",
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": "การอภิปรายกลุ่มย่อยและการเตรียมอ่านเอกสาร"
+			},
+			{
+				"id": "e-2",
+				"title": "แบบทดสอบย่อยจากการอ่าน",
+				"type": "quiz",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": "ทดสอบสั้น 4 ครั้งตลอดภาคการศึกษา"
+			},
+			{
+				"id": "e-3",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": "ปรนัยและอัตนัย"
+			},
+			{
+				"id": "e-4",
+				"title": "รายงานกรณีศึกษาหน่วยงานภาครัฐ",
+				"type": "case_analysis",
+				"weightPercent": 20,
+				"individual": false,
+				"dueWeek": 14,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-5",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": "อัตนัย ครอบคลุมทั้งภาคการศึกษา"
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Shafritz, J. M., Russell, E. W., & Borick, C. P. Introducing public administration. Routledge.",
+				"title": "Introducing Public Administration",
+				"authors": "Jay M. Shafritz, E. W. Russell, Christopher P. Borick",
+				"year": null,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Shafritz, J. M., & Hyde, A. C. (Eds.). Classics of public administration. Cengage Learning.",
+				"title": "Classics of Public Administration",
+				"authors": "Jay M. Shafritz, Albert C. Hyde (eds.)",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Wilson, W. (1887). The study of administration. Political Science Quarterly, 2(2), 197–222.",
+				"title": "The Study of Administration",
+				"authors": "Woodrow Wilson",
+				"year": 1887,
+				"type": "article",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-4",
+				"citation": "พระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534 และที่แก้ไขเพิ่มเติม.",
+				"title": "พระราชบัญญัติระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534",
+				"authors": "ประเทศไทย",
+				"year": 1991,
+				"type": "law",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-5",
+				"citation": "Hood, C. (1991). A public management for all seasons? Public Administration, 69(1), 3–19.",
+				"title": "A Public Management for All Seasons?",
+				"authors": "Christopher Hood",
+				"year": 1991,
+				"type": "article",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-6",
+				"citation": "Osborne, D., & Gaebler, T. (1992). Reinventing government: How the entrepreneurial spirit is transforming the public sector. Addison-Wesley.",
+				"title": "Reinventing Government",
+				"authors": "David Osborne, Ted Gaebler",
+				"year": 1992,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-7",
+				"citation": "Denhardt, R. B., & Denhardt, J. V. (2000). The new public service: Serving rather than steering. Public Administration Review, 60(6), 549–559.",
+				"title": "The New Public Service: Serving Rather than Steering",
+				"authors": "Robert B. Denhardt, Janet V. Denhardt",
+				"year": 2000,
+				"type": "article",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "รายงานกรณีศึกษา: โครงสร้างและบทบาทของหน่วยงานภาครัฐไทย 1 หน่วยงาน",
+			"type": "case_analysis",
+			"description": "เลือกหน่วยงานภาครัฐ 1 แห่ง อธิบายโครงสร้าง ภารกิจ และความสัมพันธ์กับหน่วยงานอื่น แล้ววิเคราะห์ด้วยแนวคิดที่เรียน",
+			"deliverable": "รายงานประมาณ 10 หน้า ส่งทาง MyCourseVille",
+			"individual": false,
+			"groupSize": "4–5",
+			"dueWeek": 14,
+			"evaluationItemId": "e-4",
+			"estimatedHours": 12
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งรายงานกรณีศึกษา",
+			"week": 14,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

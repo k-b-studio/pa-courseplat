@@ -1,0 +1,392 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ศึกษากระบวนการวางแผนนโยบายระดับชาติของไทย ตั้งแต่ยุทธศาสตร์ชาติและแผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ จนถึงการแปลงแผนสู่การปฏิบัติและการติดตามผล เป็นวิชาเลือกของสายนโยบายและการวางแผน",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"national planning",
+			"national strategy",
+			"development plan",
+			"planning process",
+			"plan implementation"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายแนวคิด หลักการ และขั้นตอนการวางแผนนโยบายระดับชาติได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "วิเคราะห์ความเชื่อมโยงของแผนระดับต่าง ๆ ของไทยได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "ประเมินการแปลงแผนสู่การปฏิบัติและเสนอแนวทางปรับปรุงได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO3D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study"
+		],
+		"description": "บรรยายและวิเคราะห์เอกสารแผนระดับชาติฉบับจริง",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: การวางแผนกับนโยบาย",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "แนวคิดและทฤษฎีการวางแผน",
+			"details": "",
+			"concepts": [
+				"planning theory"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "สภาพแวดล้อมภายนอกและภายในของการวางแผน",
+			"details": "",
+			"concepts": [
+				"environmental scanning"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "ระบบเศรษฐกิจกับการวางแผน",
+			"details": "",
+			"concepts": [
+				"economic planning"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "ยุทธศาสตร์ชาติ",
+			"details": "",
+			"concepts": [
+				"national strategy"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ",
+			"details": "",
+			"concepts": [
+				"national development plan"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "ระบบแผนสามระดับของไทย",
+			"details": "",
+			"concepts": [
+				"plan hierarchy"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การแปลงแผนสู่การปฏิบัติ",
+			"details": "",
+			"concepts": [
+				"plan implementation"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การเชื่อมแผนกับงบประมาณ",
+			"details": "",
+			"concepts": [
+				"planning and budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การวางแผนเชิงพื้นที่",
+			"details": "",
+			"concepts": [
+				"spatial planning"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การติดตามและประเมินผลแผน",
+			"details": "",
+			"concepts": [
+				"plan monitoring"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "กรณีศึกษา: แผนแม่บทภายใต้ยุทธศาสตร์ชาติ",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "กรณีศึกษา: แผนพัฒนาจังหวัด",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอบทวิเคราะห์แผน",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชา",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "บทวิเคราะห์แผนระดับชาติ",
+				"type": "paper",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 14,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 35,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "สำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ. แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13 (พ.ศ. 2566–2570).",
+				"title": "แผนพัฒนาเศรษฐกิจและสังคมแห่งชาติ ฉบับที่ 13 (พ.ศ. 2566–2570)",
+				"authors": "สำนักงานสภาพัฒนาการเศรษฐกิจและสังคมแห่งชาติ",
+				"year": null,
+				"type": "report",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "ยุทธศาสตร์ชาติ (พ.ศ. 2561–2580).",
+				"title": "ยุทธศาสตร์ชาติ (พ.ศ. 2561–2580)",
+				"authors": "ประเทศไทย",
+				"year": 2018,
+				"type": "report",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

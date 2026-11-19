@@ -10,7 +10,7 @@
 /* scan only src/ for classes (specs/, data/, fixtures/ hold no markup) */
 @import 'tailwindcss' source('.');
 
-@theme {
+@theme static {
 	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 	--font-heading: 'Prompt', 'Sarabun', ui-sans-serif, system-ui, sans-serif;
 

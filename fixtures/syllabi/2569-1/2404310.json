@@ -1,0 +1,393 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ศึกษาความสัมพันธ์ระหว่างการบริหารภาครัฐกับสังคม ทุนทางสังคม ความเหลื่อมล้ำ และการมีส่วนร่วมของพลเมือง โดยใช้ประเด็นสาธารณะร่วมสมัยของไทยเป็นกรณีศึกษา",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"administration and society",
+			"social capital",
+			"citizen participation",
+			"inequality"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายความสัมพันธ์ระหว่างการบริหารภาครัฐ สังคม และนโยบายสาธารณะได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "วิเคราะห์ผลของบริบททางสังคมต่อการบริหารจัดการภาครัฐได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "อภิปรายบทบาทของพลเมืองในการบริหารภาครัฐอย่างเคารพความหลากหลาย",
+			"ploCodes": [
+				"PLO5D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study"
+		],
+		"description": "บรรยายและอภิปรายกรณีศึกษาประเด็นสาธารณะของไทย",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "รัฐ ตลาด และสังคม",
+			"details": "",
+			"concepts": [
+				"state",
+				"market",
+				"civil society"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "ทุนทางสังคมกับการบริหารภาครัฐ",
+			"details": "",
+			"concepts": [
+				"social capital"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "ความเหลื่อมล้ำและบริการสาธารณะ",
+			"details": "",
+			"concepts": [
+				"inequality",
+				"public services"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การมีส่วนร่วมของพลเมือง",
+			"details": "",
+			"concepts": [
+				"citizen participation"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "ภาคประชาสังคมและองค์กรไม่แสวงหากำไร",
+			"details": "",
+			"concepts": [
+				"civil society organizations"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "สื่อ ความเห็นสาธารณะ และการบริหารภาครัฐ",
+			"details": "",
+			"concepts": [
+				"public opinion"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "ความไว้วางใจต่อภาครัฐ",
+			"details": "",
+			"concepts": [
+				"trust in government"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การบริหารภาครัฐในสังคมพหุวัฒนธรรม",
+			"details": "",
+			"concepts": [
+				"diversity"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "สังคมสูงวัยกับการบริหารภาครัฐ",
+			"details": "",
+			"concepts": [
+				"ageing society"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "ความยั่งยืนและการพัฒนา",
+			"details": "",
+			"concepts": [
+				"sustainable development"
+			],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "กรณีศึกษาประเด็นสาธารณะของไทย (1)",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "กรณีศึกษาประเด็นสาธารณะของไทย (2)",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอบทความ",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชา",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@apichart"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "บทความวิเคราะห์ประเด็นสาธารณะ",
+				"type": "paper",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 13,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 35,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Putnam, R. D. (2000). Bowling alone: The collapse and revival of American community. Simon & Schuster.",
+				"title": "Bowling Alone",
+				"authors": "Robert D. Putnam",
+				"year": 2000,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Frederickson, H. G., Smith, K. B., Larimer, C. W., & Licari, M. J. The public administration theory primer. Routledge.",
+				"title": "The Public Administration Theory Primer",
+				"authors": "H. George Frederickson, Kevin B. Smith, Christopher W. Larimer, Michael J. Licari",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

@@ -1,0 +1,489 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ใช้ตอนเรียนสองตอนที่ใช้ประมวลรายวิชาเดียวกัน เน้นการใช้สถิติเพื่อการตัดสินใจทางการบริหาร ตั้งแต่สถิติเชิงพรรณนาจนถึงการวิเคราะห์การถดถอย นิสิตฝึกวิเคราะห์ข้อมูลภาครัฐจริงในห้องปฏิบัติการคอมพิวเตอร์ทุกสัปดาห์",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"descriptive statistics",
+			"sampling",
+			"hypothesis testing",
+			"regression",
+			"data analysis",
+			"research design"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "เลือกใช้สถิติเชิงพรรณนาและสถิติเชิงอนุมานให้เหมาะกับคำถามทางการบริหารได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "วิเคราะห์ข้อมูลด้วยโปรแกรมสถิติและแปลผลได้ถูกต้อง",
+			"ploCodes": [
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนรายงานผลการวิเคราะห์ข้อมูลที่สื่อสารกับผู้บริหารได้",
+			"ploCodes": [
+				"PLO3D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"workshop_seminar",
+			"problem_based"
+		],
+		"description": "บรรยายแนวคิดครึ่งแรกของคาบ แล้วฝึกปฏิบัติในห้องปฏิบัติการคอมพิวเตอร์ด้วยชุดข้อมูลภาครัฐที่เปิดเผย มีแบบฝึกหัดปฏิบัติการทุกสัปดาห์ และโครงงานวิเคราะห์ข้อมูลกลุ่มในช่วงท้ายภาค",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ใช้ AI อธิบายแนวคิดหรือช่วยแก้ปัญหาโปรแกรมได้ แต่ผลการวิเคราะห์ต้องมาจากการรันจริงของนิสิต",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: สถิติกับการตัดสินใจทางการบริหาร",
+			"details": "สถิติเชิงพรรณนาและสถิติเชิงอนุมาน",
+			"concepts": [
+				"statistics for decision making"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "การออกแบบการวิจัยและการวัด",
+			"details": "ตัวแปร มาตรวัด ความเที่ยงและความตรง",
+			"concepts": [
+				"research design",
+				"levels of measurement"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "การเก็บข้อมูลและการสุ่มตัวอย่าง",
+			"details": "วิธีสุ่มตัวอย่างและความคลาดเคลื่อน",
+			"concepts": [
+				"sampling",
+				"data collection"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "สถิติเชิงพรรณนา",
+			"details": "ค่ากลางและการกระจาย",
+			"concepts": [
+				"descriptive statistics",
+				"central tendency",
+				"dispersion"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การนำเสนอข้อมูลด้วยตารางและแผนภาพ",
+			"details": "หลักการเลือกแผนภาพให้เหมาะกับข้อมูล",
+			"concepts": [
+				"data visualization"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "ความน่าจะเป็นและการแจกแจงปกติ",
+			"details": "ค่ามาตรฐานและพื้นที่ใต้โค้งปกติ",
+			"concepts": [
+				"probability",
+				"normal distribution"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การประมาณค่าและช่วงความเชื่อมั่น",
+			"details": "การประมาณค่าเฉลี่ยและสัดส่วน",
+			"concepts": [
+				"estimation",
+				"confidence interval"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การทดสอบสมมติฐาน",
+			"details": "การทดสอบที และความผิดพลาดประเภทที่ 1 และ 2",
+			"concepts": [
+				"hypothesis testing",
+				"t-test"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การวิเคราะห์ความแปรปรวน",
+			"details": "การเปรียบเทียบค่าเฉลี่ยมากกว่าสองกลุ่ม",
+			"concepts": [
+				"ANOVA"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การวิเคราะห์ตารางไขว้และไคสแควร์",
+			"details": "ความสัมพันธ์ระหว่างตัวแปรเชิงกลุ่ม",
+			"concepts": [
+				"chi-square",
+				"crosstabulation"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "สหสัมพันธ์",
+			"details": "สัมประสิทธิ์สหสัมพันธ์และข้อควรระวังในการตีความ",
+			"concepts": [
+				"correlation"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การวิเคราะห์การถดถอยอย่างง่าย",
+			"details": "การประมาณสมการและการตีความค่าสัมประสิทธิ์",
+			"concepts": [
+				"simple regression"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "การวิเคราะห์การถดถอยพหุคูณ",
+			"details": "ตัวแปรควบคุมและตัวแปรหุ่น",
+			"concepts": [
+				"multiple regression"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "การเขียนรายงานผลการวิเคราะห์ข้อมูล",
+			"details": "การสื่อสารผลสถิติให้ผู้บริหารเข้าใจ",
+			"concepts": [
+				"reporting results"
+			],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "ส่งโครงงานวิเคราะห์ข้อมูล",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@chonthicha",
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "แบบฝึกหัดปฏิบัติการรายสัปดาห์",
+				"type": "other",
+				"weightPercent": 20,
+				"individual": true,
+				"dueWeek": null,
+				"description": "ส่งท้ายคาบทุกสัปดาห์ นับ 10 ครั้งที่ดีที่สุด"
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": "ข้อสอบคำนวณและแปลผล"
+			},
+			{
+				"id": "e-3",
+				"title": "โครงงานวิเคราะห์ข้อมูล",
+				"type": "project",
+				"weightPercent": 20,
+				"individual": false,
+				"dueWeek": 15,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Meier, K. J., Brudney, J. L., & Bohte, J. (2015). Applied statistics for public and nonprofit administration (9th ed.). Cengage Learning.",
+				"title": "Applied Statistics for Public and Nonprofit Administration",
+				"authors": "Kenneth J. Meier, Jeffrey L. Brudney, John Bohte",
+				"year": 2015,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Field, A. (2018). Discovering statistics using IBM SPSS statistics (5th ed.). SAGE.",
+				"title": "Discovering Statistics Using IBM SPSS Statistics",
+				"authors": "Andy Field",
+				"year": 2018,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			},
+			{
+				"name": "ห้องปฏิบัติการคอมพิวเตอร์",
+				"url": null,
+				"note": "ใช้โปรแกรม SPSS และ jamovi"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "แบบฝึกหัดปฏิบัติการรายสัปดาห์",
+			"type": "exercise",
+			"description": "วิเคราะห์ชุดข้อมูลตามโจทย์ของสัปดาห์นั้นและตอบคำถามสั้น",
+			"deliverable": "ไฟล์ผลการวิเคราะห์ ส่งท้ายคาบ",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": null,
+			"evaluationItemId": "e-1",
+			"estimatedHours": 1
+		},
+		{
+			"id": "w-2",
+			"title": "โครงงานวิเคราะห์ข้อมูลภาครัฐ",
+			"type": "project",
+			"description": "ตั้งคำถามทางการบริหาร 1 ข้อ วิเคราะห์ด้วยชุดข้อมูลเปิดของภาครัฐ และเขียนรายงานสรุปสำหรับผู้บริหาร",
+			"deliverable": "รายงาน 8 หน้า พร้อมไฟล์ข้อมูลและผลการวิเคราะห์",
+			"individual": false,
+			"groupSize": "3",
+			"dueWeek": 15,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 15
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งโครงงานวิเคราะห์ข้อมูลภาครัฐ",
+			"week": 15,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

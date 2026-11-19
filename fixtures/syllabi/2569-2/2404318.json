@@ -1,0 +1,411 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้เน้นการกำกับติดตามและประเมินผลแบบมุ่งผลสัมฤทธิ์ ตั้งแต่ตัวแบบเชิงตรรกะและการออกแบบตัวชี้วัด ไปจนถึงการประเมินผลนโยบายและโครงการ นิสิตจะจัดทำแผนการติดตามและประเมินผลของโครงการภาครัฐจริงเป็นกลุ่ม",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"monitoring",
+			"evaluation",
+			"logic model",
+			"indicators",
+			"impact evaluation",
+			"results-based management"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายหลักการและความแตกต่างของการกำกับติดตามและการประเมินผลได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ออกแบบตัวแบบเชิงตรรกะและตัวชี้วัดของโครงการได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "วางแผนการประเมินผลนโยบายหรือโครงการที่เหมาะกับคำถามการประเมินได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO3D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"workshop_seminar",
+			"case_study",
+			"group_project"
+		],
+		"description": "บรรยายและฝึกเขียนตัวแบบเชิงตรรกะกับตัวชี้วัดของโครงการจริง ทำงานกลุ่มจัดทำแผนการติดตามและประเมินผล",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "unspecified",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: การกำกับติดตามกับการประเมินผล",
+			"details": "ความเหมือนและความต่าง และบทบาทในวงจรนโยบาย",
+			"concepts": [
+				"monitoring",
+				"evaluation"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "การบริหารแบบมุ่งผลสัมฤทธิ์",
+			"details": "ผลผลิต ผลลัพธ์ และผลกระทบ",
+			"concepts": [
+				"results-based management"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "ตัวแบบเชิงตรรกะ (Logic model)",
+			"details": "ปัจจัยนำเข้า กิจกรรม ผลผลิต ผลลัพธ์ และทฤษฎีการเปลี่ยนแปลง",
+			"concepts": [
+				"logic model",
+				"theory of change",
+				"outputs",
+				"outcomes"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "การออกแบบตัวชี้วัด",
+			"details": "ตัวชี้วัดที่ดีและการกำหนดค่าเป้าหมาย",
+			"concepts": [
+				"indicators",
+				"KPI"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "ระบบการกำกับติดตาม",
+			"details": "การเก็บข้อมูลและการรายงานความก้าวหน้า",
+			"concepts": [
+				"monitoring system",
+				"data collection"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การประเมินความต้องการและการประเมินก่อนเริ่มโครงการ",
+			"details": "การประเมินก่อนดำเนินการ",
+			"concepts": [
+				"needs assessment",
+				"ex-ante evaluation"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การประเมินกระบวนการ",
+			"details": "การประเมินความครบถ้วนของการดำเนินงาน",
+			"concepts": [
+				"process evaluation"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การประเมินผลนโยบายและโครงการ (1): การออกแบบการประเมินผลลัพธ์",
+			"details": "คำถามการประเมินและแบบการประเมิน",
+			"concepts": [
+				"outcome evaluation",
+				"evaluation design",
+				"policy evaluation"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การประเมินผลนโยบายและโครงการ (2): การประเมินผลกระทบ",
+			"details": "สภาพการณ์สมมติ (counterfactual) และกลุ่มเปรียบเทียบ",
+			"concepts": [
+				"impact evaluation",
+				"counterfactual",
+				"policy evaluation"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การวิเคราะห์ต้นทุน-ประสิทธิผล",
+			"details": "การเปรียบเทียบทางเลือกโครงการด้วยต้นทุนต่อผลลัพธ์",
+			"concepts": [
+				"cost-effectiveness analysis"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การใช้ผลการประเมินและการรายงานผล",
+			"details": "การสื่อสารผลการประเมินกับผู้ตัดสินใจ",
+			"concepts": [
+				"evaluation use",
+				"reporting"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "ส่งแผนการติดตามและประเมินผล",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "แผนการติดตามและประเมินผลโครงการ",
+				"type": "project",
+				"weightPercent": 20,
+				"individual": false,
+				"dueWeek": 12,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Kusek, J. Z., & Rist, R. C. (2004). Ten steps to a results-based monitoring and evaluation system. World Bank.",
+				"title": "Ten Steps to a Results-Based Monitoring and Evaluation System",
+				"authors": "Jody Zall Kusek, Ray C. Rist",
+				"year": 2004,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "W.K. Kellogg Foundation. (2004). Logic model development guide. W.K. Kellogg Foundation.",
+				"title": "Logic Model Development Guide",
+				"authors": "W.K. Kellogg Foundation",
+				"year": 2004,
+				"type": "report",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Rossi, P. H., Lipsey, M. W., & Henry, G. T. (2019). Evaluation: A systematic approach (8th ed.). SAGE.",
+				"title": "Evaluation: A Systematic Approach",
+				"authors": "Peter H. Rossi, Mark W. Lipsey, Gary T. Henry",
+				"year": 2019,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "แผนการติดตามและประเมินผลโครงการภาครัฐ",
+			"type": "project",
+			"description": "เลือกโครงการภาครัฐ 1 โครงการ เขียนตัวแบบเชิงตรรกะ ตัวชี้วัด และแผนการประเมินผล",
+			"deliverable": "รายงาน 10 หน้า",
+			"individual": false,
+			"groupSize": "4",
+			"dueWeek": 12,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 15
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งแผนการติดตามและประเมินผลโครงการภาครัฐ",
+			"week": 12,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

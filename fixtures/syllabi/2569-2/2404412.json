@@ -1,0 +1,489 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้จัดเป็นห้องปฏิบัติการนโยบาย (policy lab) สอนร่วมโดยอาจารย์ 3 ท่าน นิสิตทำงานกลุ่มกับโจทย์จริงจากหน่วยงานภาครัฐตลอดภาค ตั้งแต่การนิยามปัญหา การออกแบบและทดสอบต้นแบบบริการ จนถึงการนำเสนอข้อเสนอต่อผู้บริหารหน่วยงาน",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"policy lab",
+			"design thinking",
+			"service design",
+			"co-creation",
+			"prototyping",
+			"public sector innovation"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "ประยุกต์ใช้แนวคิดทางรัฐประศาสนศาสตร์วิเคราะห์ปัญหาการบริหารจัดการภาครัฐจริงได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ออกแบบและทดสอบต้นแบบแนวทางแก้ปัญหาร่วมกับผู้มีส่วนได้ส่วนเสียได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "สื่อสารข้อเสนอต่อผู้บริหารภาครัฐอย่างมีหลักฐานและทำงานเป็นทีมได้",
+			"ploCodes": [
+				"PLO3D",
+				"PLO5D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"policy_lab",
+			"group_project",
+			"workshop_seminar",
+			"field_visit",
+			"guest_speaker"
+		],
+		"description": "สอนร่วม 3 ช่วง: ผศ.ดร.ธนกฤต (สัปดาห์ 1–5) ดูแลการนิยามปัญหา ผศ.ดร.กิตติพงษ์ (สัปดาห์ 6–10) ดูแลการออกแบบและทดสอบต้นแบบ ผศ.ดร.ชลธิชา (สัปดาห์ 11–15) ดูแลการประเมินความเป็นไปได้และการนำเสนอ แต่ละกลุ่มมีพี่เลี้ยงจากหน่วยงานภาครัฐ",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed",
+		"aiPolicyNote": "ใช้ AI เป็นเครื่องมือระดมความคิดและสร้างต้นแบบได้เต็มที่ โดยอธิบายวิธีใช้ในรายงาน",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชาและการทำงานแบบห้องปฏิบัติการนโยบาย",
+			"details": "รับโจทย์จากหน่วยงานภาครัฐและจัดกลุ่ม",
+			"concepts": [
+				"policy lab",
+				"public sector innovation"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "การทำความเข้าใจปัญหาสาธารณะและผู้ใช้บริการ",
+			"details": "การสัมภาษณ์ผู้ใช้บริการและการสังเกต",
+			"concepts": [
+				"problem definition",
+				"user research"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-1",
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "เครื่องมือการคิดเชิงออกแบบสำหรับภาครัฐ",
+			"details": "แผนที่การเดินทางของผู้ใช้บริการและการนิยามโจทย์",
+			"concepts": [
+				"design thinking",
+				"service design"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "การทำงานร่วมกับหน่วยงานภาครัฐและผู้มีส่วนได้ส่วนเสีย",
+			"details": "การร่วมสร้างสรรค์ (co-creation)",
+			"concepts": [
+				"stakeholder engagement",
+				"co-creation"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "นำเสนอโจทย์และการนิยามปัญหา (Milestone 1)",
+			"details": "นำเสนอต่อพี่เลี้ยงจากหน่วยงาน",
+			"concepts": [],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [],
+			"activity": "ส่ง Milestone 1",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การใช้ข้อมูลและหลักฐานเพื่อออกแบบทางเลือก",
+			"details": "แหล่งข้อมูลภาครัฐและการวิเคราะห์เบื้องต้น",
+			"concepts": [
+				"evidence-based policy",
+				"data analysis"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การบริหารโครงการและการทำงานเป็นทีม",
+			"details": "การแบ่งงานและการติดตามความก้าวหน้า",
+			"concepts": [
+				"project management",
+				"teamwork"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สัปดาห์สอบกลางภาค (งดการเรียนการสอน)",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การออกแบบต้นแบบบริการภาครัฐ",
+			"details": "ต้นแบบความละเอียดต่ำและการทดสอบกับผู้ใช้",
+			"concepts": [
+				"prototyping"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "ทดสอบต้นแบบและนำเสนอความก้าวหน้า (Milestone 2)",
+			"details": "ทดสอบกับผู้ใช้บริการจริงอย่างน้อย 5 คน",
+			"concepts": [
+				"user testing"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "ส่ง Milestone 2",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การประเมินผลกระทบที่คาดหวังและความเป็นไปได้",
+			"details": "ความเป็นไปได้ทางกฎหมาย งบประมาณ และองค์การ",
+			"concepts": [
+				"feasibility",
+				"expected impact"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การประมาณต้นทุนและการขยายผล",
+			"details": "การประมาณต้นทุนและแนวทางขยายผลในหน่วยงาน",
+			"concepts": [
+				"costing",
+				"scaling up"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การสื่อสารข้อเสนอต่อผู้บริหารภาครัฐ",
+			"details": "การเขียนบันทึกข้อเสนอและการนำเสนอแบบกระชับ",
+			"concepts": [
+				"policy communication",
+				"pitching"
+			],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "ซ้อมนำเสนอและรับข้อเสนอแนะ",
+			"details": "ซ้อมนำเสนอระหว่างกลุ่ม",
+			"concepts": [],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอผลงานต่อหน่วยงานภาครัฐ (Milestone 3)",
+			"details": "นำเสนอต่อผู้บริหารและพี่เลี้ยงจากหน่วยงาน",
+			"concepts": [],
+			"instructorIds": [
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "ส่ง Milestone 3",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สะท้อนการเรียนรู้และสรุปรายวิชา",
+			"details": "อาจารย์ทั้ง 3 ท่านร่วมสรุป",
+			"concepts": [
+				"reflection"
+			],
+			"instructorIds": [
+				"@thanakrit",
+				"@kittipong",
+				"@chonthicha"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "Milestone 1: การนิยามปัญหา",
+				"type": "project",
+				"weightPercent": 15,
+				"individual": false,
+				"dueWeek": 5,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "Milestone 2: ต้นแบบและผลการทดสอบ",
+				"type": "project",
+				"weightPercent": 20,
+				"individual": false,
+				"dueWeek": 10,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "Milestone 3: ข้อเสนอและการนำเสนอต่อหน่วยงาน",
+				"type": "presentation",
+				"weightPercent": 30,
+				"individual": false,
+				"dueWeek": 15,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "บันทึกสะท้อนการเรียนรู้",
+				"type": "reflection",
+				"weightPercent": 15,
+				"individual": true,
+				"dueWeek": null,
+				"description": "บันทึกทุก 2 สัปดาห์"
+			},
+			{
+				"id": "e-5",
+				"title": "การมีส่วนร่วมและการประเมินโดยเพื่อนร่วมกลุ่ม",
+				"type": "participation",
+				"weightPercent": 20,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Bason, C. (2018). Leading public sector innovation: Co-creating for a better society (2nd ed.). Policy Press.",
+				"title": "Leading Public Sector Innovation",
+				"authors": "Christian Bason",
+				"year": 2018,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "OECD. (2017). Embracing innovation in government: Global trends. OECD.",
+				"title": "Embracing Innovation in Government: Global Trends",
+				"authors": "OECD",
+				"year": 2017,
+				"type": "report",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Brown, T. (2009). Change by design: How design thinking transforms organizations and inspires innovation. HarperBusiness.",
+				"title": "Change by Design",
+				"authors": "Tim Brown",
+				"year": 2009,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "Milestone 1: รายงานการนิยามปัญหา",
+			"type": "project",
+			"description": "สรุปปัญหา ผู้ใช้บริการ และหลักฐานจากการสัมภาษณ์",
+			"deliverable": "รายงาน 5 หน้า และนำเสนอ 10 นาที",
+			"individual": false,
+			"groupSize": "5–6",
+			"dueWeek": 5,
+			"evaluationItemId": "e-1",
+			"estimatedHours": 12
+		},
+		{
+			"id": "w-2",
+			"title": "Milestone 2: ต้นแบบและผลการทดสอบ",
+			"type": "project",
+			"description": "ต้นแบบแนวทางแก้ปัญหาและผลการทดสอบกับผู้ใช้บริการ",
+			"deliverable": "ต้นแบบ และรายงานผลการทดสอบ 5 หน้า",
+			"individual": false,
+			"groupSize": "5–6",
+			"dueWeek": 10,
+			"evaluationItemId": "e-2",
+			"estimatedHours": 15
+		},
+		{
+			"id": "w-3",
+			"title": "Milestone 3: ข้อเสนอต่อหน่วยงาน",
+			"type": "presentation",
+			"description": "ข้อเสนอฉบับสมบูรณ์พร้อมการประเมินความเป็นไปได้และต้นทุน",
+			"deliverable": "บันทึกข้อเสนอ 4 หน้า และนำเสนอ 20 นาที",
+			"individual": false,
+			"groupSize": "5–6",
+			"dueWeek": 15,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 18
+		}
+	],
+	"keyDates": [
+		{
+			"label": "ส่ง Milestone 1",
+			"week": 5,
+			"date": null
+		},
+		{
+			"label": "ส่ง Milestone 2",
+			"week": 10,
+			"date": null
+		},
+		{
+			"label": "นำเสนอต่อหน่วยงาน (Milestone 3)",
+			"week": 15,
+			"date": null
+		}
+	]
+}

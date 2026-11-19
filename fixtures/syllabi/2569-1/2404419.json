@@ -1,0 +1,396 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ฝึกกระบวนการวิจัยทางรัฐประศาสนศาสตร์ตั้งแต่การกำหนดปัญหา การทบทวนแนวคิด การตั้งสมมติฐาน การออกแบบการวิจัยเชิงปริมาณ เชิงคุณภาพ และแบบผสานวิธี จนถึงการเขียนโครงร่างการวิจัย",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"research design",
+			"research question",
+			"qualitative research",
+			"quantitative research",
+			"mixed methods",
+			"case study"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "กำหนดปัญหาและคำถามการวิจัยทางรัฐประศาสนศาสตร์ได้",
+			"ploCodes": [
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ออกแบบการวิจัยที่เหมาะกับคำถามการวิจัยได้",
+			"ploCodes": [
+				"PLO4D",
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนโครงร่างการวิจัยที่ถูกต้องตามหลักจริยธรรมการวิจัย",
+			"ploCodes": [
+				"PLO3D",
+				"PLO4"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"workshop_seminar",
+			"independent_study"
+		],
+		"description": "บรรยายและเวิร์กช็อปเขียนโครงร่างการวิจัยทีละส่วน",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: การวิจัยทางรัฐประศาสนศาสตร์",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "ปัญหาและคำถามการวิจัย",
+			"details": "",
+			"concepts": [
+				"research question"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "การทบทวนวรรณกรรมและกรอบแนวคิด",
+			"details": "",
+			"concepts": [
+				"conceptual framework"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "สมมติฐานและตัวแปร",
+			"details": "",
+			"concepts": [
+				"hypothesis",
+				"variables"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การออกแบบการวิจัยเชิงปริมาณ",
+			"details": "",
+			"concepts": [
+				"quantitative research design"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การสร้างเครื่องมือวิจัยและแบบสอบถาม",
+			"details": "",
+			"concepts": [
+				"questionnaire design"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การออกแบบการวิจัยเชิงคุณภาพ",
+			"details": "",
+			"concepts": [
+				"qualitative research design"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การสัมภาษณ์เชิงลึกและการสนทนากลุ่ม",
+			"details": "",
+			"concepts": [
+				"in-depth interview",
+				"focus group"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การวิจัยกรณีศึกษา",
+			"details": "",
+			"concepts": [
+				"case study research"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การวิจัยแบบผสานวิธี",
+			"details": "",
+			"concepts": [
+				"mixed methods"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "จริยธรรมการวิจัย",
+			"details": "",
+			"concepts": [
+				"research ethics"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การเขียนโครงร่างการวิจัย",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "ปรึกษาโครงร่างการวิจัย",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอโครงร่างการวิจัย",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชา",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "โครงร่างการวิจัย",
+				"type": "paper",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 15,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 35,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Creswell, J. W., & Creswell, J. D. (2018). Research design: Qualitative, quantitative, and mixed methods approaches (5th ed.). SAGE.",
+				"title": "Research Design: Qualitative, Quantitative, and Mixed Methods Approaches",
+				"authors": "John W. Creswell, J. David Creswell",
+				"year": 2018,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Yin, R. K. (2018). Case study research and applications: Design and methods (6th ed.). SAGE.",
+				"title": "Case Study Research and Applications",
+				"authors": "Robert K. Yin",
+				"year": 2018,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

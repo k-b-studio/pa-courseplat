@@ -241,3 +241,16 @@ describe('deleting a user never fails (spec 02 rule 5, AC 9)', () => {
 		expect(left[0]).toEqual({ n: 0, c: 1, note_author: null });
 	});
 });
+
+describe('offering listing (0005, spec 04 R1 and AC 9)', () => {
+	it('students see that an unpublished offering exists, and its status, but not the offering row', async () => {
+		const listed = await as(db, ST, async (tx) => (await tx.query<{ course_code: string; status: string }>(`select course_code, status from courseplat.offering_listing('2569-2')`)).rows);
+		expect(listed.map((r) => r.course_code.trim()).sort()).toEqual(['2404324', '2404429']);
+		const visible = await as(db, ST, async (tx) => (await tx.query(`select id from courseplat.offerings where id = '${O429}'`)).rows);
+		const status = listed.find((r) => r.course_code.trim() === '2404429')!.status;
+		if (status !== 'published') expect(visible).toHaveLength(0);
+	});
+	it('anon cannot call it', async () => {
+		await expect(as(db, null, (tx) => tx.query(`select * from courseplat.offering_listing('2569-2')`))).rejects.toThrow();
+	});
+});

@@ -4,15 +4,19 @@
  * Order (spec 08 "Scripts"): catalog → semesters → demo_accounts → staff_directory → demo users
  * (Admin API, email_confirm: true; the shared sign-up hook lets them in because demo_accounts
  * is seeded first) → profiles (ensure_profile, run as each user) → offerings, sections,
- * instructors, meetings. Syllabi, notes and cautions follow in later phases.
+ * instructors, meetings → syllabi (save_syllabus / publish_offering, run as the coordinator).
+ * Notes and cautions follow in later phases.
  *
  * Shared project (spec 02 rule 6): writes only schema courseplat and auth users whose email is
  * in courseplat.demo_accounts. Prints counts of rows changed; a second run prints zeros.
  *
  * Flags: --reset-passwords  set every demo user's password to DEMO_ACCOUNT_PASSWORD again.
  */
+import { readFileSync } from 'node:fs';
 import offeringsJson from '../fixtures/offerings.json';
 import peopleJson from '../fixtures/people.json';
+import syllabusIndex from '../fixtures/syllabi/index.json';
+import type { SyllabusDoc } from '../src/lib/schema/syllabus';
 import { adminClient, demoPassword } from './lib/admin';
 import { coursePloRows, courseRows, curriculumCourseRows, curriculumRows, ploRows } from './lib/catalog';
 import { asUser, upsert, type Tx } from './lib/db-helpers';
@@ -110,6 +114,59 @@ try {
 			for (const o of list) await seedOffering(tx, semesterId, o, byKey);
 		});
 	}
+
+	// 7. syllabi through save_syllabus / publish_offering, run as the coordinator (same path as the app) ---
+	const coordinatorOf = new Map<string, { id: string; email: string }>();
+	for (const [semesterId, list] of Object.entries(offeringsJson.offerings as Record<string, OfferingFx[]>))
+		for (const o of list) {
+			const p = people.find((x) => x.key === o.coordinator)!;
+			coordinatorOf.set(`${semesterId}|${o.course}`, { id: byKey(o.coordinator), email: p.email });
+		}
+	const keyToId = (doc: SyllabusDoc): SyllabusDoc => ({
+		...doc,
+		weeklyPlan: doc.weeklyPlan.map((w) => ({ ...w, instructorIds: w.instructorIds.map((k) => (k.startsWith('@') ? byKey(k) : k)) }))
+	});
+	for (const [semesterId, codes] of Object.entries(syllabusIndex as Record<string, Record<string, 'published' | 'draft'>>)) {
+		for (const [code, want] of Object.entries(codes)) {
+			const doc = keyToId(JSON.parse(readFileSync(`fixtures/syllabi/${semesterId}/${code}.json`, 'utf-8')));
+			const [o] = await sql<{ id: string; revision: number; status: string; published_revision: number | null; same: boolean }[]>`
+				select id, revision, status::text, published_revision, coalesce(syllabus = ${doc as never}::jsonb, false) as same
+				  from courseplat.offerings where course_code = ${code} and semester_id = ${semesterId}`;
+			if (!o) throw new Error(`no offering ${code} ${semesterId}`);
+			const upToDate = o.same && (want === 'draft' ? o.status === 'draft' : o.status === 'published' && o.published_revision === o.revision);
+			if (upToDate) continue;
+			await asUser(sql, coordinatorOf.get(`${semesterId}|${code}`)!, async (tx) => {
+				let rev = o.revision;
+				if (!o.same) [{ rev }] = await tx<{ rev: number }[]>`select courseplat.save_syllabus(${o.id}, ${doc as never}::jsonb, ${o.revision}) as rev`;
+				if (want === 'published') await tx`select courseplat.publish_offering(${o.id}, ${rev})`;
+			});
+			count(want === 'published' ? 'syllabi_published' : 'syllabi_saved', 1);
+		}
+	}
+
+	// 8. plausible fixed dates instead of "today" (edited and published before each semester starts) ------
+	await sql.begin(async (tx) => {
+		const dated = await tx`
+			with d as (
+				select o.id,
+				       (s.starts_on - case s.status when 'upcoming' then 70 else 21 end
+				                    + (abs(hashtext(o.course_code)) % 14))::timestamptz + interval '10 hours' as edited
+				  from courseplat.offerings o join courseplat.semesters s on s.id = o.semester_id
+				 where o.revision > 0)
+			update courseplat.offerings o
+			   set updated_at = d.edited,
+			       published_at = case when o.status = 'published' then d.edited + interval '2 hours' else o.published_at end
+			  from d
+			 where o.id = d.id
+			   and (o.updated_at, o.published_at) is distinct from (d.edited, case when o.status = 'published' then d.edited + interval '2 hours' else o.published_at end)
+			returning 1`;
+		const versions = await tx`
+			update courseplat.offering_versions v set published_at = o.published_at
+			  from courseplat.offerings o
+			 where o.id = v.offering_id and v.revision = o.published_revision and v.published_at is distinct from o.published_at
+			returning 1`;
+		count('dates', dated.length + versions.length);
+	});
 
 	const changed = Object.entries(changes).filter(([, n]) => n > 0);
 	console.log(changed.length ? `changed: ${changed.map(([k, n]) => `${k} ${n}`).join(', ')}` : 'nothing to change (already seeded)');

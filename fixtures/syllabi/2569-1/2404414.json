@@ -1,0 +1,392 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้อ่านวรรณกรรมสำคัญทางรัฐประศาสนศาสตร์ร่วมสมัยด้วยกระบวนการวิจัยเอกสาร ทั้งการปฏิรูปภาครัฐ การบริหารปกครอง และการออกแบบสถาบัน นิสิตเขียนบททบทวนวรรณกรรมรายบุคคล",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"literature review",
+			"governance",
+			"public sector reform",
+			"documentary research"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "สรุปและวิพากษ์วรรณกรรมทางรัฐประศาสนศาสตร์ร่วมสมัยได้",
+			"ploCodes": [
+				"PLO1D",
+				"PLO3D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ใช้กระบวนการวิจัยเอกสารค้นคว้าวรรณกรรมได้อย่างเป็นระบบ",
+			"ploCodes": [
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนบททบทวนวรรณกรรมที่อ้างอิงถูกต้องตามหลักจริยธรรมทางวิชาการ",
+			"ploCodes": [
+				"PLO3D",
+				"PLO4"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"discussion",
+			"workshop_seminar",
+			"independent_study"
+		],
+		"description": "สัมมนาจากการอ่านทุกสัปดาห์ และฝึกค้นคว้าจากฐานข้อมูลวิชาการ",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ห้ามใช้ AI สร้างรายการอ้างอิง ทุกรายการต้องตรวจสอบจากต้นฉบับ",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชาและการวิจัยเอกสาร",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "การค้นฐานข้อมูลวิชาการ",
+			"details": "",
+			"concepts": [
+				"academic databases"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "การอ่านเชิงวิพากษ์",
+			"details": "",
+			"concepts": [
+				"critical reading"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "รัฐประศาสนศาสตร์ในฐานะสหวิทยาการ",
+			"details": "",
+			"concepts": [
+				"interdisciplinary study of government"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การปฏิรูปภาครัฐ",
+			"details": "",
+			"concepts": [
+				"public sector reform"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การบริหารปกครองแบบใหม่",
+			"details": "",
+			"concepts": [
+				"governance"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การออกแบบสถาบัน",
+			"details": "",
+			"concepts": [
+				"institutional design"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "ความรับผิดชอบทางการบริหาร",
+			"details": "",
+			"concepts": [
+				"accountability"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "ภาวะผู้นำภาครัฐ",
+			"details": "",
+			"concepts": [
+				"public leadership"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "ภาครัฐกับนวัตกรรม",
+			"details": "",
+			"concepts": [
+				"public sector innovation"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การเขียนบททบทวนวรรณกรรม",
+			"details": "",
+			"concepts": [
+				"literature review"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การอ้างอิงและจริยธรรมทางวิชาการ",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "ปรึกษางานรายบุคคล",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอบททบทวนวรรณกรรม",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชา",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "บททบทวนวรรณกรรม",
+				"type": "paper",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 14,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 35,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Raadschelders, J. C. N. (2011). Public administration: The interdisciplinary study of government. Oxford University Press.",
+				"title": "Public Administration: The Interdisciplinary Study of Government",
+				"authors": "Jos C. N. Raadschelders",
+				"year": 2011,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Rhodes, R. A. W. (1996). The new governance: Governing without government. Political Studies, 44(4), 652–667.",
+				"title": "The New Governance: Governing without Government",
+				"authors": "R. A. W. Rhodes",
+				"year": 1996,
+				"type": "article",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

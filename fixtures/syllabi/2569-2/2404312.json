@@ -1,0 +1,476 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ศึกษาการบริหารงานบุคคลภาครัฐตามกระบวนการตั้งแต่การวางแผนกำลังคน การสรรหา การพัฒนา จนถึงการประเมินผลการปฏิบัติงาน โดยใช้ระบบข้าราชการพลเรือนไทยเป็นกรณีหลัก และให้นิสิตเขียนรายงานกรณีศึกษาปัญหาการบริหารงานบุคคลจริง",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"personnel administration",
+			"merit system",
+			"recruitment",
+			"workforce planning",
+			"performance appraisal",
+			"Thai civil service"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายแนวคิดและวิวัฒนาการของการบริหารงานบุคคลภาครัฐได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "วิเคราะห์กระบวนการบริหารงานบุคคลของระบบข้าราชการพลเรือนไทยได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนรายงานวิเคราะห์ปัญหาการบริหารงานบุคคลพร้อมข้อเสนอแนะได้",
+			"ploCodes": [
+				"PLO3D",
+				"PLO5D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study"
+		],
+		"description": "บรรยายตามกระบวนการบริหารงานบุคคล ยกกรณีศึกษาจากส่วนราชการไทยในทุกหัวข้อ และให้นิสิตนำเสนอกรณีศึกษาในช่วงท้ายภาค",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ระบุการใช้ AI ในภาคผนวกของรายงาน",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: ความหมายและวิวัฒนาการของการบริหารงานบุคคล",
+			"details": "จากการบริหารงานบุคคลสู่การบริหารทรัพยากรมนุษย์",
+			"concepts": [
+				"personnel administration",
+				"human resource management"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "ระบบคุณธรรมและระบบอุปถัมภ์",
+			"details": "หลักความสามารถ ความเสมอภาค ความมั่นคง และความเป็นกลางทางการเมือง",
+			"concepts": [
+				"merit system",
+				"patronage"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "ระบบบริหารงานบุคคลภาครัฐไทย",
+			"details": "ข้าราชการพลเรือน บทบาทของ ก.พ. และองค์กรกลางบริหารงานบุคคล",
+			"concepts": [
+				"Thai civil service",
+				"central personnel agency"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "การจัดตำแหน่งและการวิเคราะห์งาน",
+			"details": "การจำแนกตำแหน่ง คำบรรยายลักษณะงาน",
+			"concepts": [
+				"job analysis",
+				"position classification"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การสรรหาและการเลือกสรร",
+			"details": "การสอบแข่งขัน การคัดเลือก และความเป็นธรรมในการเลือกสรร",
+			"concepts": [
+				"recruitment",
+				"selection"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การวางแผนกำลังคนและการวิเคราะห์อัตรากำลัง",
+			"details": "การคาดการณ์ความต้องการกำลังคนและการกำหนดกรอบอัตรากำลังของส่วนราชการ",
+			"concepts": [
+				"workforce planning",
+				"manpower analysis"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "ค่าตอบแทนและสวัสดิการ",
+			"details": "โครงสร้างเงินเดือนและสิทธิประโยชน์ของข้าราชการ",
+			"concepts": [
+				"compensation",
+				"benefits"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การประเมินผลการปฏิบัติงาน",
+			"details": "ระบบประเมินผลและปัญหาความลำเอียงในการประเมิน",
+			"concepts": [
+				"performance appraisal"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การพัฒนาบุคลากรและเส้นทางความก้าวหน้า",
+			"details": "การฝึกอบรมและการเลื่อนตำแหน่ง",
+			"concepts": [
+				"training",
+				"career development"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "วินัย จริยธรรม และการคุ้มครองระบบคุณธรรม",
+			"details": "การดำเนินการทางวินัยและการอุทธรณ์ร้องทุกข์",
+			"concepts": [
+				"discipline",
+				"ethics",
+				"merit protection"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "ความผูกพันและแรงงานสัมพันธ์ในภาครัฐ",
+			"details": "แรงจูงใจในการทำงานภาครัฐและความผูกพันของบุคลากร",
+			"concepts": [
+				"employee engagement",
+				"public service motivation"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "ส่งรายงานกรณีศึกษา",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "ความหลากหลายและความเท่าเทียมในที่ทำงานภาครัฐ",
+			"details": "ความเสมอภาคทางเพศและการไม่เลือกปฏิบัติ",
+			"concepts": [
+				"diversity",
+				"equity"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "การบริหารคนเก่งและการบริหารทรัพยากรบุคคลยุคดิจิทัล",
+			"details": "ระบบข้อมูลบุคลากรและการทำงานแบบยืดหยุ่น",
+			"concepts": [
+				"talent management",
+				"digital HR"
+			],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอกรณีศึกษา",
+			"details": "กลุ่มละ 15 นาที",
+			"concepts": [],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [],
+			"activity": "การนำเสนอกลุ่ม",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@pimchanok"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": "อัตนัย 4 ข้อ"
+			},
+			{
+				"id": "e-3",
+				"title": "รายงานกรณีศึกษา",
+				"type": "case_analysis",
+				"weightPercent": 15,
+				"individual": true,
+				"dueWeek": 12,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-4",
+				"title": "นำเสนอกรณีศึกษากลุ่ม",
+				"type": "presentation",
+				"weightPercent": 15,
+				"individual": false,
+				"dueWeek": 15,
+				"description": ""
+			},
+			{
+				"id": "e-5",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Berman, E. M., Bowman, J. S., West, J. P., & Van Wart, M. R. Human resource management in public service: Paradoxes, processes, and problems. SAGE.",
+				"title": "Human Resource Management in Public Service",
+				"authors": "Evan M. Berman, James S. Bowman, Jonathan P. West, Montgomery R. Van Wart",
+				"year": null,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "พระราชบัญญัติระเบียบข้าราชการพลเรือน พ.ศ. 2551 และที่แก้ไขเพิ่มเติม.",
+				"title": "พระราชบัญญัติระเบียบข้าราชการพลเรือน พ.ศ. 2551",
+				"authors": "ประเทศไทย",
+				"year": 2008,
+				"type": "law",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Perry, J. L., & Wise, L. R. (1990). The motivational bases of public service. Public Administration Review, 50(3), 367–373.",
+				"title": "The Motivational Bases of Public Service",
+				"authors": "James L. Perry, Lois Recascino Wise",
+				"year": 1990,
+				"type": "article",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "รายงานกรณีศึกษา: ปัญหาการบริหารงานบุคคลในหน่วยงานภาครัฐ",
+			"type": "case_analysis",
+			"description": "เลือกปัญหาการบริหารงานบุคคล 1 ประเด็นจากข่าวหรือรายงานของหน่วยงานภาครัฐ วิเคราะห์สาเหตุด้วยแนวคิดที่เรียน และเสนอแนวทางแก้ไข",
+			"deliverable": "รายงาน 6–8 หน้า",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": 12,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 10
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งรายงานกรณีศึกษา",
+			"week": 12,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

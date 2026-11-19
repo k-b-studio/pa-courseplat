@@ -1,0 +1,475 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ศึกษางบประมาณในฐานะเครื่องมือนำนโยบายไปปฏิบัติ ตั้งแต่วงจรและกระบวนการจัดทำงบประมาณของรัฐ พัฒนาการของระบบงบประมาณ การเมืองของงบประมาณ ไปจนถึงงบประมาณแบบมีส่วนร่วมและความโปร่งใสทางการคลัง เป็นวิชาเลือกของสายนโยบายและการวางแผน",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"budget cycle",
+			"budget process",
+			"performance-based budgeting",
+			"incrementalism",
+			"participatory budgeting",
+			"fiscal transparency"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายวงจรงบประมาณและบทบาทของผู้เกี่ยวข้องในกระบวนการงบประมาณของรัฐได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "เปรียบเทียบระบบงบประมาณแบบต่าง ๆ และวิเคราะห์ข้อดีข้อจำกัดได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "วิเคราะห์งบประมาณรายจ่ายของหน่วยงานภาครัฐและเสนอข้อปรับปรุงได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO3D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study",
+			"guest_speaker"
+		],
+		"description": "บรรยายและอภิปรายจากเอกสารงบประมาณจริง มีวิทยากรจากหน่วยงานด้านงบประมาณ 1 ครั้ง นิสิตเขียนบทวิเคราะห์งบประมาณรายบุคคล",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: งบประมาณในฐานะเครื่องมือนโยบาย",
+			"details": "ภาพรวมวงจรงบประมาณของรัฐ",
+			"concepts": [
+				"budget as policy instrument",
+				"budget cycle"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "วงจรงบประมาณและกระบวนการจัดทำงบประมาณของรัฐ (1): การจัดเตรียมงบประมาณ",
+			"details": "ปฏิทินงบประมาณ การจัดทำคำของบประมาณ และบทบาทของสำนักงบประมาณ",
+			"concepts": [
+				"budget cycle",
+				"budget preparation",
+				"budget process"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-3",
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "วงจรงบประมาณและกระบวนการจัดทำงบประมาณของรัฐ (2): การพิจารณาอนุมัติ",
+			"details": "ร่างพระราชบัญญัติงบประมาณรายจ่ายประจำปีและบทบาทของรัฐสภา",
+			"concepts": [
+				"legislative budget approval",
+				"budget process"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "พัฒนาการของระบบงบประมาณ",
+			"details": "แบบแสดงรายการ แบบแผนงาน และแบบมุ่งเน้นผลงาน",
+			"concepts": [
+				"line-item budgeting",
+				"program budgeting",
+				"performance-based budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "งบประมาณแบบมุ่งผลสัมฤทธิ์และงบประมาณฐานศูนย์",
+			"details": "การเชื่อมงบประมาณกับผลลัพธ์",
+			"concepts": [
+				"results-based budgeting",
+				"zero-based budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การเมืองของงบประมาณ",
+			"details": "แนวคิดส่วนเพิ่มของ Wildavsky และผู้เล่นในกระบวนการงบประมาณ",
+			"concepts": [
+				"incrementalism",
+				"budget politics"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การบริหารงบประมาณและการควบคุมการใช้จ่าย",
+			"details": "การโอนเปลี่ยนแปลงงบประมาณและการเบิกจ่าย",
+			"concepts": [
+				"budget execution",
+				"expenditure control"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "งบประมาณเชิงพื้นที่และงบประมาณบูรณาการ",
+			"details": "การจัดสรรงบประมาณข้ามหน่วยงาน",
+			"concepts": [
+				"area-based budgeting",
+				"integrated budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "งบประมาณขององค์กรปกครองส่วนท้องถิ่น",
+			"details": "กระบวนการงบประมาณท้องถิ่น",
+			"concepts": [
+				"local government budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "งบประมาณที่คำนึงถึงมิติเพศ",
+			"details": "แนวคิดและตัวอย่างการใช้ในต่างประเทศ",
+			"concepts": [
+				"gender-responsive budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การมีส่วนร่วมของประชาชนในกระบวนการงบประมาณ",
+			"details": "งบประมาณแบบมีส่วนร่วม",
+			"concepts": [
+				"participatory budgeting"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การติดตามและประเมินผลการใช้งบประมาณ",
+			"details": "การตรวจสอบผลสัมฤทธิ์และประสิทธิภาพ",
+			"concepts": [
+				"budget monitoring",
+				"performance audit"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "ความโปร่งใสทางการคลังและการเปิดเผยข้อมูลงบประมาณ",
+			"details": "ดัชนีงบประมาณเปิดและข้อมูลงบประมาณสาธารณะ",
+			"concepts": [
+				"fiscal transparency",
+				"open budget"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "วิทยากรจากหน่วยงานด้านงบประมาณ",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอบทวิเคราะห์งบประมาณ",
+			"details": "คนละ 7 นาที",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "ส่งบทวิเคราะห์งบประมาณ",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "บทวิเคราะห์งบประมาณ",
+				"type": "paper",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 15,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 40,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Wildavsky, A., & Caiden, N. (2004). The new politics of the budgetary process (5th ed.). Pearson Longman.",
+				"title": "The New Politics of the Budgetary Process",
+				"authors": "Aaron Wildavsky, Naomi Caiden",
+				"year": 2004,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Rubin, I. S. The politics of public budgeting: Getting and spending, borrowing and balancing. CQ Press.",
+				"title": "The Politics of Public Budgeting",
+				"authors": "Irene S. Rubin",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "พระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2561.",
+				"title": "พระราชบัญญัติวิธีการงบประมาณ พ.ศ. 2561",
+				"authors": "ประเทศไทย",
+				"year": 2018,
+				"type": "law",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-4",
+				"citation": "สำนักงบประมาณ. งบประมาณโดยสังเขป (ฉบับปีงบประมาณล่าสุด). สำนักงบประมาณ.",
+				"title": "งบประมาณโดยสังเขป",
+				"authors": "สำนักงบประมาณ",
+				"year": null,
+				"type": "report",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "บทวิเคราะห์งบประมาณรายจ่ายประจำปีของกระทรวง 1 แห่ง",
+			"type": "paper",
+			"description": "วิเคราะห์งบประมาณรายจ่ายประจำปีของกระทรวง 1 แห่ง ด้วยกรอบแนวคิดที่เรียน และเสนอข้อปรับปรุงการจัดสรร",
+			"deliverable": "บทวิเคราะห์ 8–10 หน้า และนำเสนอ 7 นาที",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": 15,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 15
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งบทวิเคราะห์งบประมาณรายจ่ายประจำปีของกระทรวง 1 แห่ง",
+			"week": 15,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

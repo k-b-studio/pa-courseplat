@@ -1,0 +1,504 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้วิเคราะห์ทฤษฎีองค์การสาธารณะเชิงวิพากษ์ ตั้งแต่ทฤษฎียุคคลาสสิกและข้อวิพากษ์ ทฤษฎีการตัดสินใจ สถาบันนิยมใหม่ จนถึงเครือข่ายและการบริหารปกครองร่วม โดยต่อยอดจากพื้นฐานใน 2400114 และใช้กรณีการปรับโครงสร้างหน่วยงานภาครัฐไทย",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"organization theory",
+			"bureaucracy",
+			"bounded rationality",
+			"new institutionalism",
+			"organizational culture",
+			"collaborative governance"
+		],
+		"prerequisiteNote": "ควรผ่าน 2400114 ความรู้เบื้องต้นเกี่ยวกับรัฐประศาสนศาสตร์ มาก่อน"
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "วิเคราะห์และเปรียบเทียบทฤษฎีองค์การสาธารณะตั้งแต่ยุคคลาสสิกถึงปัจจุบันเชิงวิพากษ์ได้",
+			"ploCodes": [
+				"PLO1D",
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ประยุกต์ใช้ทฤษฎีองค์การอธิบายปรากฏการณ์ในหน่วยงานภาครัฐไทยได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนบทวิเคราะห์เชิงทฤษฎีที่มีเหตุผลและอ้างอิงถูกต้องได้",
+			"ploCodes": [
+				"PLO3D",
+				"PLO4"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study"
+		],
+		"description": "สัมมนาจากการอ่านเอกสารคลาสสิกทุกสัปดาห์ นิสิตเขียนบันทึกการอ่านสั้นก่อนเข้าชั้น และเขียนบทวิเคราะห์ทฤษฎีกับกรณีหน่วยงานภาครัฐไทย",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ห้ามใช้ AI เขียนบันทึกการอ่าน ใช้ช่วยค้นหาเอกสารได้",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: องค์การสาธารณะต่างจากองค์การเอกชนอย่างไร",
+			"details": "ความเป็นสาธารณะของรัฐ",
+			"concepts": [
+				"public organization",
+				"publicness"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "ทฤษฎีองค์การยุคคลาสสิกและข้อวิพากษ์",
+			"details": "ระบบราชการแบบอุดมคติของ Weber ข้อวิพากษ์การจัดการเชิงวิทยาศาสตร์ของ Taylor และบทความ 'The Proverbs of Administration' ของ Simon",
+			"concepts": [
+				"classical organization theory",
+				"bureaucracy",
+				"scientific management",
+				"proverbs of administration"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1",
+				"r-2",
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "ทฤษฎีมนุษยสัมพันธ์และพฤติกรรมองค์การ",
+			"details": "แรงจูงใจและกลุ่มไม่เป็นทางการ",
+			"concepts": [
+				"human relations",
+				"organizational behavior"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "การตัดสินใจในองค์การ: ความมีเหตุผลแบบจำกัด",
+			"details": "Simon, March และตัวแบบถังขยะ",
+			"concepts": [
+				"bounded rationality",
+				"decision making",
+				"garbage can model"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1",
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "ทฤษฎีระบบและทฤษฎีตามสถานการณ์",
+			"details": "องค์การกับสภาพแวดล้อม",
+			"concepts": [
+				"systems theory",
+				"contingency theory"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "ทฤษฎีสถาบันนิยมใหม่",
+			"details": "ความชอบธรรมและการเลียนแบบเชิงสถาบัน",
+			"concepts": [
+				"new institutionalism",
+				"isomorphism"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "อำนาจและการเมืองในองค์การ",
+			"details": "ที่มาของอำนาจในหน่วยงานราชการ",
+			"concepts": [
+				"power",
+				"organizational politics"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "วัฒนธรรมองค์การภาครัฐ",
+			"details": "วัฒนธรรมราชการไทย",
+			"concepts": [
+				"organizational culture"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การเปลี่ยนแปลงองค์การและการปฏิรูประบบราชการ",
+			"details": "แรงต้านการเปลี่ยนแปลงและการจัดการ",
+			"concepts": [
+				"organizational change",
+				"bureaucratic reform"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "เครือข่ายและการบริหารปกครองร่วม",
+			"details": "การทำงานข้ามหน่วยงานและข้ามภาคส่วน",
+			"concepts": [
+				"networks",
+				"collaborative governance"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การจัดการภาครัฐแนวใหม่และหลังการจัดการภาครัฐแนวใหม่",
+			"details": "ผลต่อโครงสร้างองค์การภาครัฐ",
+			"concepts": [
+				"new public management",
+				"post-NPM"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "องค์การสาธารณะในยุคดิจิทัล",
+			"details": "การบริหารปกครองยุคดิจิทัล",
+			"concepts": [
+				"digital era governance"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "กรณีศึกษา: การปรับโครงสร้างหน่วยงานภาครัฐไทย",
+			"details": "วิเคราะห์ด้วยทฤษฎีที่เรียน",
+			"concepts": [
+				"case study",
+				"restructuring"
+			],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [
+				"r-4"
+			],
+			"activity": "ส่งบทวิเคราะห์ทฤษฎี",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอบทวิเคราะห์ทฤษฎี",
+			"details": "คนละ 7 นาที",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "การนำเสนอ",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@wipawadee"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในการสัมมนา",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "บันทึกการอ่าน",
+				"type": "reflection",
+				"weightPercent": 15,
+				"individual": true,
+				"dueWeek": null,
+				"description": "บันทึกสั้น 6 ครั้ง ครั้งละ 1 หน้า"
+			},
+			{
+				"id": "e-3",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "บทวิเคราะห์ทฤษฎีกับกรณีศึกษา",
+				"type": "paper",
+				"weightPercent": 20,
+				"individual": true,
+				"dueWeek": 14,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-5",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Shafritz, J. M., Ott, J. S., & Jang, Y. S. (2016). Classics of organization theory (8th ed.). Cengage Learning.",
+				"title": "Classics of Organization Theory",
+				"authors": "Jay M. Shafritz, J. Steven Ott, Yong Suk Jang",
+				"year": 2016,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Shafritz, J. M., & Hyde, A. C. (Eds.). Classics of public administration. Cengage Learning.",
+				"title": "Classics of Public Administration",
+				"authors": "Jay M. Shafritz, Albert C. Hyde (eds.)",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Simon, H. A. (1946). The proverbs of administration. Public Administration Review, 6(1), 53–67.",
+				"title": "The Proverbs of Administration",
+				"authors": "Herbert A. Simon",
+				"year": 1946,
+				"type": "article",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-4",
+				"citation": "พิทยา บวรวัฒนา. ทฤษฎีองค์การสาธารณะ. สำนักพิมพ์แห่งจุฬาลงกรณ์มหาวิทยาลัย.",
+				"title": "ทฤษฎีองค์การสาธารณะ",
+				"authors": "พิทยา บวรวัฒนา",
+				"year": null,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "บทวิเคราะห์ทฤษฎีองค์การกับกรณีหน่วยงานภาครัฐไทย",
+			"type": "paper",
+			"description": "เลือกทฤษฎีองค์การ 2 ทฤษฎี และใช้อธิบายการเปลี่ยนแปลงของหน่วยงานภาครัฐไทย 1 แห่ง",
+			"deliverable": "บทความ 8–10 หน้า",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": 14,
+			"evaluationItemId": "e-4",
+			"estimatedHours": 15
+		},
+		{
+			"id": "w-2",
+			"title": "บันทึกการอ่าน",
+			"type": "reading_response",
+			"description": "สรุปและตั้งคำถามจากเอกสารที่มอบหมาย",
+			"deliverable": "บันทึก 1 หน้า ส่งก่อนเข้าชั้น",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": null,
+			"evaluationItemId": "e-2",
+			"estimatedHours": 1.5
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งบทวิเคราะห์ทฤษฎีองค์การกับกรณีหน่วยงานภาครัฐไทย",
+			"week": 14,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

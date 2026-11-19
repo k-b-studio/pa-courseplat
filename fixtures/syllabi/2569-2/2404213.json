@@ -1,0 +1,480 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้แนะนำบทบาททางเศรษฐกิจของรัฐ รายได้และรายจ่ายสาธารณะ หนี้สาธารณะ และกระบวนการงบประมาณของไทยเบื้องต้น โดยฝึกอ่านเอกสารงบประมาณจริงของหน่วยงานภาครัฐ และทำรายงานวิเคราะห์งบประมาณเป็นกลุ่มในช่วงท้ายภาค",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"public finance",
+			"taxation",
+			"public expenditure",
+			"public debt",
+			"budget process",
+			"fiscal decentralization"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายบทบาททางเศรษฐกิจของรัฐและเหตุผลของการคลังสาธารณะได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "วิเคราะห์โครงสร้างรายได้ รายจ่าย และหนี้สาธารณะของไทยได้",
+			"ploCodes": [
+				"PLO1D",
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "อธิบายขั้นตอนของกระบวนการงบประมาณของไทยและอ่านเอกสารงบประมาณเบื้องต้นได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"discussion",
+			"case_study",
+			"group_project"
+		],
+		"description": "บรรยายแนวคิดหลักแล้วฝึกวิเคราะห์ด้วยข้อมูลการคลังจริงของไทย มีแบบฝึกหัดคำนวณสั้นในชั้นเรียน และรายงานกลุ่มวิเคราะห์งบประมาณของหน่วยงานภาครัฐ 1 แห่ง",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ใช้ AI ช่วยค้นข้อมูลได้ แต่ตัวเลขทุกตัวในรายงานต้องอ้างอิงเอกสารทางการ",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: บทบาททางเศรษฐกิจของรัฐ",
+			"details": "หน้าที่ด้านการจัดสรร การกระจาย และการรักษาเสถียรภาพ",
+			"concepts": [
+				"role of government",
+				"public finance"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "ความล้มเหลวของตลาดและสินค้าสาธารณะ",
+			"details": "สินค้าสาธารณะ ผลกระทบภายนอก และข้อมูลไม่สมมาตร",
+			"concepts": [
+				"market failure",
+				"public goods",
+				"externalities"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "รายจ่ายสาธารณะ: ประเภทและการวิเคราะห์",
+			"details": "รายจ่ายประจำ รายจ่ายลงทุน และแนวโน้มรายจ่ายของรัฐบาลไทย",
+			"concepts": [
+				"public expenditure"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "ทฤษฎีภาษีอากรและหลักการจัดเก็บภาษีที่ดี",
+			"details": "ความเป็นธรรม ประสิทธิภาพ และภาระภาษี",
+			"concepts": [
+				"taxation",
+				"tax principles",
+				"tax incidence"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "โครงสร้างภาษีของไทย",
+			"details": "ภาษีเงินได้ ภาษีมูลค่าเพิ่ม และภาษีสรรพสามิต",
+			"concepts": [
+				"Thai tax system",
+				"income tax",
+				"value added tax"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "รายได้ที่มิใช่ภาษีและรัฐวิสาหกิจ",
+			"details": "ค่าธรรมเนียม รายได้จากรัฐวิสาหกิจ และการบริหารทรัพย์สินของรัฐ",
+			"concepts": [
+				"non-tax revenue",
+				"state enterprises"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "หนี้สาธารณะและวินัยการคลัง",
+			"details": "กรอบวินัยการเงินการคลังของรัฐและเพดานหนี้",
+			"concepts": [
+				"public debt",
+				"fiscal discipline"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "กระบวนการงบประมาณของไทยเบื้องต้น (1): วงจรงบประมาณ",
+			"details": "การจัดเตรียม การจัดทำคำของบประมาณ และปฏิทินงบประมาณ",
+			"concepts": [
+				"budget cycle",
+				"budget process",
+				"budget preparation"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "กระบวนการงบประมาณของไทยเบื้องต้น (2): การอนุมัติและการบริหารงบประมาณ",
+			"details": "การพิจารณาของรัฐสภา การจัดสรร และการเบิกจ่าย",
+			"concepts": [
+				"budget approval",
+				"budget execution"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การคลังท้องถิ่นและความสัมพันธ์ทางการคลังระหว่างรัฐบาลกับท้องถิ่น",
+			"details": "รายได้ขององค์กรปกครองส่วนท้องถิ่นและเงินอุดหนุน",
+			"concepts": [
+				"fiscal decentralization",
+				"intergovernmental transfers"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "นโยบายการคลังกับการรักษาเสถียรภาพทางเศรษฐกิจ",
+			"details": "การขาดดุล การเกินดุล และตัวทวีคูณทางการคลัง",
+			"concepts": [
+				"fiscal policy",
+				"economic stabilization"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "การคลังเพื่อสังคม: สวัสดิการและการกระจายรายได้",
+			"details": "เงินโอน สวัสดิการ และความเหลื่อมล้ำ",
+			"concepts": [
+				"redistribution",
+				"social welfare"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "กรณีศึกษา: มาตรการกระตุ้นเศรษฐกิจของรัฐบาล",
+			"details": "วิเคราะห์ต้นทุนทางการคลังและผลที่ได้",
+			"concepts": [
+				"fiscal stimulus",
+				"case study"
+			],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอรายงานวิเคราะห์งบประมาณ",
+			"details": "กลุ่มละ 15 นาที",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "นำเสนอและส่งรายงานกลุ่ม",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@suppawit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "แบบฝึกหัดในชั้นเรียน",
+				"type": "other",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": "แบบฝึกหัดคำนวณและอ่านเอกสารงบประมาณ 5 ครั้ง"
+			},
+			{
+				"id": "e-3",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "รายงานวิเคราะห์งบประมาณ",
+				"type": "paper",
+				"weightPercent": 20,
+				"individual": false,
+				"dueWeek": 15,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-5",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 30,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Rosen, H. S., & Gayer, T. (2014). Public finance (10th ed.). McGraw-Hill Education.",
+				"title": "Public Finance",
+				"authors": "Harvey S. Rosen, Ted Gayer",
+				"year": 2014,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Mikesell, J. L. Fiscal administration: Analysis and applications for the public sector. Cengage Learning.",
+				"title": "Fiscal Administration: Analysis and Applications for the Public Sector",
+				"authors": "John L. Mikesell",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "พระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. 2561.",
+				"title": "พระราชบัญญัติวินัยการเงินการคลังของรัฐ พ.ศ. 2561",
+				"authors": "ประเทศไทย",
+				"year": 2018,
+				"type": "law",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "รายงานวิเคราะห์งบประมาณรายจ่ายของหน่วยงานภาครัฐ",
+			"type": "paper",
+			"description": "เลือกหน่วยงานภาครัฐ 1 แห่ง วิเคราะห์โครงสร้างงบประมาณรายจ่าย 3 ปีย้อนหลัง และอธิบายความเชื่อมโยงกับนโยบายของหน่วยงาน",
+			"deliverable": "รายงานประมาณ 12 หน้า และนำเสนอ 15 นาที",
+			"individual": false,
+			"groupSize": "4–5",
+			"dueWeek": 15,
+			"evaluationItemId": "e-4",
+			"estimatedHours": 15
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งรายงานวิเคราะห์งบประมาณรายจ่ายของหน่วยงานภาครัฐ",
+			"week": 15,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

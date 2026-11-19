@@ -4,8 +4,8 @@
 |---|---|---|
 | P0 Scaffold | **Done** | Migrations on the shared project; AC 1 passes there; dashboard steps done and checked |
 | P1 Auth + roles | **Done** (Musts) | AC 1–7 pass; Google sign-in needs one manual check by Kim (below) |
-| P2 Student pages | next | |
-| P3 Editor | not started | |
+| P2 Student pages | **Done** (Musts + the curriculum-map Should) | AC 1–6, 8, 9 pass; AC 7 needs the P4 upload (mechanism tested now) |
+| P3 Editor | next | |
 | P4 AI import | not started | |
 | P5 Content Caution | not started | |
 | P6 Staff dashboard | not started | |
@@ -43,9 +43,27 @@
 - Google sign-in can't be automated (needs a real Chula Google account). Kim: sign in once at http://localhost:5173 with your PolSci student account, and once in creditGPAX to confirm it still works (spec 03 setup step 2).
 - AC 5 in the UI (`/admin/people`) comes with P6; the trigger and the per-request role are tested now.
 
+## P2 — student pages and seed syllabi (spec 04, spec 08)
+
+**Built:**
+- 18 fictional syllabi authored compactly in `fixtures/syllabi/src/*.ts` (real readings; `year: null` where unsure), expanded by `npm run make:syllabi` into `fixtures/syllabi/<semester>/<code>.json`. 2/2569: 10 published, 1 draft (2404318: weeks 1–12, weights 90), 3 not started; 2/2568: 2404324 and 2404429 by `@thanakrit`; 1/2569: five lighter syllabi. All planted overlaps from spec 08 are in place; year-3 week 12 adds up to 65%.
+- `npm run seed` now saves and publishes each syllabus through `save_syllabus` / `publish_offering` as the coordinator, then sets plausible fixed "edited/published" dates per semester. Second run: "nothing to change".
+- Migration 0005 `offering_listing(semester)`: course code and status of every offering, so the list can grey out unpublished courses and a draft URL shows "ยังไม่เผยแพร่" (applied to the shared project; `public` unchanged).
+- `/courses` (semester switcher, combinable filters, cards with badges, evaluation bar, compare toggle, sticky compare tray in localStorage), `/courses/[code]` (redirect), `/courses/[code]/[semesterId]` (at-a-glance card, the nine sections with a sticky section nav, related courses from the catalog only, past versions), `/courses/[code]/versions/[versionId]` (read-only snapshot), `/compare` (aligned rows, shared topics and readings, time clashes, workload heatmap with table view), `/curriculum` (PLO matrix ● / ◐ with footers; PA requirements by curriculum).
+- Pure domain modules with unit tests: `curriculum.ts` (badges), `workload.ts`, `weeks.ts`, `compare.ts`, `people.ts`.
+
+**Passed:**
+- Unit (104): spec 08 AC 2 (every published seed syllabus passes strict; the 2404318 draft fails only on the total), JSON fixtures up to date, instructors in plans teach that offering, badges (spec 04 AC 1), workload, weeks, compare helpers, `offering_listing` on PGlite.
+- E2E, Chromium + WebKit + iPhone 13 (50 passed, 1 skipped by design): spec 04 AC 1, 2, 3, 4, 5, 6, 9, the compare tray, compare (shared Dye, shared policy-cycle topics, heavy week 12, using 2404429's 2/2568 version until P4), past versions, curriculum map; AC 8: no horizontal overflow at 390 × 844 in WebKit (measured against the visual viewport) on `/courses`, course pages, compare and the curriculum map; no console errors anywhere.
+- Build + `check:secrets`: OK. Snapshot `pre-0005` vs `post-0005`: identical.
+
+**Known gaps:**
+- AC 7 with the 2/2569 upload of 2404429 runs after P4.
+- creditGPAX's old hook `public.hook_before_user_created` had its grants changed by the dashboard when the hook was switched (DECISIONS.md). Harmless; left alone because `public` is off limits.
+
 ## How to resume
 
 1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.
 2. `npm run db:migrate` → "nothing to apply"; `npm run seed` → "nothing to change".
 3. `npm run test:e2e` and `npm run test:db` (both use the shared project).
-4. Next phase: P2 (spec 04 + the syllabi in spec 08).
+4. Next phase: P3 (spec 05 R1–R10, the manual editor).

@@ -1,0 +1,491 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้ฝึกเทคนิคการวิเคราะห์นโยบายสาธารณะอย่างเป็นขั้นตอน ตั้งแต่การนิยามปัญหาตามแนวทาง eightfold path การวิเคราะห์ทางเลือกและต้นทุน-ผลประโยชน์ ไปจนถึงการออกแบบการประเมินผลกระทบ โดยใช้กรณีนโยบายพลังงานและการศึกษาของไทย",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"policy analysis",
+			"eightfold path",
+			"cost-benefit analysis",
+			"stakeholder analysis",
+			"impact evaluation",
+			"policy brief"
+		],
+		"prerequisiteNote": "ควรผ่าน 2404324 นโยบายสาธารณะ มาก่อน"
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "ใช้เทคนิคการวิเคราะห์นโยบายอย่างเป็นขั้นตอนกับปัญหานโยบายจริงได้",
+			"ploCodes": [
+				"PLO2D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "เปรียบเทียบทางเลือกนโยบายด้วยเกณฑ์และหลักฐานที่เหมาะสมได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4D"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เขียนและนำเสนอผลการวิเคราะห์นโยบายต่อผู้ตัดสินใจได้",
+			"ploCodes": [
+				"PLO3D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"case_study",
+			"workshop_seminar",
+			"group_project"
+		],
+		"description": "บรรยายเทคนิคแล้วฝึกใช้ในเวิร์กช็อปทุกสัปดาห์ นิสิตเขียน policy brief รายบุคคล และทำโครงงานวิเคราะห์ทางเลือกนโยบายเป็นกลุ่ม",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชาและบทบาทของนักวิเคราะห์นโยบาย",
+			"details": "นักวิเคราะห์นโยบายในหน่วยงานภาครัฐและหน่วยงานคลังสมอง",
+			"concepts": [
+				"policy analysis",
+				"policy analyst"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "ทบทวนตัวแบบกระบวนการนโยบาย (Stages model) และกระแสหลายสาย (Multiple Streams)",
+			"details": "ทบทวนพื้นฐานจากวิชานโยบายสาธารณะ",
+			"concepts": [
+				"policy cycle",
+				"stages model",
+				"multiple streams"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "การนิยามปัญหานโยบาย (Bardach's eightfold path)",
+			"details": "การนิยามปัญหาและการรวบรวมหลักฐาน",
+			"concepts": [
+				"problem definition",
+				"eightfold path"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "เกณฑ์การตัดสินใจและการวิเคราะห์ทางเลือก",
+			"details": "ประสิทธิภาพ ความเป็นธรรม และความเป็นไปได้ทางการเมือง",
+			"concepts": [
+				"evaluative criteria",
+				"policy alternatives"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-2",
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การวิเคราะห์ต้นทุน-ผลประโยชน์",
+			"details": "มูลค่าปัจจุบันสุทธิและการวิเคราะห์ความอ่อนไหว",
+			"concepts": [
+				"cost-benefit analysis",
+				"net present value"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การวิเคราะห์ความเสี่ยงและความไม่แน่นอน",
+			"details": "การวิเคราะห์ฉากทัศน์",
+			"concepts": [
+				"risk analysis",
+				"scenario analysis"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การวิเคราะห์ผู้มีส่วนได้ส่วนเสีย",
+			"details": "แผนภาพอำนาจและผลประโยชน์",
+			"concepts": [
+				"stakeholder analysis"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การวิเคราะห์การนำนโยบายไปปฏิบัติ",
+			"details": "การคาดการณ์อุปสรรคในการนำไปปฏิบัติ",
+			"concepts": [
+				"implementation analysis"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "การพยากรณ์ผลลัพธ์ของนโยบาย",
+			"details": "เทคนิคการพยากรณ์อย่างง่าย",
+			"concepts": [
+				"forecasting",
+				"policy outcomes"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การออกแบบการประเมินผลกระทบ",
+			"details": "กลุ่มเปรียบเทียบและแบบการประเมิน",
+			"concepts": [
+				"impact evaluation",
+				"evaluation design"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "กรณีศึกษา: นโยบายพลังงานทดแทนของไทย",
+			"details": "วิเคราะห์ทางเลือกด้วยเครื่องมือที่เรียน",
+			"concepts": [
+				"energy policy",
+				"case study"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [],
+			"activity": "ส่ง policy brief",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "กรณีศึกษา: นโยบายการศึกษา",
+			"details": "วิเคราะห์ผู้มีส่วนได้ส่วนเสียและความเป็นไปได้",
+			"concepts": [
+				"education policy",
+				"case study"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "การเขียน policy brief และ options memo",
+			"details": "โครงสร้างและภาษาสำหรับผู้ตัดสินใจ",
+			"concepts": [
+				"policy brief",
+				"options memo"
+			],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอโครงงาน",
+			"details": "กลุ่มละ 15 นาที",
+			"concepts": [],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [],
+			"activity": "นำเสนอและส่งรายงานโครงงาน",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@thanakrit"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 20,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "Policy brief",
+				"type": "policy_brief",
+				"weightPercent": 20,
+				"individual": true,
+				"dueWeek": 12,
+				"description": ""
+			},
+			{
+				"id": "e-4",
+				"title": "โครงงานวิเคราะห์ทางเลือกนโยบาย",
+				"type": "project",
+				"weightPercent": 25,
+				"individual": false,
+				"dueWeek": 15,
+				"description": ""
+			},
+			{
+				"id": "e-5",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Dye, T. R. (2017). Understanding public policy (15th ed.). Pearson.",
+				"title": "Understanding Public Policy",
+				"authors": "Thomas R. Dye",
+				"year": 2017,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": "9780134169972",
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Bardach, E., & Patashnik, E. M. (2020). A practical guide for policy analysis: The eightfold path to more effective problem solving (6th ed.). CQ Press.",
+				"title": "A Practical Guide for Policy Analysis: The Eightfold Path to More Effective Problem Solving",
+				"authors": "Eugene Bardach, Eric M. Patashnik",
+				"year": 2020,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Weimer, D. L., & Vining, A. R. (2017). Policy analysis: Concepts and practice (6th ed.). Routledge.",
+				"title": "Policy Analysis: Concepts and Practice",
+				"authors": "David L. Weimer, Aidan R. Vining",
+				"year": 2017,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "Policy brief วิเคราะห์นโยบายสาธารณะไทย 1 ประเด็น",
+			"type": "policy_brief",
+			"description": "วิเคราะห์ปัญหานโยบาย 1 ประเด็นและเสนอทางเลือก",
+			"deliverable": "เอกสาร 2 หน้า A4",
+			"individual": true,
+			"groupSize": null,
+			"dueWeek": 12,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 12
+		},
+		{
+			"id": "w-2",
+			"title": "โครงงานวิเคราะห์ทางเลือกนโยบาย",
+			"type": "project",
+			"description": "วิเคราะห์ทางเลือกนโยบายอย่างน้อย 3 ทางด้วยเกณฑ์ที่กำหนด",
+			"deliverable": "รายงานประมาณ 15 หน้า และนำเสนอ 15 นาที",
+			"individual": false,
+			"groupSize": "4–5",
+			"dueWeek": 15,
+			"evaluationItemId": "e-4",
+			"estimatedHours": 20
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งPolicy brief วิเคราะห์นโยบายสาธารณะไทย 1 ประเด็น",
+			"week": 12,
+			"date": null
+		},
+		{
+			"label": "ส่งโครงงานวิเคราะห์ทางเลือกนโยบาย",
+			"week": 15,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}

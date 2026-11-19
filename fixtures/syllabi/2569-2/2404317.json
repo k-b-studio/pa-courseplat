@@ -1,0 +1,454 @@
+{
+	"schemaVersion": 1,
+	"overview": {
+		"focus": "ภาคการศึกษานี้เน้นกระบวนการวางแผนทรัพยากรมนุษย์ในองค์การภาครัฐ ตั้งแต่การวิเคราะห์อัตรากำลัง การพยากรณ์ความต้องการกำลังคน จนถึงการวางแผนสืบทอดตำแหน่ง นิสิตจะลงพื้นที่สัมภาษณ์หน่วยงานบริหารทรัพยากรบุคคลของส่วนราชการจริงเป็นกลุ่ม",
+		"language": "th",
+		"deliveryMode": "onsite",
+		"workloadHoursPerWeek": 6,
+		"keywords": [
+			"human resource planning",
+			"workforce planning",
+			"manpower analysis",
+			"forecasting",
+			"succession planning",
+			"competency"
+		],
+		"prerequisiteNote": ""
+	},
+	"objectives": [
+		{
+			"id": "clo-1",
+			"text": "อธิบายแนวคิดและกระบวนการวางแผนทรัพยากรมนุษย์ในองค์การภาครัฐได้",
+			"ploCodes": [
+				"PLO1D"
+			]
+		},
+		{
+			"id": "clo-2",
+			"text": "ใช้เทคนิคพื้นฐานในการวิเคราะห์อัตรากำลังและพยากรณ์ความต้องการกำลังคนได้",
+			"ploCodes": [
+				"PLO2D",
+				"PLO4"
+			]
+		},
+		{
+			"id": "clo-3",
+			"text": "เก็บข้อมูลภาคสนามและเขียนรายงานวิเคราะห์การวางแผนกำลังคนของหน่วยงานจริงได้",
+			"ploCodes": [
+				"PLO3D",
+				"PLO4D"
+			]
+		}
+	],
+	"approach": {
+		"methods": [
+			"lecture",
+			"case_study",
+			"field_visit",
+			"group_project"
+		],
+		"description": "บรรยายสลับกับแบบฝึกหัดวิเคราะห์ข้อมูลกำลังคน และทำงานภาคสนามเป็นกลุ่ม โดยแต่ละกลุ่มสัมภาษณ์ผู้รับผิดชอบงานบริหารทรัพยากรบุคคลของส่วนราชการ 1 แห่ง",
+		"attendancePolicy": "นิสิตต้องมีเวลาเรียนไม่น้อยกว่าร้อยละ 80 ของเวลาเรียนทั้งหมดจึงจะมีสิทธิ์สอบปลายภาค",
+		"aiPolicy": "allowed_with_disclosure",
+		"aiPolicyNote": "ห้ามใช้ AI ถอดความหรือแต่งข้อมูลการสัมภาษณ์ ใช้ช่วยเรียบเรียงภาษาได้โดยระบุไว้",
+		"lateWorkPolicy": "ส่งงานช้าหักร้อยละ 10 ของคะแนนงานนั้นต่อวัน ไม่รับงานที่ช้าเกิน 3 วัน เว้นแต่มีเหตุจำเป็นและแจ้งผู้สอนล่วงหน้า"
+	},
+	"weeklyPlan": [
+		{
+			"week": 1,
+			"topic": "แนะนำรายวิชา: ความสำคัญของการวางแผนทรัพยากรมนุษย์ในองค์การภาครัฐ",
+			"details": "การวางแผนทรัพยากรมนุษย์เชิงกลยุทธ์",
+			"concepts": [
+				"human resource planning",
+				"strategic HRM"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 2,
+			"topic": "กระบวนการวางแผนทรัพยากรมนุษย์และการวิเคราะห์อัตรากำลัง",
+			"details": "ขั้นตอนการวางแผน การวิเคราะห์ภาระงาน และการกำหนดอัตรากำลังที่เหมาะสม",
+			"concepts": [
+				"human resource planning process",
+				"workforce planning",
+				"manpower analysis"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 3,
+			"topic": "การเชื่อมแผนทรัพยากรมนุษย์กับแผนยุทธศาสตร์องค์การ",
+			"details": "การแปลงยุทธศาสตร์เป็นความต้องการด้านกำลังคน",
+			"concepts": [
+				"strategic alignment"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 4,
+			"topic": "การพยากรณ์ความต้องการกำลังคน",
+			"details": "เทคนิคเชิงปริมาณและเชิงคุณภาพในการพยากรณ์",
+			"concepts": [
+				"demand forecasting"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 5,
+			"topic": "การวิเคราะห์อุปทานกำลังคนและข้อมูลบุคลากร",
+			"details": "อัตราการลาออก การเกษียณ และระบบสารสนเทศบุคลากร",
+			"concepts": [
+				"supply analysis",
+				"HR information system"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 6,
+			"topic": "การวิเคราะห์ช่องว่างสมรรถนะ",
+			"details": "ตัวแบบสมรรถนะและการวิเคราะห์ช่องว่าง",
+			"concepts": [
+				"competency model",
+				"competency gap analysis"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 7,
+			"topic": "การวางแผนสืบทอดตำแหน่ง",
+			"details": "การเตรียมผู้บริหารรุ่นต่อไปในส่วนราชการ",
+			"concepts": [
+				"succession planning"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-2"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 8,
+			"topic": "สอบกลางภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [],
+			"readingIds": [],
+			"activity": "",
+			"noClass": true
+		},
+		{
+			"week": 9,
+			"topic": "การวางแผนการสรรหาและการรักษาบุคลากร",
+			"details": "กลยุทธ์ดึงดูดและรักษาบุคลากรที่มีความสามารถ",
+			"concepts": [
+				"recruitment planning",
+				"retention"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-3"
+			],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 10,
+			"topic": "นโยบายการบริหารกำลังคนภาครัฐของไทย",
+			"details": "การควบคุมขนาดกำลังคนภาครัฐและการเกลี่ยอัตรากำลัง",
+			"concepts": [
+				"public workforce policy"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 11,
+			"topic": "การวางแผนรับมือสังคมสูงวัยและเทคโนโลยี",
+			"details": "ผลของการเกษียณจำนวนมากและระบบอัตโนมัติต่อกำลังคนภาครัฐ",
+			"concepts": [
+				"ageing workforce",
+				"automation"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 12,
+			"topic": "การติดตามและประเมินผลแผนทรัพยากรมนุษย์",
+			"details": "ตัวชี้วัดด้านทรัพยากรมนุษย์",
+			"concepts": [
+				"HR metrics"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [
+				"r-1"
+			],
+			"activity": "ส่งรายงานภาคสนาม",
+			"noClass": false
+		},
+		{
+			"week": 13,
+			"topic": "กรณีศึกษา: การวางแผนกำลังคนของหน่วยงานภาครัฐ",
+			"details": "อภิปรายบทเรียนจากรายงานภาคสนาม",
+			"concepts": [
+				"case study"
+			],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		},
+		{
+			"week": 14,
+			"topic": "นำเสนอรายงานภาคสนาม (1)",
+			"details": "กลุ่มที่ 1–5",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "การนำเสนอกลุ่ม",
+			"noClass": false
+		},
+		{
+			"week": 15,
+			"topic": "นำเสนอรายงานภาคสนาม (2)",
+			"details": "กลุ่มที่ 6–10",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "การนำเสนอกลุ่ม",
+			"noClass": false
+		},
+		{
+			"week": 16,
+			"topic": "สรุปรายวิชาและทบทวนก่อนสอบปลายภาค",
+			"details": "",
+			"concepts": [],
+			"instructorIds": [
+				"@kittipong"
+			],
+			"readingIds": [],
+			"activity": "",
+			"noClass": false
+		}
+	],
+	"evaluation": {
+		"gradingScheme": "letter",
+		"referencing": "criterion",
+		"items": [
+			{
+				"id": "e-1",
+				"title": "การมีส่วนร่วมในชั้นเรียน",
+				"type": "participation",
+				"weightPercent": 10,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			},
+			{
+				"id": "e-2",
+				"title": "สอบกลางภาค",
+				"type": "midterm_exam",
+				"weightPercent": 25,
+				"individual": true,
+				"dueWeek": 8,
+				"description": ""
+			},
+			{
+				"id": "e-3",
+				"title": "รายงานภาคสนาม",
+				"type": "paper",
+				"weightPercent": 30,
+				"individual": false,
+				"dueWeek": 12,
+				"description": "ดูรายละเอียดในงานที่มอบหมาย"
+			},
+			{
+				"id": "e-4",
+				"title": "สอบปลายภาค",
+				"type": "final_exam",
+				"weightPercent": 35,
+				"individual": true,
+				"dueWeek": null,
+				"description": ""
+			}
+		],
+		"cutoffs": [
+			{
+				"grade": "A",
+				"minPercent": 80
+			},
+			{
+				"grade": "B+",
+				"minPercent": 75
+			},
+			{
+				"grade": "B",
+				"minPercent": 70
+			},
+			{
+				"grade": "C+",
+				"minPercent": 65
+			},
+			{
+				"grade": "C",
+				"minPercent": 60
+			},
+			{
+				"grade": "D+",
+				"minPercent": 55
+			},
+			{
+				"grade": "D",
+				"minPercent": 50
+			},
+			{
+				"grade": "F",
+				"minPercent": 0
+			}
+		]
+	},
+	"resources": {
+		"readings": [
+			{
+				"id": "r-1",
+				"citation": "Armstrong, M., & Taylor, S. (2020). Armstrong's handbook of human resource management practice (15th ed.). Kogan Page.",
+				"title": "Armstrong's Handbook of Human Resource Management Practice",
+				"authors": "Michael Armstrong, Stephen Taylor",
+				"year": 2020,
+				"type": "book",
+				"required": true,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-2",
+				"citation": "Rothwell, W. J. (2015). Effective succession planning: Ensuring leadership continuity and building talent from within (5th ed.). AMACOM.",
+				"title": "Effective Succession Planning",
+				"authors": "William J. Rothwell",
+				"year": 2015,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			},
+			{
+				"id": "r-3",
+				"citation": "Pynes, J. E. Human resources management for public and nonprofit organizations: A strategic approach. Jossey-Bass.",
+				"title": "Human Resources Management for Public and Nonprofit Organizations",
+				"authors": "Joan E. Pynes",
+				"year": null,
+				"type": "book",
+				"required": false,
+				"url": null,
+				"isbn": null,
+				"doi": null
+			}
+		],
+		"materials": [
+			"สไลด์ประกอบการบรรยายรายสัปดาห์"
+		],
+		"platforms": [
+			{
+				"name": "MyCourseVille",
+				"url": null,
+				"note": "ประกาศ เอกสาร และส่งงานทั้งหมด"
+			}
+		]
+	},
+	"work": [
+		{
+			"id": "w-1",
+			"title": "รายงานภาคสนาม: สัมภาษณ์หน่วยงานบริหารทรัพยากรบุคคลของส่วนราชการ",
+			"type": "fieldwork_report",
+			"description": "สัมภาษณ์ผู้รับผิดชอบงานบริหารทรัพยากรบุคคลของส่วนราชการ 1 แห่ง เกี่ยวกับกระบวนการวางแผนกำลังคนและการวิเคราะห์อัตรากำลัง แล้ววิเคราะห์เทียบกับแนวคิดที่เรียน",
+			"deliverable": "รายงานประมาณ 15 หน้า พร้อมบันทึกการสัมภาษณ์",
+			"individual": false,
+			"groupSize": "3–4",
+			"dueWeek": 12,
+			"evaluationItemId": "e-3",
+			"estimatedHours": 20
+		}
+	],
+	"keyDates": [
+		{
+			"label": "สอบกลางภาค",
+			"week": 8,
+			"date": null
+		},
+		{
+			"label": "ส่งรายงานภาคสนาม",
+			"week": 12,
+			"date": null
+		},
+		{
+			"label": "สอบปลายภาค",
+			"week": null,
+			"date": null
+		}
+	]
+}
