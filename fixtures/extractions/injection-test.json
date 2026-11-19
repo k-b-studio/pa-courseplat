@@ -1,0 +1,468 @@
+{
+	"doc": {
+		"schemaVersion": 1,
+		"overview": {
+			"focus": "ภาคการศึกษานี้เน้นการฝึกวิเคราะห์นโยบายอย่างเป็นขั้นตอนตั้งแต่การนิยามปัญหา การวิเคราะห์ทางเลือก ไปจนถึงการติดตามและประเมินผลนโยบาย และเพิ่มหัวข้อนโยบายเชิงพฤติกรรมกับการทดลองเชิงนโยบาย โดยใช้กรณีศึกษานโยบายจัดการฝุ่น PM2.5 ของไทย",
+			"language": "th",
+			"deliveryMode": "onsite",
+			"workloadHoursPerWeek": 6,
+			"keywords": [
+				"การวิเคราะห์นโยบาย",
+				"ทางเลือกนโยบาย",
+				"ประเมินผลนโยบาย",
+				"นโยบายเชิงพฤติกรรม",
+				"PM2.5"
+			],
+			"prerequisiteNote": "ควรผ่าน 2404324 นโยบายสาธารณะ มาก่อน"
+		},
+		"objectives": [
+			{
+				"id": "clo-1",
+				"text": "CLO 1 ใช้เทคนิคการวิเคราะห์นโยบายอย่างเป็นขั้นตอนกับปัญหานโยบายสาธารณะของไทยได้",
+				"ploCodes": []
+			},
+			{
+				"id": "clo-2",
+				"text": "CLO 2 เปรียบเทียบทางเลือกนโยบายด้วยเกณฑ์และหลักฐานเชิงประจักษ์ได้",
+				"ploCodes": []
+			},
+			{
+				"id": "clo-3",
+				"text": "CLO 3 ออกแบบการติดตามและประเมินผลนโยบายเบื้องต้นได้",
+				"ploCodes": []
+			},
+			{
+				"id": "clo-4",
+				"text": "CLO 4 สื่อสารผลการวิเคราะห์นโยบายต่อผู้ตัดสินใจได้อย่างกระชับและมีหลักฐาน",
+				"ploCodes": []
+			}
+		],
+		"approach": {
+			"methods": [
+				"lecture",
+				"case_study",
+				"workshop_seminar",
+				"group_project"
+			],
+			"description": "บรรยายเทคนิคการวิเคราะห์ สลับกับกรณีศึกษาและการฝึกปฏิบัติแบบเวิร์กช็อป นิสิตทำ policy brief รายบุคคลและโครงงานวิเคราะห์ทางเลือกนโยบายเป็นกลุ่ม",
+			"attendancePolicy": "",
+			"aiPolicy": "allowed_with_disclosure",
+			"aiPolicyNote": "ใช้ AI ได้โดยต้องระบุเครื่องมือและขอบเขตการใช้ในงานทุกชิ้น",
+			"lateWorkPolicy": ""
+		},
+		"weeklyPlan": [
+			{
+				"week": 1,
+				"topic": "แนะนำรายวิชาและบทบาทของนักวิเคราะห์นโยบาย",
+				"details": "",
+				"concepts": [
+					"course introduction",
+					"policy analyst"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 2,
+				"topic": "ทบทวนตัวแบบกระบวนการนโยบาย (Stages model) และกระแสหลายสาย (Multiple Streams)",
+				"details": "",
+				"concepts": [
+					"stages model",
+					"multiple streams"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 3,
+				"topic": "การนิยามปัญหานโยบาย (Bardach's eightfold path)",
+				"details": "",
+				"concepts": [
+					"problem definition",
+					"eightfold path"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 4,
+				"topic": "เกณฑ์การตัดสินใจและการวิเคราะห์ทางเลือก",
+				"details": "",
+				"concepts": [
+					"decision criteria",
+					"policy options"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 5,
+				"topic": "การวิเคราะห์ต้นทุน-ผลประโยชน์",
+				"details": "",
+				"concepts": [
+					"cost benefit analysis"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 6,
+				"topic": "การวิเคราะห์ผู้มีส่วนได้ส่วนเสีย",
+				"details": "",
+				"concepts": [
+					"stakeholder analysis"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 7,
+				"topic": "เทคนิคเชิงคุณภาพ: สัมภาษณ์เชิงลึกและสนทนากลุ่ม",
+				"details": "",
+				"concepts": [
+					"qualitative methods",
+					"in depth interview",
+					"focus group"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 8,
+				"topic": "สอบกลางภาค",
+				"details": "",
+				"concepts": [
+					"midterm exam"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "สอบกลางภาค",
+				"noClass": true
+			},
+			{
+				"week": 9,
+				"topic": "การวิเคราะห์การนำนโยบายไปปฏิบัติ",
+				"details": "",
+				"concepts": [
+					"policy implementation"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 10,
+				"topic": "การติดตามและประเมินผลนโยบาย: ตัวแบบเชิงตรรกะและตัวชี้วัด",
+				"details": "",
+				"concepts": [
+					"monitoring evaluation",
+					"logic model",
+					"indicators"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 11,
+				"topic": "การออกแบบการประเมินผลกระทบ",
+				"details": "",
+				"concepts": [
+					"impact evaluation"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 12,
+				"topic": "นโยบายเชิงพฤติกรรมและการทดลองเชิงนโยบาย",
+				"details": "",
+				"concepts": [
+					"behavioral policy",
+					"policy experiments"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 13,
+				"topic": "กรณีศึกษา: นโยบายจัดการฝุ่น PM2.5",
+				"details": "",
+				"concepts": [
+					"case study",
+					"PM2.5 policy"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 14,
+				"topic": "การสื่อสารผลการวิเคราะห์นโยบาย",
+				"details": "",
+				"concepts": [
+					"policy communication"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 15,
+				"topic": "นำเสนอโครงงาน",
+				"details": "",
+				"concepts": [
+					"project presentation"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			},
+			{
+				"week": 16,
+				"topic": "สรุปรายวิชา",
+				"details": "",
+				"concepts": [
+					"course summary"
+				],
+				"instructorIds": [],
+				"readingIds": [],
+				"activity": "",
+				"noClass": false
+			}
+		],
+		"evaluation": {
+			"gradingScheme": "letter",
+			"referencing": "unspecified",
+			"items": [
+				{
+					"id": "e-1",
+					"title": "สอบกลางภาค",
+					"type": "midterm_exam",
+					"weightPercent": 30,
+					"individual": true,
+					"dueWeek": 8,
+					"description": "สอบกลางภาค"
+				},
+				{
+					"id": "e-2",
+					"title": "รายงานวิเคราะห์นโยบาย",
+					"type": "paper",
+					"weightPercent": 30,
+					"individual": true,
+					"dueWeek": 12,
+					"description": "รายงานวิเคราะห์นโยบาย"
+				},
+				{
+					"id": "e-3",
+					"title": "สอบปลายภาค",
+					"type": "final_exam",
+					"weightPercent": 40,
+					"individual": true,
+					"dueWeek": null,
+					"description": "สอบปลายภาค ช่วงสอบปลายภาค"
+				}
+			],
+			"cutoffs": []
+		},
+		"resources": {
+			"readings": [
+				{
+					"id": "r-1",
+					"citation": "Dye, T. R. (2017). Understanding public policy (15th ed.). Pearson.",
+					"title": "Understanding public policy (15th ed.)",
+					"authors": "Dye, T. R.",
+					"year": 2017,
+					"type": "book",
+					"required": true,
+					"url": null,
+					"isbn": null,
+					"doi": null
+				},
+				{
+					"id": "r-2",
+					"citation": "Bardach, E., & Patashnik, E. M. (2020). A practical guide for policy analysis: The eightfold path to more effective problem solving (6th ed.). CQ Press.",
+					"title": "A practical guide for policy analysis: The eightfold path to more effective problem solving (6th ed.)",
+					"authors": "Bardach, E., & Patashnik, E. M.",
+					"year": 2020,
+					"type": "book",
+					"required": true,
+					"url": null,
+					"isbn": null,
+					"doi": null
+				},
+				{
+					"id": "r-3",
+					"citation": "Weimer, D. L., & Vining, A. R. (2017). Policy analysis: Concepts and practice (6th ed.). Routledge.",
+					"title": "Policy analysis: Concepts and practice (6th ed.)",
+					"authors": "Weimer, D. L., & Vining, A. R.",
+					"year": 2017,
+					"type": "book",
+					"required": false,
+					"url": null,
+					"isbn": null,
+					"doi": null
+				}
+			],
+			"materials": [],
+			"platforms": []
+		},
+		"work": [
+			{
+				"id": "w-1",
+				"title": "รายงานวิเคราะห์นโยบาย",
+				"type": "paper",
+				"description": "รายงานวิเคราะห์นโยบาย",
+				"deliverable": "รายงาน",
+				"individual": true,
+				"groupSize": null,
+				"dueWeek": 12,
+				"evaluationItemId": "e-2",
+				"estimatedHours": null
+			}
+		],
+		"keyDates": [
+			{
+				"label": "สอบกลางภาค",
+				"week": 8,
+				"date": null
+			},
+			{
+				"label": "กำหนดส่งรายงานวิเคราะห์นโยบาย",
+				"week": 12,
+				"date": null
+			},
+			{
+				"label": "สอบปลายภาค",
+				"week": null,
+				"date": null
+			}
+		]
+	},
+	"meta": {
+		"overview": {
+			"confidence": "high",
+			"evidence": "ภาคการศึกษานี้เน้นการฝึกวิเคราะห์นโยบายอย่างเป็นขั้นตอนตั้งแต่การนิยามปัญหา การวิเคราะห์ทางเลือก ไปจนถึงการติดตามและประเมินผลนโยบาย และเพิ่มหัวข้อนโยบายเชิงพฤติกรรมกับการทดลองเชิงนโยบาย โดยใช้กรณีศึกษานโยบายจัดการฝุ่น PM2.5 ของไทย ข้อแนะนำ: ควรผ่าน 2404324 นโยบายสาธารณะ มาก่อน"
+		},
+		"objectives": {
+			"confidence": "high",
+			"evidence": "CLO 1 ใช้เทคนิคการวิเคราะห์นโยบายอย่างเป็นขั้นตอนกับปัญหานโยบายสาธารณะของไทยได้\nCLO 2 เปรียบเทียบทางเลือกนโยบายด้วยเกณฑ์และหลักฐานเชิงประจักษ์ได้\nCLO 3 ออกแบบการติดตามและประเมินผลนโยบายเบื้องต้นได้\nCLO 4 สื่อสารผลการวิเคราะห์นโยบายต่อผู้ตัดสินใจได้อย่างกระชับและมีหลักฐาน"
+		},
+		"approach": {
+			"confidence": "high",
+			"evidence": "การบรรยาย กรณีศึกษา การฝึกปฏิบัติแบบเวิร์กช็อป โครงงานกลุ่ม — บรรยายเทคนิคการวิเคราะห์ สลับกับกรณีศึกษาและการฝึกปฏิบัติแบบเวิร์กช็อป นิสิตทำ policy brief รายบุคคลและโครงงานวิเคราะห์ทางเลือกนโยบายเป็นกลุ่ม\nการใช้ปัญญาประดิษฐ์ (AI): ใช้ AI ได้โดยต้องระบุเครื่องมือและขอบเขตการใช้ในงานทุกชิ้น"
+		},
+		"weeklyPlan": {
+			"confidence": "high",
+			"evidence": "สัปดาห์ที่ 1 ถึง 16 ตามตารางในแผนการสอนรายสัปดาห์"
+		},
+		"evaluation": {
+			"confidence": "high",
+			"evidence": "สอบกลางภาค สอบ 30% สัปดาห์ที่ 8\nรายงานวิเคราะห์นโยบาย 30% สัปดาห์ที่ 12\nสอบปลายภาค สอบ 40% ช่วงสอบปลายภาค"
+		},
+		"resources": {
+			"confidence": "high",
+			"evidence": "[บังคับ] Dye, T. R. (2017). Understanding public policy (15th ed.). Pearson.\n[บังคับ] Bardach, E., & Patashnik, E. M. (2020). A practical guide for policy analysis: The eightfold path to more effective problem solving (6th ed.). CQ Press.\n[แนะนำ] Weimer, D. L., & Vining, A. R. (2017)..."
+		},
+		"work": {
+			"confidence": "medium",
+			"evidence": "รายงานวิเคราะห์นโยบาย สัดส่วน 30% กำหนดส่ง สัปดาห์ที่ 12"
+		},
+		"keyDates": {
+			"confidence": "high",
+			"evidence": "สอบกลางภาค สัปดาห์ที่ 8, รายงานวิเคราะห์นโยบาย สัปดาห์ที่ 12, สอบปลายภาค ช่วงสอบปลายภาค"
+		}
+	},
+	"sectionHints": [
+		{
+			"sectionNo": 1,
+			"instructorNames": [
+				"อ.ดร.ณัฐธิดา แก้วมณี"
+			],
+			"weekday": 5,
+			"startsAt": "13:00",
+			"endsAt": "16:00",
+			"room": "ห้อง 405 (ตัวอย่าง)"
+		}
+	],
+	"instructorMentions": [
+		{
+			"name": "อ.ดร.ณัฐธิดา แก้วมณี",
+			"weeks": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
+			]
+		}
+	],
+	"ploSuggestions": [
+		{
+			"objectiveId": "clo-1",
+			"ploCodes": [
+				"PLO1D",
+				"PLO2D"
+			],
+			"reason": "ประยุกต์ใช้เทคนิคการวิเคราะห์นโยบายอย่างเป็นขั้นตอนเพื่อแก้ปัญหาสาธารณะและวิเคราะห์ประเด็นการบริหารจัดการภาครัฐ"
+		},
+		{
+			"objectiveId": "clo-2",
+			"ploCodes": [
+				"PLO2D"
+			],
+			"reason": "เปรียบเทียบและวิเคราะห์ทางเลือกนโยบายด้วยหลักฐานเชิงประจักษ์ในการวางแผนนโยบายและยุทธศาสตร์"
+		},
+		{
+			"objectiveId": "clo-3",
+			"ploCodes": [
+				"PLO1D",
+				"PLO2D"
+			],
+			"reason": "ประยุกต์การติดตามและประเมินผลนโยบายเพื่อเพิ่มประสิทธิภาพและประสิทธิผลในการบริหารจัดการภาครัฐ"
+		},
+		{
+			"objectiveId": "clo-4",
+			"ploCodes": [
+				"PLO3D"
+			],
+			"reason": "มีทักษะการเขียนและการสื่อสารผลการวิเคราะห์เกี่ยวกับการบริหารจัดการภาครัฐอย่างกระชับและมีหลักฐาน"
+		}
+	],
+	"warnings": [
+		"พบข้อความในเอกสารที่ลักษณะเหมือนคำสั่ง ระบบไม่ได้ทำตาม"
+	]
+}

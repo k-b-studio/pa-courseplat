@@ -21,7 +21,7 @@ export function aiConfigFrom(env: Env): AiConfig {
 		maxCallsPerHour: Number(env.AI_MAX_CALLS_PER_HOUR || 6),
 		gemini: {
 			apiKey: env.GEMINI_API_KEY || undefined,
-			model: env.AI_MODEL || 'gemini-flash-latest',
+			model: env.AI_MODEL || 'gemini-3.6-flash', // the alias gemini-flash-latest answers 404 (recorded 2026-11-19)
 			fallbackModel: env.AI_FALLBACK_MODEL || 'gemini-3.5-flash-lite'
 		},
 		thaillm: {

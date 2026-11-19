@@ -15,7 +15,7 @@
 	let { data } = $props();
 
 	// the editor works on its own copy; adopt() takes the server's copy after clone/blank actions
-	const initial = untrack(() => ({ doc: data.doc, revision: data.offering.revision }));
+	const initial = untrack(() => ({ doc: data.doc, revision: data.offering.revision, flags: data.flags }));
 	let doc = $state<SyllabusDoc | null>(initial.doc ? structuredClone(initial.doc) : null);
 	let revision = $state(initial.revision);
 	let lastSaved = $state(initial.doc ? JSON.stringify(initial.doc) : '');
@@ -23,6 +23,8 @@
 	let savedAt = $state<string | null>(null);
 	let message = $state<string | null>(null);
 	let conflict = $state<{ serverRevision: number; serverDoc: SyllabusDoc } | null>(null);
+	let aiPlo = $state<string[]>([...initial.flags.aiPlo]);
+	let aiWeeks = $state<number[]>([...initial.flags.aiWeeks]);
 	let preview = $state(false);
 	let busy = $state(false);
 	let tab = $state<'notes' | 'history' | 'cautions'>('notes');
@@ -40,6 +42,8 @@
 		doc = data.doc ? structuredClone(data.doc) : null;
 		revision = data.offering.revision;
 		lastSaved = data.doc ? JSON.stringify(data.doc) : '';
+		aiPlo = [...data.flags.aiPlo];
+		aiWeeks = [...data.flags.aiWeeks];
 	}
 
 	async function post(action: string, fields: Record<string, string>) {
@@ -221,7 +225,7 @@
 				{#if preview}
 					<SyllabusView ctx={{ doc, course: data.course, semester: data.semester, sections: data.sections, instructors: data.instructors, plos: data.plos }} />
 				{:else}
-					<SyllabusForm bind:doc {ctx} issues={issueCounts}>
+					<SyllabusForm bind:doc {ctx} issues={issueCounts} bind:aiPlo bind:aiWeeks>
 						{#snippet sectionsSlot()}
 							{#each data.sections as s (s.id)}<SectionDetails section={s} editable={data.mySectionIds.includes(s.id) || data.profile.role === 'staff'} />{/each}
 						{/snippet}

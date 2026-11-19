@@ -23,7 +23,7 @@ export default defineConfig({
 	use: { baseURL: DEMO_URL, locale: 'th-TH', timezoneId: 'Asia/Bangkok', trace: 'retain-on-failure' },
 	webServer: [
 		{ command: 'npx vite preview --port 4173 --strictPort', url: DEMO_URL, reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'true' } },
-		{ command: 'npx vite preview --port 4174 --strictPort', url: NO_DEMO_URL, reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'false' } }
+		{ command: 'npx vite preview --port 4174 --strictPort', url: NO_DEMO_URL, reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'false', AI_TIER: 'paid' } }
 	],
 	projects: [
 		{ name: 'chromium', use: { ...devices['Desktop Chrome'] } },

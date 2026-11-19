@@ -1,5 +1,6 @@
 /** Shared e2e helpers: fail on console errors (spec 08), demo sign-in, and read-only DB lookups. */
 import { test as base, expect, type Page } from '@playwright/test';
+import { createClient } from '@supabase/supabase-js';
 import postgres from 'postgres';
 
 type Fixtures = {
@@ -53,5 +54,15 @@ export async function resetNotStarted(code = '2404429', semester = '2569-2') {
 		await tx`delete from courseplat.syllabus_items where offering_id = ${o.id}`;
 		await tx`delete from courseplat.extractions where offering_id = ${o.id}`;
 		await tx`update courseplat.offerings set syllabus = null, revision = 0, status = 'not_started', cloned_from = null, updated_by = null, updated_at = null, published_at = null, published_revision = null where id = ${o.id}`;
+		await removeUploads(o.id);
 	});
+}
+
+/** Secret-key client for test cleanup (storage objects can only be removed through the Storage API). */
+export const admin = () => createClient(process.env.PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SECRET_KEY!, { auth: { persistSession: false } });
+
+export async function removeUploads(offeringId: string) {
+	const bucket = admin().storage.from('syllabus-uploads');
+	const { data } = await bucket.list(offeringId, { limit: 1000 });
+	if (data?.length) await bucket.remove(data.map((f) => `${offeringId}/${f.name}`));
 }

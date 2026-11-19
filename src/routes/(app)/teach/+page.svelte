@@ -36,6 +36,8 @@
 								{#if o.updated_at}<span class="text-xs text-ink-muted">{t.editor.lastEdited} {thaiDate(o.updated_at)}</span>{/if}
 							</span>
 						</a>
+						{#if data.imports[o.id]?.status === 'running'}<p class="chip mt-2 bg-info-bg text-info">{t.importAi.running}…</p>{/if}
+						{#if data.imports[o.id]?.status === 'succeeded' && o.status === 'not_started'}<a class="mt-2 inline-block text-sm text-accent underline" href="/teach/{o.id}/review/{data.imports[o.id].id}">{t.importAi.reviewLink}</a>{/if}
 					</li>
 				{/each}
 			</ul>

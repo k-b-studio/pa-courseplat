@@ -6,8 +6,8 @@
 | P1 Auth + roles | **Done** (Musts) | AC 1–7 pass; Google sign-in needs one manual check by Kim (below) |
 | P2 Student pages | **Done** (Musts + the curriculum-map Should) | AC 1–6, 8, 9 pass; AC 7 needs the P4 upload (mechanism tested now) |
 | P3 Editor | **Done** (R1–R10, incl. the diff Should) | AC 5, 6, 7, 8, 11 pass; AC 4's manual half passes; caution parts come with P5 |
-| P4 AI import | next | |
-| P5 Content Caution | not started | |
+| P4 AI import | **Done** (R11–R17) | Offline AC 3, 4, 9, 10, 12 (mocked), 13 pass; online fixtures recorded with gemini-3.6-flash; AC 1's 60 s target not yet shown online (see below) |
+| P5 Content Caution | next | |
 | P6 Staff dashboard | not started | |
 | P7 Demo hardening | not started | |
 
@@ -76,9 +76,24 @@
 **Known gaps:**
 - Upload / paste (P4); caution counts on `/teach`, the cautions tab and the caution run after publishing (P5).
 
+## P4 — AI import (spec 05 R11–R17)
+
+**Built:**
+- `npm run make:samples`: the fictional 2404429 upload as .docx, a 2-page image-only "scanned" PDF, .txt, and `injection-test.docx`; `fixtures/samples/index.json` (sha256 → fixture).
+- `/teach/[id]/import`: file and paste tabs, `.doc` refused, 15 MB and 60,000-character limits, photos downscaled to 2,000 px in the browser, upload to `syllabus-uploads/{offering}/{uuid}.{ext}` with the user's session, honest progress steps with elapsed time, free-tier data notice (`AI_TIER=free`), offline banner.
+- `POST /api/extract`: `can_edit_offering` with the user's JWT, magic-byte sniffing, PDF ≤ 30 pages, per-user hourly cap from `ai_calls`, offline fixtures (2.5 s) or Gemini (`responseJsonSchema`, low thinking, 2-minute timeout) with the ThaiLLM four-slice fallback for text inputs, post-processing (ids, instructor matching, defaults, weight and injection warnings), every call logged; the row always ends `succeeded` or `failed`.
+- `/teach/[id]/review/[extractionId]`: the original (PDF via signed URL, sanitised .docx HTML, image, text) beside the pre-filled `SyllabusForm`, confidence chips with evidence, low/not-found sections outlined, PLO suggestions applied and marked "ข้อเสนอจาก AI", section hints with one-click apply, accept → replace all or fill only empty sections → editor (the editor keeps the AI markers). `/teach` shows running imports and a review link.
+
+**Recorded online (`npm run fixtures:record`, 2026-11-19):** `gemini-flash-latest` answers HTTP 404; `gemini-3.6-flash` did all three calls. .docx: 16 weeks, weights 100, Dye, policy brief due week 11, evaluation and weekly plan confidence high, 4 PLO suggestions (AC 1 content); scanned PDF: the same structure, 16 weeks and 5 evaluation items (AC 2); injection sample: 30/30/40 plus the warning (AC 9). **Pin `AI_MODEL=gemini-3.6-flash`** (now in `.env`, `.env.example` and the default).
+
+**Passed:** unit (131): sniffing, .docx → text, offline lookup (all three inputs, whitespace-tolerant), post-processing, AI flags, fill-empty merge, quota message with the Bangkok reset time, AC 12 mocked (PDF → quota + two `rate_limited` calls, .docx → ThaiLLM in four calls with confidence ≤ medium, both failing → error). E2E Chromium + WebKit (14 import tests): AC 3 (three inputs in ~2.5 s, unknown file → 503 message + manual form, row `failed`), AC 4 (accept → draft, AI markers in the editor, touching removes one), AC 9 offline, AC 10 (403 on the API and on the storage folder), AC 13 (notice on free, none on paid).
+
+**Known gaps:**
+- AC 1's "under 60 s": the recorded .docx call took 643 s (the PDF 40 s, the injection test 25 s), and a timing re-check got Gemini HTTP 503 after retries. Extraction now uses low thinking and a 2-minute request timeout; re-check the timing once before the presentation (spec 08 AC 4 rehearsal).
+
 ## How to resume
 
 1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.
 2. `npm run db:migrate` → "nothing to apply"; `npm run seed` → "nothing to change".
 3. `npm run test:e2e` and `npm run test:db` (both use the shared project).
-4. Next phase: P4 (spec 05 R11–R17, AI import with offline fixtures).
+4. Next phase: P5 (spec 06, Content Caution).

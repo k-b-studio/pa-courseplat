@@ -6,6 +6,8 @@ import { error, fail } from '@sveltejs/kit';
 import { z } from 'zod';
 import { t } from '$lib/i18n/th';
 import { emptySyllabus, strictIssues, SyllabusDraft, type SyllabusDoc } from '$lib/schema/syllabus';
+import { aiFlags } from '$lib/server/ai/extract';
+import { ExtractionResult } from '$lib/schema/extraction';
 import { instructorsFor, plosMap } from '$lib/server/course-page';
 import { courses, sectionsFor, semesters } from '$lib/server/student';
 import type { Actions, PageServerLoad } from './$types';
@@ -59,6 +61,11 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		.filter((x): x is NonNullable<typeof x> => !!x)
 		.sort((a, b) => b.semesterId.localeCompare(a.semesterId));
 
+	// spec 05 AC 4: AI suggestions stay marked "ข้อเสนอจาก AI" until the instructor touches them
+	const { data: lastX } = await sb.from('extractions').select('result').eq('offering_id', id).eq('status', 'succeeded').order('created_at', { ascending: false }).limit(1).maybeSingle();
+	const parsedX = lastX?.result ? ExtractionResult.safeParse(lastX.result) : null;
+	const flags = wk.doc && parsedX?.success ? aiFlags(wk.doc, parsedX.data) : { aiPlo: [] as string[], aiWeeks: [] as number[] };
+
 	// spec 07 R12: highlight handover notes added since this person last opened the editor
 	const { data: lastVisit } = await sb.rpc('touch_course_visit', { p_course: code });
 	const semLabel = (sid: string | null) => all.find((s) => s.id === sid)?.label ?? '';
@@ -75,6 +82,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		suggestedPlos: ((coursePlos.data ?? []) as { plo_code: string }[]).map((r) => r.plo_code),
 		notes: ((notesRes.data ?? []) as any[]).map((n) => ({ id: n.id as string, body: n.body as string, created_at: n.created_at as string, semester: semLabel(n.semester_id), author: n.author, isNew: !!lastVisit && n.created_at > (lastVisit as string) })),
 		history,
+		flags,
 		cautions: [] as { id: string; severity: string; label: string }[] // spec 06 (P5)
 	};
 };

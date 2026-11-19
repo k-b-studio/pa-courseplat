@@ -19,6 +19,7 @@ export type GeminiRequest = {
 		responseJsonSchema: unknown;
 		maxOutputTokens: number;
 		temperature: number;
+		thinkingConfig?: { thinkingLevel: 'MINIMAL' | 'LOW' | 'MEDIUM' | 'HIGH' };
 	};
 };
 
@@ -36,7 +37,8 @@ export type GeminiDeps = {
 };
 
 export function geminiDeps(apiKey: string): GeminiDeps {
-	const ai = new GoogleGenAI({ apiKey });
+	// a stuck request fails after 2 minutes instead of hanging the import (one recorded call took 643 s)
+	const ai = new GoogleGenAI({ apiKey, httpOptions: { timeout: 120_000 } });
 	return {
 		generateContent: (req) => ai.models.generateContent(req as never) as Promise<GeminiResponseLike>
 	};
@@ -90,7 +92,9 @@ export async function geminiGenerate<T>(
 						responseMimeType: 'application/json',
 						responseJsonSchema,
 						maxOutputTokens: opts.maxOutputTokens,
-						temperature: 0.2
+						temperature: 0.2,
+						// extraction and comparison copy and classify; low thinking keeps a 16-week syllabus well under a minute
+						thinkingConfig: { thinkingLevel: 'LOW' }
 					}
 				});
 				const u = res.usageMetadata;

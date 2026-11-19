@@ -83,6 +83,7 @@
 	function addWork() {
 		doc.work.push({ id: nextId(ids(doc.work), 'w'), title: '', type: 'paper', description: '', deliverable: '', individual: true, groupSize: null, dueWeek: null, evaluationItemId: null, estimatedHours: null });
 	}
+	const tone = (k: keyof SectionMeta) => (meta?.[k] && (meta[k]!.confidence === 'low' || meta[k]!.confidence === 'not_found') ? 'warn' : undefined);
 	const numOrNull = (v: string) => (v === '' ? null : Number(v));
 	const strOrNull = (v: string) => (v.trim() === '' ? null : v.trim());
 </script>
@@ -91,7 +92,7 @@
 
 <div class="grid gap-4" data-testid="syllabus-form">
 	<!-- 1 Course Overview -->
-	<EditorCard id="overview" th={t.sections.overview.th} en={t.sections.overview.en} issues={issues.overview}>
+	<EditorCard id="overview" th={t.sections.overview.th} en={t.sections.overview.en} issues={issues.overview} tone={tone('overview')}>
 		{#snippet badge()}{@render confidenceChip('overview')}{/snippet}
 		<div class="rounded-lg bg-page p-3 text-sm">
 			<p class="font-medium">{ctx.course.code} {ctx.course.name_th} · {ctx.course.credit_format}</p>
@@ -113,7 +114,7 @@
 	</EditorCard>
 
 	<!-- 2 Objectives -->
-	<EditorCard id="objectives" th={t.sections.objectives.th} en={t.sections.objectives.en} issues={issues.objectives}>
+	<EditorCard id="objectives" th={t.sections.objectives.th} en={t.sections.objectives.en} issues={issues.objectives} tone={tone('objectives')}>
 		{#snippet badge()}{@render confidenceChip('objectives')}{/snippet}
 		{#each doc.objectives as o, i (o.id)}
 			<div class="grid gap-2 rounded-lg border border-line p-3" id="f-objectives-{i}" data-testid="objective-row">
@@ -149,7 +150,7 @@
 	</EditorCard>
 
 	<!-- 3 Classroom Approach -->
-	<EditorCard id="approach" th={t.sections.approach.th} en={t.sections.approach.en} issues={issues.approach}>
+	<EditorCard id="approach" th={t.sections.approach.th} en={t.sections.approach.en} issues={issues.approach} tone={tone('approach')}>
 		{#snippet badge()}{@render confidenceChip('approach')}{/snippet}
 		<div class="flex flex-wrap gap-1.5" role="group" aria-label={t.course.methods}>
 			{#each TEACHING_METHODS as m (m)}
@@ -166,7 +167,7 @@
 	</EditorCard>
 
 	<!-- 4 Evaluation -->
-	<EditorCard id="evaluation" th={t.sections.evaluation.th} en={t.sections.evaluation.en} issues={issues.evaluation}>
+	<EditorCard id="evaluation" th={t.sections.evaluation.th} en={t.sections.evaluation.en} issues={issues.evaluation} tone={tone('evaluation')}>
 		{#snippet badge()}{@render confidenceChip('evaluation')}{/snippet}
 		<div class="grid gap-3 sm:grid-cols-2">
 			<label class="grid gap-1"><span class="label">{t.editor.gradingScheme}</span><select class="input" bind:value={doc.evaluation.gradingScheme}>{#each GRADING_SCHEMES as g (g)}<option value={g}>{t.gradingScheme[g]}</option>{/each}</select></label>
@@ -207,7 +208,7 @@
 	</EditorCard>
 
 	<!-- 5 Class Resources -->
-	<EditorCard id="resources" th={t.sections.resources.th} en={t.sections.resources.en} issues={issues.resources}>
+	<EditorCard id="resources" th={t.sections.resources.th} en={t.sections.resources.en} issues={issues.resources} tone={tone('resources')}>
 		{#snippet badge()}{@render confidenceChip('resources')}{/snippet}
 		{#each doc.resources.readings as r, i (r.id)}
 			<div class="grid gap-2 rounded-lg border border-line p-3" id="f-resources-{i}" data-testid="reading-row">
@@ -249,7 +250,7 @@
 	</EditorCard>
 
 	<!-- 6 Work (optional) -->
-	<EditorCard id="work" th={t.sections.work.th} en={t.sections.work.en} issues={issues.work} open={doc.work.length > 0}>
+	<EditorCard id="work" th={t.sections.work.th} en={t.sections.work.en} issues={issues.work} tone={tone('work')} open={doc.work.length > 0}>
 		{#snippet badge()}{@render confidenceChip('work')}{/snippet}
 		<p class="text-xs text-ink-muted">{t.editor.workOptional}</p>
 		{#each doc.work as w, i (w.id)}
@@ -282,7 +283,7 @@
 	</EditorCard>
 
 	<!-- 8 Timetable: weekly plan + key dates -->
-	<EditorCard id="timetable" th={t.sections.timetable.th} en={t.sections.timetable.en} issues={issues.timetable}>
+	<EditorCard id="timetable" th={t.sections.timetable.th} en={t.sections.timetable.en} issues={issues.timetable} tone={tone('weeklyPlan')}>
 		{#snippet badge()}{@render confidenceChip('weeklyPlan')}{/snippet}
 		<div class="flex flex-wrap gap-2">
 			<button type="button" class="btn btn-secondary text-sm" onclick={fill16} data-testid="fill-16">{t.editor.fill16}</button>
