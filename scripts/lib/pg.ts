@@ -34,5 +34,12 @@ export function isLocal(url: string): boolean {
 }
 
 export function connect(url = dbUrl()) {
-	return postgres(url, { prepare: false, max: 1, onnotice: () => {}, connect_timeout: 20 });
+	return postgres(url, {
+		prepare: false,
+		max: 1,
+		onnotice: () => {},
+		connect_timeout: 20,
+		// labelled, and the server drops a session left in an open transaction (a crashed script can't hold locks)
+		connection: { application_name: 'pa-courseplat-scripts', idle_in_transaction_session_timeout: 60_000 }
+	});
 }

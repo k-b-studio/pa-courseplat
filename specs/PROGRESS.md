@@ -5,8 +5,8 @@
 | P0 Scaffold | **Done** | Migrations on the shared project; AC 1 passes there; dashboard steps done and checked |
 | P1 Auth + roles | **Done** (Musts) | AC 1–7 pass; Google sign-in needs one manual check by Kim (below) |
 | P2 Student pages | **Done** (Musts + the curriculum-map Should) | AC 1–6, 8, 9 pass; AC 7 needs the P4 upload (mechanism tested now) |
-| P3 Editor | next | |
-| P4 AI import | not started | |
+| P3 Editor | **Done** (R1–R10, incl. the diff Should) | AC 5, 6, 7, 8, 11 pass; AC 4's manual half passes; caution parts come with P5 |
+| P4 AI import | next | |
 | P5 Content Caution | not started | |
 | P6 Staff dashboard | not started | |
 | P7 Demo hardening | not started | |
@@ -61,9 +61,24 @@
 - AC 7 with the 2/2569 upload of 2404429 runs after P4.
 - creditGPAX's old hook `public.hook_before_user_created` had its grants changed by the dashboard when the hook was switched (DECISIONS.md). Harmless; left alone because `public` is off limits.
 
+## P3 — instructor workspace and manual editor (spec 05 R1–R10)
+
+**Built:**
+- `/teach`: my offerings in the upcoming and active semesters (staff: all, with a search), status, last edited, syllabus due date with days left.
+- `/teach/[id]/edit`: the four start options for a not-started course (upload and paste lead to the P4 import page; copy from a past semester; blank form); the nine sections as collapsible cards (`SyllabusForm`, reusable for the P4 review screen) with every field behaviour in R4 (PLO chips with the curriculum's suggestions ★, method chips, weekly plan with "เติม 16 สัปดาห์", instructor and reading pickers, live evaluation total and donut, citation splitter, work items linked to evaluation, key dates); autosave 1.5 s after the last change with "กำลังบันทึก… / บันทึกแล้ว HH:MM"; the revision-conflict dialog listing the differing sections, with โหลดฉบับล่าสุด / บันทึกทับ (second confirmation); the readiness checklist (strict schema, links to fields; sticky on desktop, bottom sheet on a phone) gating เผยแพร่; the server re-validates strict before `publish_offering`; "ดูตัวอย่างแบบนิสิต" with the student blocks; sidebar with handover notes (new ones flagged, add a note), history with a field-level diff and "คัดลอกมาเป็นฉบับร่าง", and a cautions tab (filled in P5); section note and meeting times for the instructors of that section.
+- `src/lib/domain/diff.ts`, `citation.ts` (unit-tested). Seed: the 2/2568 handover note on 2404429.
+
+**Passed:**
+- Unit (111): diff (AC 11: week 12 and the weight changes between 2404324's 2/2568 and 2/2569), citation splitter.
+- E2E, Chromium + WebKit (16 editor tests; whole suite 66 passed, 1 skipped by design): R2 start options + AC 8 (the handover note shows before starting); AC 7 (copy from 2/2568 clears key-date dates and weekly instructors, `cloned_from` set); AC 5 (30/30/35 → "รวม 95% — ต้องครบ 100%", publish disabled, 100 enables it, autosave reaches the database); AC 4's manual half (an objective without a PLO blocks publishing); AC 6 (two tabs → conflict dialog → load latest); AC 11 in the history panel; R7 preview; R9 section note. Editor tests reset 2404429 to not started before and after, so nothing is published.
+- Seed still idempotent; check, build and `check:secrets` OK.
+
+**Known gaps:**
+- Upload / paste (P4); caution counts on `/teach`, the cautions tab and the caution run after publishing (P5).
+
 ## How to resume
 
 1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.
 2. `npm run db:migrate` → "nothing to apply"; `npm run seed` → "nothing to change".
 3. `npm run test:e2e` and `npm run test:db` (both use the shared project).
-4. Next phase: P3 (spec 05 R1–R10, the manual editor).
+4. Next phase: P4 (spec 05 R11–R17, AI import with offline fixtures).

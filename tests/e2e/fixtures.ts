@@ -41,3 +41,17 @@ export async function offeringIds(semesterId = '2569-2'): Promise<Map<string, st
 	const rows = await db()<{ id: string; course_code: string }[]>`select id, course_code from courseplat.offerings where semester_id = ${semesterId}`;
 	return new Map(rows.map((r) => [r.course_code, r.id]));
 }
+
+/**
+ * Put a seeded offering back to "not started" (what demo:reset does for the live-demo course).
+ * Only ever used on 2404429 in 2/2569, which the seed leaves not started.
+ */
+export async function resetNotStarted(code = '2404429', semester = '2569-2') {
+	await db().begin(async (tx) => {
+		const [o] = await tx<{ id: string }[]>`select id from courseplat.offerings where course_code = ${code} and semester_id = ${semester}`;
+		await tx`delete from courseplat.offering_versions where offering_id = ${o.id}`;
+		await tx`delete from courseplat.syllabus_items where offering_id = ${o.id}`;
+		await tx`delete from courseplat.extractions where offering_id = ${o.id}`;
+		await tx`update courseplat.offerings set syllabus = null, revision = 0, status = 'not_started', cloned_from = null, updated_by = null, updated_at = null, published_at = null, published_revision = null where id = ${o.id}`;
+	});
+}

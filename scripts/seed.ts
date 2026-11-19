@@ -5,7 +5,7 @@
  * (Admin API, email_confirm: true; the shared sign-up hook lets them in because demo_accounts
  * is seeded first) → profiles (ensure_profile, run as each user) → offerings, sections,
  * instructors, meetings → syllabi (save_syllabus / publish_offering, run as the coordinator).
- * Notes and cautions follow in later phases.
+ * → handover notes. Cautions follow in P5.
  *
  * Shared project (spec 02 rule 6): writes only schema courseplat and auth users whose email is
  * in courseplat.demo_accounts. Prints counts of rows changed; a second run prints zeros.
@@ -16,6 +16,7 @@ import { readFileSync } from 'node:fs';
 import offeringsJson from '../fixtures/offerings.json';
 import peopleJson from '../fixtures/people.json';
 import syllabusIndex from '../fixtures/syllabi/index.json';
+import notesJson from '../fixtures/notes.json';
 import type { SyllabusDoc } from '../src/lib/schema/syllabus';
 import { adminClient, demoPassword } from './lib/admin';
 import { coursePloRows, courseRows, curriculumCourseRows, curriculumRows, ploRows } from './lib/catalog';
@@ -166,6 +167,18 @@ try {
 			 where o.id = v.offering_id and v.revision = o.published_revision and v.published_at is distinct from o.published_at
 			returning 1`;
 		count('dates', dated.length + versions.length);
+	});
+
+	// 9. handover notes (spec 08), matched by course, semester and text --------------------------------
+	await sql.begin(async (tx) => {
+		for (const n of notesJson.notes) {
+			const r = await tx`
+				insert into courseplat.course_notes (course_code, semester_id, author_id, body, created_at)
+				select ${n.course}, ${n.semester}, ${byKey(n.author)}, ${n.body}, ${n.created_at}::timestamptz
+				 where not exists (select 1 from courseplat.course_notes where course_code = ${n.course} and semester_id = ${n.semester} and body = ${n.body})
+				returning 1`;
+			count('notes', r.length);
+		}
 	});
 
 	const changed = Object.entries(changes).filter(([, n]) => n > 0);
