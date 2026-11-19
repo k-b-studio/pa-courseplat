@@ -1,0 +1,170 @@
+/**
+ * npm run seed — load the demo into an empty courseplat schema; safe to re-run (spec 08 R1).
+ *
+ * Order (spec 08 "Scripts"): catalog → semesters → demo_accounts → staff_directory → demo users
+ * (Admin API, email_confirm: true; the shared sign-up hook lets them in because demo_accounts
+ * is seeded first) → profiles (ensure_profile, run as each user) → offerings, sections,
+ * instructors, meetings. Syllabi, notes and cautions follow in later phases.
+ *
+ * Shared project (spec 02 rule 6): writes only schema courseplat and auth users whose email is
+ * in courseplat.demo_accounts. Prints counts of rows changed; a second run prints zeros.
+ *
+ * Flags: --reset-passwords  set every demo user's password to DEMO_ACCOUNT_PASSWORD again.
+ */
+import offeringsJson from '../fixtures/offerings.json';
+import peopleJson from '../fixtures/people.json';
+import { adminClient, demoPassword } from './lib/admin';
+import { coursePloRows, courseRows, curriculumCourseRows, curriculumRows, ploRows } from './lib/catalog';
+import { asUser, upsert, type Tx } from './lib/db-helpers';
+import { connect, dbUrl, describeUrl } from './lib/pg';
+
+type Person = (typeof peopleJson.people)[number] & { cohort?: number; major?: string; office?: string; office_hours?: string; contact_note?: string };
+type SectionFx = { no: number; language: string; capacity: number; note?: string; instructors: string[]; meetings: { weekday: number; start: string; end: string; room: string; mode?: string }[] };
+type OfferingFx = { course: string; coordinator: string; sections: SectionFx[] };
+
+const people = peopleJson.people as Person[];
+const resetPasswords = process.argv.includes('--reset-passwords');
+const url = dbUrl();
+const sql = connect(url);
+const admin = adminClient();
+const changes: Record<string, number> = {};
+const count = (k: string, n: number) => (changes[k] = (changes[k] ?? 0) + n);
+
+console.log(`seed → ${describeUrl(url)}`);
+
+try {
+	// 1. catalog (real data) ------------------------------------------------------------------
+	await sql.begin(async (tx) => {
+		count('courses', (await upsert(tx, 'courses', courseRows(), ['code'], '1')).length);
+		count('curricula', (await upsert(tx, 'curricula', curriculumRows(), ['id'], '1')).length);
+		count('plos', (await upsert(tx, 'plos', ploRows(), ['code'], '1')).length);
+		count('curriculum_courses', (await upsert(tx, 'curriculum_courses', curriculumCourseRows(), ['curriculum_id', 'course_code', 'major', 'category', 'track'], '1')).length);
+		count('course_plos', (await upsert(tx, 'course_plos', coursePloRows(), ['course_code', 'plo_code'], '1')).length);
+	});
+
+	// 2. semesters ----------------------------------------------------------------------------
+	await sql.begin(async (tx) => {
+		count('semesters', (await upsert(tx, 'semesters', offeringsJson.semesters, ['id'], '1')).length);
+	});
+
+	// 3. demo_accounts before any demo user exists (the sign-up hook reads it) -----------------
+	const label = (p: Person) => `${p.title_th ?? ''}${p.name_th}`;
+	await sql.begin(async (tx) => {
+		const rows = people.map((p) => ({ email: p.email, role: p.role, cohort: p.cohort ?? null, major: p.major ?? null, label_th: label(p) }));
+		count('demo_accounts', (await upsert(tx, 'demo_accounts', rows, ['email'], '1')).length);
+		const staff = people.filter((p) => p.role === 'instructor' || p.role === 'staff');
+		const dir = staff.map((p) => ({ email: p.email, role: p.role, title_th: p.title_th, name_th: p.name_th, name_en: p.name_en }));
+		count('staff_directory', (await upsert(tx, 'staff_directory', dir, ['email'], '1')).length);
+	});
+
+	// 4. demo users (Admin API) — looked up only by demo emails, never listing other users ------
+	const emails = people.map((p) => p.email);
+	const ids = new Map<string, string>();
+	for (const r of await sql<{ id: string; email: string }[]>`select id, lower(email) as email from auth.users where lower(email) = any(${emails})`) ids.set(r.email, r.id);
+	const password = demoPassword();
+	for (const p of people) {
+		const existing = ids.get(p.email);
+		if (existing) {
+			if (resetPasswords) {
+				const { error } = await admin.auth.admin.updateUserById(existing, { password });
+				if (error) throw new Error(`reset password ${p.email}: ${error.message}`);
+				count('demo_passwords_reset', 1);
+			}
+			continue;
+		}
+		const { data, error } = await admin.auth.admin.createUser({ email: p.email, password, email_confirm: true, user_metadata: { demo: true } });
+		if (error || !data.user) throw new Error(`create ${p.email}: ${error?.message ?? 'no user returned'}`);
+		ids.set(p.email, data.user.id);
+		count('demo_users', 1);
+	}
+
+	// 5. profiles: the same ensure_profile() the app calls on first sign-in --------------------
+	const haveProfile = new Set((await sql<{ email: string }[]>`select email from courseplat.profiles where email = any(${emails})`).map((r) => r.email));
+	for (const p of people) {
+		if (haveProfile.has(p.email)) continue;
+		await asUser(sql, { id: ids.get(p.email)!, email: p.email }, (tx) => tx`select courseplat.ensure_profile()`);
+		count('profiles', 1);
+	}
+	await sql.begin(async (tx) => {
+		for (const p of people.filter((x) => x.office)) {
+			const r = await tx`
+				update courseplat.profiles set office = ${p.office!}, office_hours = ${p.office_hours ?? null}, contact_note = ${p.contact_note ?? null}
+				 where email = ${p.email}
+				   and (office, office_hours, contact_note) is distinct from (${p.office!}::text, ${p.office_hours ?? null}::text, ${p.contact_note ?? null}::text)
+				returning 1`;
+			count('profile_details', r.length);
+		}
+	});
+	const profileId = new Map<string, string>();
+	for (const r of await sql<{ id: string; email: string }[]>`select id, email from courseplat.profiles where email = any(${emails})`) profileId.set(r.email, r.id);
+	const byKey = (key: string) => {
+		const p = people.find((x) => x.key === key);
+		const id = p && profileId.get(p.email);
+		if (!id) throw new Error(`unknown person ${key}`);
+		return id;
+	};
+
+	// 6. offerings, sections, instructors, meetings (fictional) --------------------------------
+	for (const [semesterId, list] of Object.entries(offeringsJson.offerings as Record<string, OfferingFx[]>)) {
+		await sql.begin(async (tx) => {
+			for (const o of list) await seedOffering(tx, semesterId, o, byKey);
+		});
+	}
+
+	const changed = Object.entries(changes).filter(([, n]) => n > 0);
+	console.log(changed.length ? `changed: ${changed.map(([k, n]) => `${k} ${n}`).join(', ')}` : 'nothing to change (already seeded)');
+} finally {
+	await sql.end();
+}
+
+async function seedOffering(tx: Tx, semesterId: string, o: OfferingFx, byKey: (k: string) => string) {
+	const coordinator = byKey(o.coordinator);
+	count('offerings', (await upsert(tx, 'offerings', [{ course_code: o.course, semester_id: semesterId, coordinator_id: coordinator }], ['course_code', 'semester_id'], '1')).length);
+	const [{ id: offeringId }] = await tx<{ id: string }[]>`select id from courseplat.offerings where course_code = ${o.course} and semester_id = ${semesterId}`;
+
+	const sectionRows = o.sections.map((s) => ({ offering_id: offeringId, section_no: s.no, language: s.language, capacity: s.capacity, note: s.note ?? '' }));
+	count('sections', (await upsert(tx, 'sections', sectionRows, ['offering_id', 'section_no'], '1')).length);
+	const sections = await tx<{ id: string; section_no: number }[]>`select id, section_no from courseplat.sections where offering_id = ${offeringId}`;
+
+	for (const s of o.sections) {
+		const sectionId = sections.find((x) => x.section_no === s.no)!.id;
+
+		// instructors: first is lead, the rest co-teach; remove seeded people no longer listed
+		const want = s.instructors.map((k, i) => ({ profile_id: byKey(k), role: i === 0 ? 'lead' : 'co' }));
+		const have = await tx<{ id: string; profile_id: string | null; role: string }[]>`select id, profile_id, role from courseplat.section_instructors where section_id = ${sectionId}`;
+		for (const h of have) {
+			const w = want.find((x) => x.profile_id === h.profile_id);
+			if (!w) {
+				await tx`delete from courseplat.section_instructors where id = ${h.id}`;
+				count('section_instructors', 1);
+			} else if (w.role !== h.role) {
+				await tx`update courseplat.section_instructors set role = ${w.role} where id = ${h.id}`;
+				count('section_instructors', 1);
+			}
+		}
+		for (const w of want.filter((x) => !have.some((h) => h.profile_id === x.profile_id))) {
+			await tx`insert into courseplat.section_instructors (section_id, profile_id, role) values (${sectionId}, ${w.profile_id}, ${w.role})`;
+			count('section_instructors', 1);
+		}
+
+		// meetings, matched by weekday and times
+		const wantM = s.meetings.map((m) => ({ weekday: m.weekday, starts_at: `${m.start}:00`, ends_at: `${m.end}:00`, room: m.room, mode: m.mode ?? 'onsite' }));
+		const haveM = await tx<{ id: string; weekday: number; starts_at: string; ends_at: string; room: string; mode: string }[]>`
+			select id, weekday, starts_at::text, ends_at::text, room, mode from courseplat.section_meetings where section_id = ${sectionId}`;
+		const same = (a: { weekday: number; starts_at: string; ends_at: string }, b: typeof a) => a.weekday === b.weekday && a.starts_at === b.starts_at && a.ends_at === b.ends_at;
+		for (const h of haveM) {
+			const w = wantM.find((x) => same(x, h));
+			if (!w) {
+				await tx`delete from courseplat.section_meetings where id = ${h.id}`;
+				count('section_meetings', 1);
+			} else if (w.room !== h.room || w.mode !== h.mode) {
+				await tx`update courseplat.section_meetings set room = ${w.room}, mode = ${w.mode} where id = ${h.id}`;
+				count('section_meetings', 1);
+			}
+		}
+		for (const w of wantM.filter((x) => !haveM.some((h) => same(x, h)))) {
+			await tx`insert into courseplat.section_meetings (section_id, weekday, starts_at, ends_at, room, mode) values (${sectionId}, ${w.weekday}, ${w.starts_at}, ${w.ends_at}, ${w.room}, ${w.mode})`;
+			count('section_meetings', 1);
+		}
+	}
+}

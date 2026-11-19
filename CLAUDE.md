@@ -22,7 +22,10 @@ Kim's related project `~/Library/CloudStorage/OneDrive-Personal/Project/Local/cr
 - `npm run build && npm run check:secrets` — no secret in client assets; `.env`, `api.md`, `thaillm-api.md` untracked
 - `npm run db:snapshot -- --label before|after`, `npm run db:snapshot -- --compare before after` — creditGPAX's `public` objects, read-only
 - `npm run db:migrate` — apply `supabase/migrations/*.sql` through `courseplat.schema_migrations`. **Never `supabase db push` / `supabase db reset` against the shared project.** Refuses a non-local target until `.snapshots/public-before.json` exists.
-- Expected later: `npm run test:e2e`, `npm run make:samples`, `npm run seed`, `npm run demo:reset`, `npm run fixtures:record`, `npm run eval:judge`.
+- `npm run seed` — catalog, semesters, demo accounts and users, offerings (idempotent; second run prints "nothing to change"). `-- --reset-passwords` resets demo passwords to `DEMO_ACCOUNT_PASSWORD`
+- `npm run test:e2e` — build, then Playwright (Chromium, WebKit, iPhone 13) against the seeded shared project; one worker
+- `npm run test:db` — tests against the real shared project (creditGPAX compatibility, user deletion); cleans up its test accounts
+- Expected later: `npm run make:samples`, `npm run demo:reset`, `npm run fixtures:record`, `npm run eval:judge`.
 
 ## Conventions
 

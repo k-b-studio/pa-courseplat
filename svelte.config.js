@@ -6,7 +6,7 @@ const config = {
 	preprocess: vitePreprocess(),
 	compilerOptions: { runes: true },
 	kit: {
-		adapter: adapter({ regions: ['sin1'] })
+		adapter: adapter({ regions: ['bom1'] })
 	}
 };
 

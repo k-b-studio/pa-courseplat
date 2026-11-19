@@ -1,27 +1,14 @@
 import type { Session, SupabaseClient, User } from '@supabase/supabase-js';
+import type { Profile } from '$lib/types';
 
-export type Role = 'student' | 'viewer' | 'instructor' | 'staff';
-
-export type Profile = {
-	id: string;
-	email: string;
-	role: Role;
-	cohort: number | null;
-	major: 'GOV' | 'IR' | 'SOC' | 'PA' | null;
-	title_th: string | null;
-	name_th: string | null;
-	name_en: string | null;
-	office: string | null;
-	office_hours: string | null;
-	contact_note: string | null;
-	is_demo: boolean;
-	cautions_seen_at: string | null;
-};
+export type { Profile, Role } from '$lib/types';
 
 declare global {
 	namespace App {
 		interface Locals {
+			/** per-request client acting as the signed-in user (RLS applies); schema courseplat */
 			supabase: SupabaseClient<any, 'courseplat'>;
+			/** validates the session with auth.getUser(), never trusts the cookie alone (spec 03) */
 			safeGetSession: () => Promise<{ session: Session | null; user: User | null }>;
 			session: Session | null;
 			user: User | null;

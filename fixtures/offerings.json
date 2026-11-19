@@ -1,0 +1,96 @@
+{
+  "_note": "FICTIONAL sections, instructors, meeting times and rooms (spec 08). Course codes and names are real (data/courses.json). Statuses come from the syllabi seeded in P2 (save_syllabus / publish_offering); until then every offering is not_started. Weekday 1 = Monday.",
+  "semesters": [
+    { "id": "2568-2", "label": "2/2568", "year_be": 2568, "term": 2, "status": "archived", "starts_on": "2026-01-12", "syllabus_due_on": null },
+    { "id": "2569-1", "label": "1/2569", "year_be": 2569, "term": 1, "status": "active", "starts_on": "2026-08-10", "syllabus_due_on": null },
+    { "id": "2569-2", "label": "2/2569", "year_be": 2569, "term": 2, "status": "upcoming", "starts_on": "2027-01-11", "syllabus_due_on": "2026-12-15" }
+  ],
+  "offerings": {
+    "2569-2": [
+      {
+        "course": "2400114",
+        "coordinator": "@apichart",
+        "sections": [
+          { "no": 1, "language": "th", "capacity": 120, "instructors": ["@apichart"], "meetings": [{ "weekday": 1, "start": "09:30", "end": "12:30", "room": "ห้อง 201 (ตัวอย่าง)" }] },
+          { "no": 2, "language": "th", "capacity": 120, "note": "เน้นกรณีศึกษาเปรียบเทียบต่างประเทศ", "instructors": ["@wipawadee"], "meetings": [{ "weekday": 3, "start": "13:00", "end": "16:00", "room": "ห้อง 202 (ตัวอย่าง)" }] }
+        ]
+      },
+      {
+        "course": "2404213",
+        "coordinator": "@suppawit",
+        "sections": [{ "no": 1, "language": "th", "capacity": 60, "instructors": ["@suppawit"], "meetings": [{ "weekday": 2, "start": "13:00", "end": "16:00", "room": "ห้อง 303 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404312",
+        "coordinator": "@pimchanok",
+        "sections": [{ "no": 1, "language": "th", "capacity": 60, "instructors": ["@pimchanok"], "meetings": [{ "weekday": 4, "start": "09:30", "end": "12:30", "room": "ห้อง 304 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404317",
+        "coordinator": "@kittipong",
+        "sections": [{ "no": 1, "language": "th", "capacity": 50, "instructors": ["@kittipong"], "meetings": [{ "weekday": 1, "start": "13:00", "end": "16:00", "room": "ห้อง 305 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404416",
+        "coordinator": "@pimchanok",
+        "sections": [{ "no": 1, "language": "th", "capacity": 50, "instructors": ["@pimchanok"], "meetings": [{ "weekday": 5, "start": "09:30", "end": "12:30", "room": "ห้อง 306 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404324",
+        "coordinator": "@thanakrit",
+        "sections": [{ "no": 1, "language": "th", "capacity": 80, "instructors": ["@thanakrit"], "meetings": [{ "weekday": 2, "start": "09:30", "end": "12:30", "room": "ห้อง 401 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404368",
+        "coordinator": "@chonthicha",
+        "sections": [
+          { "no": 1, "language": "th", "capacity": 50, "instructors": ["@chonthicha"], "meetings": [{ "weekday": 3, "start": "09:30", "end": "12:30", "room": "ห้องปฏิบัติการคอมพิวเตอร์ 1 (ตัวอย่าง)" }] },
+          { "no": 2, "language": "th", "capacity": 50, "instructors": ["@suppawit"], "meetings": [{ "weekday": 4, "start": "13:00", "end": "16:00", "room": "ห้องปฏิบัติการคอมพิวเตอร์ 1 (ตัวอย่าง)" }] }
+        ]
+      },
+      {
+        "course": "2404318",
+        "coordinator": "@chonthicha",
+        "sections": [{ "no": 1, "language": "th", "capacity": 40, "instructors": ["@chonthicha"], "meetings": [{ "weekday": 4, "start": "09:30", "end": "12:30", "room": "ห้อง 402 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404412",
+        "coordinator": "@thanakrit",
+        "sections": [
+          {
+            "no": 1,
+            "language": "th",
+            "capacity": 45,
+            "instructors": ["@thanakrit", "@kittipong", "@chonthicha"],
+            "meetings": [{ "weekday": 3, "start": "13:00", "end": "16:00", "room": "ห้อง 403 (ตัวอย่าง)" }]
+          }
+        ]
+      },
+      {
+        "course": "2404422",
+        "coordinator": "@suppawit",
+        "sections": [{ "no": 1, "language": "th", "capacity": 40, "instructors": ["@suppawit"], "meetings": [{ "weekday": 1, "start": "09:30", "end": "12:30", "room": "ห้อง 404 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404429",
+        "coordinator": "@natthida",
+        "sections": [{ "no": 1, "language": "th", "capacity": 40, "instructors": ["@natthida"], "meetings": [{ "weekday": 5, "start": "13:00", "end": "16:00", "room": "ห้อง 405 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404436",
+        "coordinator": "@wipawadee",
+        "sections": [{ "no": 1, "language": "th", "capacity": 45, "instructors": ["@wipawadee"], "meetings": [{ "weekday": 2, "start": "13:00", "end": "16:00", "room": "ห้อง 406 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404480",
+        "coordinator": "@thanakrit",
+        "sections": [{ "no": 1, "language": "th", "capacity": 30, "instructors": ["@thanakrit", "@wipawadee"], "meetings": [{ "weekday": 4, "start": "13:00", "end": "16:00", "room": "ห้องสัมมนา 1 (ตัวอย่าง)" }] }]
+      },
+      {
+        "course": "2404220",
+        "coordinator": "@apichart",
+        "sections": [{ "no": 1, "language": "th", "capacity": 80, "instructors": ["@apichart"], "meetings": [{ "weekday": 5, "start": "09:30", "end": "12:30", "room": "ห้อง 407 (ตัวอย่าง)" }] }]
+      }
+    ]
+  }
+}

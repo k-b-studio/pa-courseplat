@@ -1,0 +1,114 @@
+{
+  "_note": "FICTIONAL. Every person here is invented for the demo (spec 08 R3); none is a real PA faculty member. Addresses use the reserved .test top-level domain, so they can never belong to a real person. Office hours and rooms are invented and marked (ตัวอย่าง).",
+  "people": [
+    {
+      "key": "@thanakrit",
+      "title_th": "ผศ.ดร.",
+      "name_th": "ธนกฤต วงศ์ประเสริฐ",
+      "name_en": "Thanakrit Wongprasert",
+      "email": "thanakrit.w@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 412 (ตัวอย่าง)",
+      "office_hours": "อังคาร 13:00–15:00 (ตัวอย่าง)",
+      "contact_note": "นัดหมายล่วงหน้าทางอีเมลภาควิชา (ตัวอย่าง)"
+    },
+    {
+      "key": "@natthida",
+      "title_th": "อ.ดร.",
+      "name_th": "ณัฐธิดา แก้วมณี",
+      "name_en": "Natthida Kaewmanee",
+      "email": "natthida.k@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 405 (ตัวอย่าง)",
+      "office_hours": "พฤหัสบดี 10:00–12:00 (ตัวอย่าง)",
+      "contact_note": "ติดต่อผ่านกลุ่มรายวิชาใน Microsoft Teams (ตัวอย่าง)"
+    },
+    {
+      "key": "@wipawadee",
+      "title_th": "รศ.ดร.",
+      "name_th": "วิภาวดี จันทร์เพ็ญ",
+      "name_en": "Wipawadee Chanpen",
+      "email": "wipawadee.c@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 408 (ตัวอย่าง)",
+      "office_hours": "จันทร์ 13:00–15:00 (ตัวอย่าง)",
+      "contact_note": "นัดหมายล่วงหน้าทางอีเมลภาควิชา (ตัวอย่าง)"
+    },
+    {
+      "key": "@apichart",
+      "title_th": "ผศ.ดร.",
+      "name_th": "อภิชาติ สุวรรณรัตน์",
+      "name_en": "Apichart Suwannarat",
+      "email": "apichart.s@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 410 (ตัวอย่าง)",
+      "office_hours": "พุธ 10:00–12:00 (ตัวอย่าง)",
+      "contact_note": "นัดหมายล่วงหน้าทางอีเมลภาควิชา (ตัวอย่าง)"
+    },
+    {
+      "key": "@pimchanok",
+      "title_th": "อ.ดร.",
+      "name_th": "พิมพ์ชนก ทองดี",
+      "name_en": "Pimchanok Thongdee",
+      "email": "pimchanok.t@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 403 (ตัวอย่าง)",
+      "office_hours": "อังคาร 10:00–12:00 (ตัวอย่าง)",
+      "contact_note": "ติดต่อผ่านกลุ่มรายวิชาใน Microsoft Teams (ตัวอย่าง)"
+    },
+    {
+      "key": "@kittipong",
+      "title_th": "ผศ.ดร.",
+      "name_th": "กิตติพงษ์ บุญมา",
+      "name_en": "Kittipong Boonma",
+      "email": "kittipong.b@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 406 (ตัวอย่าง)",
+      "office_hours": "พฤหัสบดี 13:00–15:00 (ตัวอย่าง)",
+      "contact_note": "นัดหมายล่วงหน้าทางอีเมลภาควิชา (ตัวอย่าง)"
+    },
+    {
+      "key": "@suppawit",
+      "title_th": "อ.ดร.",
+      "name_th": "ศุภวิชญ์ รัตนชัย",
+      "name_en": "Suppawit Rattanachai",
+      "email": "suppawit.r@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 409 (ตัวอย่าง)",
+      "office_hours": "พุธ 13:00–15:00 (ตัวอย่าง)",
+      "contact_note": "ติดต่อผ่านกลุ่มรายวิชาใน Microsoft Teams (ตัวอย่าง)"
+    },
+    {
+      "key": "@chonthicha",
+      "title_th": "ผศ.ดร.",
+      "name_th": "ชลธิชา มีสุข",
+      "name_en": "Chonthicha Meesuk",
+      "email": "chonthicha.m@courseplat.test",
+      "role": "instructor",
+      "office": "ห้องพักอาจารย์ 404 (ตัวอย่าง)",
+      "office_hours": "ศุกร์ 10:00–12:00 (ตัวอย่าง)",
+      "contact_note": "นัดหมายล่วงหน้าทางอีเมลภาควิชา (ตัวอย่าง)"
+    },
+    {
+      "key": "@onuma",
+      "title_th": "คุณ",
+      "name_th": "อรอุมา ใจงาม",
+      "name_en": "Onuma Jaingam",
+      "email": "onuma.j@courseplat.test",
+      "role": "staff",
+      "office": "สำนักงานภาควิชา (ตัวอย่าง)",
+      "office_hours": "จันทร์–ศุกร์ 08:30–16:30 (ตัวอย่าง)",
+      "contact_note": "เจ้าหน้าที่ภาควิชา ดูแลประมวลรายวิชาและตารางสอน (ตัวอย่าง)"
+    },
+    {
+      "key": "@student",
+      "title_th": null,
+      "name_th": "นิสิตตัวอย่าง (PA ปี 3)",
+      "name_en": "Demo Student",
+      "email": "student.pa67@courseplat.test",
+      "role": "student",
+      "cohort": 67,
+      "major": "PA"
+    }
+  ]
+}
