@@ -2,7 +2,9 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import Drawer from '$lib/components/caution/Drawer.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { t, thaiDateTime } from '$lib/i18n/th';
+	import type { IconName } from '$lib/icons';
 
 	let { data } = $props();
 	let selected = $state<string | null>(null);
@@ -16,16 +18,23 @@
 	}
 	const toggleIn = (list: string[], v: string) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]).join(',');
 	const sevClass: Record<string, string> = { high: 'bg-danger-bg text-danger-ink', medium: 'bg-warning-bg text-warning-ink', info: 'bg-page text-ink-muted' };
-	const cellClass: Record<string, string> = { high: 'bg-danger text-white', medium: 'bg-warning text-white', info: 'bg-line text-ink' };
+	const cellClass: Record<string, string> = { high: 'bg-danger text-white', medium: 'bg-warning text-night', info: 'bg-line text-ink' };
+	// status colours with an icon and the label beside them (never colour alone)
+	const tileLook: Record<string, { name: IconName; icon: string; bar: string }> = {
+		high: { name: 'error', icon: 'bg-danger-bg text-danger', bar: 'bg-danger' },
+		medium: { name: 'warning', icon: 'bg-warning-bg text-warning-ink', bar: 'bg-warning' },
+		coordinating: { name: 'sync', icon: 'bg-info-bg text-info', bar: 'bg-info' },
+		resolved: { name: 'check_circle', icon: 'bg-success-bg text-success', bar: 'bg-success' }
+	};
 	const ownFirst = (c: (typeof data.cautions)[number]) => (data.myOfferingIds.includes(c.b_offering_id) && !data.myOfferingIds.includes(c.a_offering_id) ? [c.b_label, c.a_label] : [c.a_label, c.b_label]);
 	const short = (label: string) => label.split(':')[0];
 </script>
 
 <div class="flex flex-wrap items-end justify-between gap-3">
 	<div>
-		<h1 class="text-2xl font-semibold">{t.cautions.title}</h1>
+		<h1 class="text-3xl font-semibold tracking-tight">{t.cautions.title}</h1>
 		<p class="text-ink-muted">{t.cautions.lead}</p>
-		<p class="mt-1 chip" data-testid="scope">{data.isStaff ? t.cautions.scopeAll : t.cautions.scopeMine}</p>
+		<p class="mt-2 chip border-brand-200 bg-brand-50 text-brand-800" data-testid="scope">{data.isStaff ? t.cautions.scopeAll : t.cautions.scopeMine}</p>
 	</div>
 	<label class="grid gap-1 text-sm">
 		<span class="label">{t.cautions.semester}</span>
@@ -36,12 +45,20 @@
 </div>
 
 {#if data.total === 0 && !data.isStaff}
-	<p class="card mt-6 p-6 text-ink-muted" data-testid="cautions-empty">{t.cautions.empty}</p>
+	<p class="card mt-6 flex items-center gap-3 p-6 text-ink-muted" data-testid="cautions-empty"><span class="grid size-10 shrink-0 place-items-center rounded-xl bg-success-bg text-success"><Icon name="check_circle" /></span>{t.cautions.empty}</p>
 {:else}
 	<!-- tiles: each one filters the list -->
 	<div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4" data-testid="tiles">
 		{#each [['high', data.tiles.high, href({ sev: 'high', status: 'open' })], ['medium', data.tiles.medium, href({ sev: 'medium', status: 'open' })], ['coordinating', data.tiles.coordinating, href({ status: 'coordinating', sev: 'high,medium,info' })], ['resolved', data.tiles.resolved, href({ status: 'intentional,dismissed', sev: 'high,medium,info' })]] as const as [key, n, link] (key)}
-			<a class="card p-4 hover:border-accent" href={link} data-testid="tile-{key}"><p class="text-3xl font-semibold tabular-nums">{n}</p><p class="text-sm text-ink-muted">{t.cautions.tiles[key]}</p></a>
+			{@const look = tileLook[key]}
+			<a class="card card-hover relative flex items-start gap-3 overflow-hidden p-4" href={link} data-testid="tile-{key}">
+				<span class="absolute inset-y-0 left-0 w-1 {look.bar}" aria-hidden="true"></span>
+				<span class="grid size-10 shrink-0 place-items-center rounded-xl {look.icon}"><Icon name={look.name} /></span>
+				<span class="min-w-0">
+					<span class="block font-heading text-3xl leading-tight font-semibold tabular-nums">{n}</span>
+					<span class="block text-sm text-ink-muted">{t.cautions.tiles[key]}</span>
+				</span>
+			</a>
 		{/each}
 	</div>
 

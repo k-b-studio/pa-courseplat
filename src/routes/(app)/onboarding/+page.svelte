@@ -6,7 +6,7 @@
 </script>
 
 <section class="mx-auto max-w-lg">
-	<h1 class="text-2xl font-semibold">{t.onboarding.title}</h1>
+	<h1 class="text-3xl font-semibold tracking-tight">{t.onboarding.title}</h1>
 	<p class="mt-2 text-ink-muted">{t.onboarding.lead}</p>
 	<form method="POST" class="card mt-6 p-5">
 		<fieldset>

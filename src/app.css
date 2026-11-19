@@ -1,68 +1,97 @@
 /* Fonts: Prompt for headings, Sarabun for body (self-hosted via Fontsource; Thai + Latin subsets) */
-@import '@fontsource/prompt/400.css';
-@import '@fontsource/prompt/500.css';
-@import '@fontsource/prompt/600.css';
-@import '@fontsource/sarabun/400.css';
-@import '@fontsource/sarabun/500.css';
-@import '@fontsource/sarabun/600.css';
-@import '@fontsource/sarabun/700.css';
+@import "@fontsource/prompt/400.css";
+@import "@fontsource/prompt/500.css";
+@import "@fontsource/prompt/600.css";
+@import "@fontsource/sarabun/400.css";
+@import "@fontsource/sarabun/500.css";
+@import "@fontsource/sarabun/600.css";
+@import "@fontsource/sarabun/700.css";
 
 /* scan only src/ for classes (specs/, data/, fixtures/ hold no markup) */
-@import 'tailwindcss' source('.');
+@import "tailwindcss" source(".");
 
 @theme static {
-	--font-sans: 'Sarabun', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-heading: 'Prompt', 'Sarabun', ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    "Sarabun", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Prompt", "Sarabun", ui-sans-serif, system-ui, sans-serif;
 
-	/* One accent: deep academic teal */
-	--color-accent: #1f5f73;
-	--color-accent-hover: #174a5a;
-	--color-accent-light: #e4f0f3;
-	--color-accent-dark: #123a46;
+  /* Brand: a Chula-inspired pink, as a colour only: no emblem or official marks (spec 04; DECISIONS 2026-11-19) */
+  --color-brand-50: #fdf2f7;
+  --color-brand-100: #fce4ef;
+  --color-brand-200: #f9c6dc;
+  --color-brand-300: #f39bbf;
+  --color-brand-400: #e96a9d;
+  --color-brand-500: #de4583; /* decoration only: 4:1 on white */
+  --color-brand-600: #c92a6b; /* fills with white text: 5.2:1 */
+  --color-brand-700: #a81f58; /* text and links: 7:1 */
+  --color-brand-800: #861a48;
+  --color-brand-900: #5e1534;
 
-	/* Neutrals: off-white page */
-	--color-ink: #22252a;
-	--color-ink-muted: #5f6672;
-	--color-surface: #ffffff;
-	--color-page: #f7f5f0;
-	--color-line: #e4e1d9;
-	--color-line-strong: #cfcac0;
+  /* Plum-charcoal for the header, hero and other dark bands */
+  --color-night: #2a1d26;
+  --color-night-2: #3a2733;
+  --color-night-line: #4d3744;
+  --color-night-muted: #c9b6c1;
 
-	/* Semantic */
-	--color-info: #2a64a8;
-	--color-info-bg: #e9f1fb;
-	--color-success: #2b7a4b;
-	--color-success-bg: #e8f5ec;
-	--color-warning: #b07d0c;
-	--color-warning-bg: #fcf4df;
-	--color-warning-ink: #7f5a00;
-	--color-danger: #b8423f;
-	--color-danger-bg: #fbebea;
-	--color-danger-ink: #962f2c;
+  /* "accent" is what components use; it points at the brand pink */
+  --color-accent: #c92a6b;
+  --color-accent-hover: #a81f58;
+  --color-accent-light: #fdf2f7;
+  --color-accent-dark: #861a48;
 
-	/* Evaluation types: the same colour on every course (spec 04) */
-	--color-ev-exam: #1f5f73;
-	--color-ev-quiz: #5a8fa3;
-	--color-ev-paper: #c0763b;
-	--color-ev-project: #7b5ea7;
-	--color-ev-presentation: #b0577a;
-	--color-ev-participation: #6f8f3e;
-	--color-ev-other: #8a8578;
+  /* Neutrals with a faint rose cast so the pink sits naturally */
+  --color-ink: #241b21;
+  --color-ink-muted: #6b6168;
+  --color-surface: #ffffff;
+  --color-page: #faf6f8;
+  --color-line: #eee5ea;
+  --color-line-strong: #dccfd6;
 
-	--radius-card: 14px;
-	--shadow-card: 0 1px 2px rgb(30 30 20 / 0.05);
+  /* Semantic (status colours are reserved; they always come with a label or icon) */
+  --color-info: #2a64a8;
+  --color-info-bg: #eaf1fb;
+  --color-success: #1f7a45;
+  --color-success-bg: #e6f5ec;
+  --color-warning: #fab219; /* fill: dark text on it */
+  --color-warning-bg: #fff5da;
+  --color-warning-ink: #7a5200;
+  --color-danger: #d03b3b; /* red, kept clear of the brand pink */
+  --color-danger-bg: #fdeeee;
+  --color-danger-ink: #a32626;
+
+  /* Evaluation types: the same colour on every course (spec 04). Validated categorical slots 1–6 in this order;
+	   EvalBar stacks segments in this order so neighbours are always a validated pair. "Other" folds to grey. */
+  --color-ev-exam: #2a78d6;
+  --color-ev-quiz: #eb6834;
+  --color-ev-paper: #1baf7a;
+  --color-ev-project: #eda100;
+  --color-ev-presentation: #e87ba4;
+  --color-ev-participation: #008300;
+  --color-ev-other: #9b9196;
+
+  /* Year level 1–4: one pink ramp, deeper for later years (validated ordinal) */
+  --color-level-1: #f39bbf;
+  --color-level-2: #e96a9d;
+  --color-level-3: #c92a6b;
+  --color-level-4: #861a48;
+
+  --radius-card: 16px;
+  --shadow-card:
+    0 1px 2px rgb(94 21 52 / 0.04), 0 6px 18px -10px rgb(94 21 52 / 0.12);
+  --shadow-lift:
+    0 2px 4px rgb(94 21 52 / 0.06), 0 16px 32px -14px rgb(94 21 52 / 0.28);
 }
 
 html {
-	-webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-	background-color: var(--color-page);
-	color: var(--color-ink);
-	font-family: var(--font-sans);
-	line-height: 1.7;
-	overflow-x: hidden;
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
 h1,
@@ -70,109 +99,145 @@ h2,
 h3,
 h4,
 .font-heading {
-	font-family: var(--font-heading);
-	line-height: 1.4;
+  font-family: var(--font-heading);
+  line-height: 1.4;
 }
 
 /* One chevron for every single select, kept clear of the text */
 select:not([multiple]):not([size]) {
-	appearance: none;
-	-webkit-appearance: none;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6672'%3E%3Cpath d='M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z'/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 0.6rem center;
-	background-size: 1.1rem;
-	padding-right: 2.1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6672'%3E%3Cpath d='M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 1.1rem;
+  padding-right: 2.1rem;
 }
 
 :focus-visible {
-	outline: 2px solid var(--color-accent);
-	outline-offset: 2px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 @layer components {
-	.card {
-		background: var(--color-surface);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-card);
-		box-shadow: var(--shadow-card);
-	}
-	.btn {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.4rem;
-		border-radius: 0.6rem;
-		padding: 0.45rem 0.95rem;
-		font-weight: 600;
-		font-size: 0.925rem;
-		line-height: 1.4;
-		border: 1px solid transparent;
-		cursor: pointer;
-		transition: background-color 0.15s;
-	}
-	.btn:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
-	.btn-primary {
-		background: var(--color-accent);
-		color: #fff;
-	}
-	.btn-primary:hover:not(:disabled) {
-		background: var(--color-accent-hover);
-	}
-	.btn-secondary {
-		background: var(--color-surface);
-		color: var(--color-ink);
-		border-color: var(--color-line-strong);
-	}
-	.btn-secondary:hover:not(:disabled) {
-		background: var(--color-page);
-	}
-	.btn-danger {
-		background: var(--color-danger);
-		color: #fff;
-	}
-	.btn-ghost {
-		background: transparent;
-		color: var(--color-accent);
-	}
-	.btn-ghost:hover:not(:disabled) {
-		background: var(--color-accent-light);
-	}
-	.input {
-		width: 100%;
-		border: 1px solid var(--color-line-strong);
-		border-radius: 0.55rem;
-		padding: 0.4rem 0.65rem;
-		background: #fff;
-		font-size: 0.95rem;
-		line-height: 1.5;
-		min-width: 0;
-	}
-	.input:focus {
-		outline: 2px solid var(--color-accent);
-		outline-offset: 0;
-		border-color: var(--color-accent);
-	}
-	.label {
-		display: block;
-		font-size: 0.85rem;
-		font-weight: 600;
-		color: var(--color-ink-muted);
-		margin-bottom: 0.2rem;
-	}
-	.chip {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.25rem;
-		border-radius: 999px;
-		padding: 0.05rem 0.6rem;
-		font-size: 0.8rem;
-		line-height: 1.6;
-		border: 1px solid var(--color-line);
-		background: var(--color-surface);
-		white-space: nowrap;
-	}
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+  /* a card that is itself a link or opens something: lifts on hover */
+  .card-hover {
+    transition:
+      transform 0.18s ease-out,
+      box-shadow 0.18s ease-out,
+      border-color 0.18s ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--color-brand-200);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-hover:hover {
+      transform: none;
+    }
+  }
+  /* small label above a heading */
+  .eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-brand-700);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: 0.6rem;
+    padding: 0.45rem 0.95rem;
+    font-weight: 600;
+    font-size: 0.925rem;
+    line-height: 1.4;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      color 0.15s;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow:
+      0 1px 2px rgb(201 42 107 / 0.3),
+      0 4px 12px -6px rgb(201 42 107 / 0.5);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-accent-hover);
+  }
+  .btn-secondary {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border-color: var(--color-line-strong);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-brand-50);
+    border-color: var(--color-brand-300);
+    color: var(--color-brand-800);
+  }
+  .btn-danger {
+    background: var(--color-danger);
+    color: #fff;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-accent);
+  }
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-accent-light);
+  }
+  .input {
+    width: 100%;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 0.65rem;
+    padding: 0.45rem 0.7rem;
+    background: #fff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    min-width: 0;
+  }
+  .input:hover {
+    border-color: var(--color-brand-300);
+  }
+  .input:focus {
+    outline: 3px solid rgb(201 42 107 / 0.18);
+    outline-offset: 0;
+    border-color: var(--color-accent);
+  }
+  .label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-ink-muted);
+    margin-bottom: 0.2rem;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 999px;
+    padding: 0.05rem 0.6rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    white-space: nowrap;
+  }
 }

@@ -14,7 +14,7 @@
 </script>
 
 <section class="mx-auto max-w-xl">
-	<h1 class="text-2xl font-semibold">{t.profile.title}</h1>
+	<h1 class="text-3xl font-semibold tracking-tight">{t.profile.title}</h1>
 	<dl class="card mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 p-5 text-sm">
 		<dt class="text-ink-muted">{t.profile.email}</dt>
 		<dd class="break-all">{p.email}</dd>

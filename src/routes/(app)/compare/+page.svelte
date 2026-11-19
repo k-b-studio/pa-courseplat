@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Heatmap from '$lib/components/Heatmap.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { evalColor } from '$lib/domain/eval-colors';
 	import { clashes, isShared, sharedConcepts, sharedReadings } from '$lib/domain/compare';
 	import { basketLoad, hoursPerWeek } from '$lib/domain/workload';
@@ -23,11 +24,11 @@
 
 {#snippet row(title: string, cell: Snippet<[number]>, testid = '')}
 	<section class="card p-4" data-testid={testid || undefined}>
-		<h2 class="label">{title}</h2>
+		<h2 class="eyebrow border-l-4 border-brand-500 pl-2.5 text-sm">{title}</h2>
 		<div class="mt-2 grid grid-cols-1 gap-4 {gridCols}">
 			{#each cols as c, i (c.offeringId)}
 				<div class="min-w-0">
-					<p class="text-xs font-semibold text-accent-dark md:hidden">{c.course.code}</p>
+					<p class="text-xs font-semibold text-brand-700 md:hidden">{c.course.code}</p>
 					{@render cell(i)}
 				</div>
 			{/each}
@@ -35,17 +36,24 @@
 	</section>
 {/snippet}
 
-<h1 class="text-2xl font-semibold">{t.compare.title}</h1>
+<h1 class="text-3xl font-semibold tracking-tight">{t.compare.title}</h1>
 {#if cols.length === 0}
-	<p class="card mt-4 p-6 text-ink-muted">{t.compare.empty}</p>
+	<div class="card mt-4 flex flex-col items-center gap-3 px-6 py-10 text-center">
+		<span class="grid size-14 place-items-center rounded-2xl bg-brand-50 text-brand-500"><Icon name="compare_arrows" size={28} /></span>
+		<p class="max-w-md text-ink-muted">{t.compare.empty}</p>
+		<a class="btn btn-primary" href="/courses"><Icon name="menu_book" size={18} />{t.nav.courses}</a>
+	</div>
 {:else}
 	<div class="mt-4 grid gap-3">
 		<div class="grid grid-cols-1 gap-3 {gridCols}">
 			{#each cols as c (c.offeringId)}
-				<a class="card block p-4 hover:border-accent" href="/courses/{c.course.code}/{c.semester.id}" data-testid="compare-column" data-course={c.course.code}>
-					<p class="text-sm text-ink-muted">{c.course.code} · {c.semester.label}</p>
-					<p class="font-semibold">{c.course.name_th}</p>
+				<a class="card card-hover block overflow-hidden" href="/courses/{c.course.code}/{c.semester.id}" data-testid="compare-column" data-course={c.course.code}>
+					<span class="block h-1.5" style="background:var(--color-level-{Math.min(4, Math.max(1, Number(c.course.code[4])))})" aria-hidden="true"></span>
+					<div class="p-4">
+					<p class="text-sm"><span class="font-heading font-medium tracking-wide text-brand-700">{c.course.code}</span> <span class="text-ink-muted">· {c.semester.label}</span></p>
+					<p class="font-heading font-semibold">{c.course.name_th}</p>
 					{#if clashing[cols.indexOf(c)]}<p class="chip mt-2 bg-danger-bg text-danger-ink" data-testid="clash">{t.compare.clash}</p>{/if}
+					</div>
 				</a>
 			{/each}
 		</div>

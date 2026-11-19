@@ -3,6 +3,7 @@
 	import { initTray } from '$lib/compare-tray.svelte';
 	import CompareTray from '$lib/components/CompareTray.svelte';
 	import CourseCard from '$lib/components/CourseCard.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { STATUS_FILTERS } from '$lib/domain/curriculum';
 	import { t } from '$lib/i18n/th';
 	import { onMount } from 'svelte';
@@ -49,7 +50,8 @@
 <div class="pb-24">
 	<div class="flex flex-wrap items-end justify-between gap-3">
 		<div>
-			<h1 class="text-2xl font-semibold">{t.nav.courses}</h1>
+			<p class="eyebrow">{data.semester.label} · {t.semesterStatus[data.semester.status]}</p>
+			<h1 class="text-3xl font-semibold tracking-tight">{t.nav.courses}</h1>
 			<p class="text-ink-muted">{t.course.results(filtered.length)}</p>
 		</div>
 		<label class="grid gap-1 text-sm">
@@ -63,7 +65,10 @@
 	{#if data.curriculumNotice}<p class="mt-3 rounded-lg bg-info-bg px-4 py-2 text-sm text-info">{t.course.curriculumNotice}</p>{/if}
 
 	<section class="card mt-4 grid gap-3 p-4" aria-label={t.course.filters}>
-		<input class="input" type="search" placeholder={t.course.search} bind:value={q} aria-label={t.course.search} />
+		<div class="relative">
+			<Icon name="search" size={20} class="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-brand-400" />
+			<input class="input py-2 pl-10" type="search" placeholder={t.course.search} bind:value={q} aria-label={t.course.search} />
+		</div>
 		<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
 			<select class="input" bind:value={status} aria-label={t.course.myStatus} data-testid="filter-status">
 				<option value="">{t.course.myStatus}</option>

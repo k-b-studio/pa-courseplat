@@ -6,8 +6,8 @@
 </script>
 
 <section {id} class="card scroll-mt-16 p-5 sm:p-6 lg:scroll-mt-6" aria-labelledby="{id}-title" data-testid="block-{id}">
-	<h2 id="{id}-title" class="text-lg font-semibold text-accent-dark">
-		{th} <span class="font-normal text-ink-muted" lang="en">· {en}</span>
+	<h2 id="{id}-title" class="flex flex-wrap items-baseline gap-x-2 border-l-4 border-brand-500 pl-3 text-lg font-semibold text-ink">
+		{th} <span class="text-sm font-normal text-ink-muted" lang="en">· {en}</span>
 	</h2>
 	<div class="mt-3 grid gap-4">
 		{@render children()}

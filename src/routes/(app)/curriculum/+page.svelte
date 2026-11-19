@@ -19,7 +19,7 @@
 {/snippet}
 
 <div class="flex flex-wrap items-end justify-between gap-3">
-	<h1 class="text-2xl font-semibold">{t.nav.curriculum}</h1>
+	<h1 class="text-3xl font-semibold tracking-tight">{t.nav.curriculum}</h1>
 	<label class="grid gap-1 text-sm">
 		<span class="label">{t.course.semester}</span>
 		<select class="input" value={data.semester.id} onchange={(e) => goto(qs({ semester: e.currentTarget.value }))}>

@@ -12,8 +12,8 @@
 	const hours = $derived(hoursPerWeek(d, ctx.course.credit_format));
 </script>
 
-<section class="card p-5" aria-labelledby="glance-title" data-testid="at-a-glance">
-	<h2 id="glance-title" class="text-lg font-semibold">{t.course.atGlance}</h2>
+<section class="card border-brand-100 bg-linear-to-br from-surface to-brand-50 p-5" aria-labelledby="glance-title" data-testid="at-a-glance">
+	<h2 id="glance-title" class="eyebrow text-base">{t.course.atGlance}</h2>
 	<div class="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-[auto_minmax(0,1fr)]">
 		{#if d.evaluation.gradingScheme === 'su'}
 			<p class="chip self-start">{t.course.su}</p>
