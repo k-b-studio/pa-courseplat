@@ -22,8 +22,6 @@ import type { RequestHandler } from './$types';
 // every path ends in "/" (see $lib/paths)
 export const trailingSlash = 'always';
 
-export const config = { maxDuration: 120 };
-
 const UUID = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';
 const Body = z.object({ offeringId: z.string().regex(new RegExp(`^${UUID}$`, 'i')), storagePath: z.string().max(200).optional(), text: z.string().max(60_000).optional() });
 

@@ -13,8 +13,6 @@ import type { RequestHandler } from './$types';
 // every path ends in "/" (see $lib/paths)
 export const trailingSlash = 'always';
 
-export const config = { maxDuration: 120 };
-
 const Body = z.object({ offeringId: z.string().uuid(), trigger: z.enum(['manual', 'publish', 'import']).default('manual') });
 
 export const POST: RequestHandler = async ({ request, locals }) => {

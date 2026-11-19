@@ -6,7 +6,10 @@ const config = {
 	preprocess: vitePreprocess(),
 	compilerOptions: { runes: true },
 	kit: {
-		adapter: adapter({ regions: ['bom1'] }),
+		// One function config for every route, so adapter-vercel builds a single function. With per-route
+		// configs it adds a route-less catch-all, and because its route rules omit paths.base every
+		// /pa-courseplat/ request lands there and 404s (DECISIONS.md, deploy). AI routes need the 120 s.
+		adapter: adapter({ regions: ['bom1'], maxDuration: 120 }),
 		// Served at kbstudio.space/pa-courseplat through a rewrite in kbstudio-pages (DECISIONS.md, deploy).
 		// Build every in-app URL with appPath() from $lib/paths; absolute paths so redirects behave the same
 		// behind the proxy and on the app's own vercel.app host.
