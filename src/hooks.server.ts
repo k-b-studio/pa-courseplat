@@ -9,8 +9,12 @@ import { redirect, type Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 import { PUBLIC_SUPABASE_PUBLISHABLE_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { canTeach, homeRouteFor, isStaffRole } from '$lib/domain/accounts';
+import { appPath } from '$lib/paths';
 import { setFlash } from '$lib/server/flash';
 import type { Profile } from '$lib/types';
+
+/** our cookies stay under our own path: kbstudio.space hosts other apps (one on the same Supabase project) */
+const COOKIE_PATH = appPath('/');
 
 const supabase: Handle = async ({ event, resolve }) => {
 	event.locals.supabase = createServerClient<any, 'courseplat'>(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY, {
@@ -18,7 +22,7 @@ const supabase: Handle = async ({ event, resolve }) => {
 		cookies: {
 			getAll: () => event.cookies.getAll(),
 			setAll: (cookies, headers) => {
-				for (const { name, value, options } of cookies) event.cookies.set(name, value, { ...options, path: '/' });
+				for (const { name, value, options } of cookies) event.cookies.set(name, value, { ...options, path: COOKIE_PATH });
 				// auth responses must never be cached (one user's token served to another)
 				try {
 					if (Object.keys(headers).length) event.setHeaders(headers);
@@ -64,21 +68,22 @@ const gate: Handle = async ({ event, resolve }) => {
 	if (!routeId.startsWith('/(app)')) return resolve(event);
 
 	const { user, profile } = event.locals;
-	if (!user) redirect(303, '/');
-	if (!profile) redirect(303, '/auth/error?reason=profile');
+	if (!user) redirect(303, appPath('/'));
+	if (!profile) redirect(303, appPath('/auth/error?reason=profile'));
 
-	const path = event.url.pathname;
+	// the route tree path without (groups): independent of the base path and the trailing slash
+	const path = routeId.replace(/\/\([^)]+\)/g, '') || '/';
 	const area = (prefix: string) => path === prefix || path.startsWith(prefix + '/');
 	if ((area('/teach') || area('/cautions')) && !canTeach(profile.role)) {
 		setFlash(event.cookies, 'wrongRole');
-		redirect(303, homeRouteFor(profile));
+		redirect(303, appPath(homeRouteFor(profile)));
 	}
 	if (area('/admin') && !isStaffRole(profile.role)) {
 		setFlash(event.cookies, 'staffOnly');
-		redirect(303, homeRouteFor(profile));
+		redirect(303, appPath(homeRouteFor(profile)));
 	}
 	// students choose a major once before anything else (spec 03 R6)
-	if (profile.role === 'student' && !profile.major && !area('/onboarding')) redirect(303, '/onboarding');
+	if (profile.role === 'student' && !profile.major && !area('/onboarding')) redirect(303, appPath('/onboarding'));
 
 	return resolve(event);
 };

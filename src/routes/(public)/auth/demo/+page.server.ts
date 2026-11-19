@@ -3,10 +3,11 @@ import { homeRouteFor } from '$lib/domain/accounts';
 import { requireDemoMode, signInDemo } from '$lib/server/demo';
 import type { Profile } from '$lib/types';
 import type { Actions, PageServerLoad } from './$types';
+import { appPath } from '$lib/paths';
 
 export const load: PageServerLoad = async () => {
 	requireDemoMode();
-	redirect(303, '/');
+	redirect(303, appPath('/'));
 };
 
 export const actions: Actions = {
@@ -15,9 +16,9 @@ export const actions: Actions = {
 		requireDemoMode();
 		const key = String((await request.formData()).get('key') ?? '');
 		const res = await signInDemo(locals.supabase, key);
-		if (!res.ok) redirect(303, '/auth/error?reason=demo');
+		if (!res.ok) redirect(303, appPath('/auth/error?reason=demo'));
 		const { data, error } = await locals.supabase.rpc('ensure_profile');
-		if (error || !data) redirect(303, '/auth/error?reason=profile');
-		redirect(303, homeRouteFor(data as Profile));
+		if (error || !data) redirect(303, appPath('/auth/error?reason=profile'));
+		redirect(303, appPath(homeRouteFor(data as Profile)));
 	}
 };

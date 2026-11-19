@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { enhance } from '$app/forms';
 	import { similarityWord } from '$lib/domain/similarity';
 	import { t, thaiDateTime } from '$lib/i18n/th';
@@ -55,7 +56,7 @@
 			{#if c.resolution_note}<dt class="text-ink-muted">{t.editor.note}</dt><dd>{c.resolution_note}</dd>{/if}
 		</dl>
 
-		<form method="POST" action="{action}?/resolve" class="mt-4 grid gap-2 rounded-lg bg-page p-3" use:enhance={refresh}>
+		<form method="POST" action="{appPath(action)}?/resolve" class="mt-4 grid gap-2 rounded-lg bg-page p-3" use:enhance={refresh}>
 			<input type="hidden" name="id" value={c.id} />
 			<label class="flex flex-wrap items-center gap-2 text-sm">
 				{t.cautions.relationLabel}
@@ -81,7 +82,7 @@
 				{/each}
 			</ul>
 			{#if c.status === 'coordinating' || showComment || c.comments.length}
-				<form method="POST" action="{action}?/comment" class="mt-2 flex gap-2" use:enhance={refresh}>
+				<form method="POST" action="{appPath(action)}?/comment" class="mt-2 flex gap-2" use:enhance={refresh}>
 					<input type="hidden" name="id" value={c.id} />
 					<input class="input min-w-0 flex-1 text-sm" name="body" maxlength="2000" placeholder={t.cautions.commentPlaceholder} required data-testid="comment-input" />
 					<button class="btn btn-primary shrink-0 text-sm" type="submit" data-testid="comment-send">{t.cautions.send}</button>

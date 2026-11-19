@@ -10,6 +10,9 @@ import { runCautions } from '$lib/server/cautions/run';
 import { adminClient } from '$lib/server/supabase-admin';
 import type { RequestHandler } from './$types';
 
+// every path ends in "/" (see $lib/paths)
+export const trailingSlash = 'always';
+
 export const config = { maxDuration: 120 };
 
 const Body = z.object({ offeringId: z.string().uuid(), trigger: z.enum(['manual', 'publish', 'import']).default('manual') });

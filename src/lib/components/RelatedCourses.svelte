@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { t } from '$lib/i18n/th';
 	import type { RelatedCourse } from '$lib/view-types';
 
@@ -18,7 +19,7 @@
 			<div class="mt-3" data-testid="related-{kind}">
 				<h3 class="label">{label}</h3>
 				<ul class="mt-1 flex flex-wrap gap-2">
-					{#each list as c (c.code)}<li><a class="chip border border-line bg-surface hover:border-accent" href="/courses/{c.code}">{c.code} {c.name_th}</a></li>{/each}
+					{#each list as c (c.code)}<li><a class="chip border border-line bg-surface hover:border-accent" href={appPath(`/courses/${c.code}`)}>{c.code} {c.name_th}</a></li>{/each}
 				</ul>
 			</div>
 		{/if}
@@ -27,7 +28,7 @@
 		<div class="mt-4" data-testid="past-versions">
 			<h3 class="label">{t.course.pastVersions}</h3>
 			<ul class="mt-1 flex flex-wrap gap-2">
-				{#each past as v (v.versionId)}<li><a class="chip border border-line bg-surface hover:border-accent" href="/courses/{code}/versions/{v.versionId}">{v.label}</a></li>{/each}
+				{#each past as v (v.versionId)}<li><a class="chip border border-line bg-surface hover:border-accent" href={appPath(`/courses/${code}/versions/${v.versionId}`)}>{v.label}</a></li>{/each}
 			</ul>
 		</div>
 	{/if}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { enhance } from '$app/forms';
 	import SyllabusForm from '$lib/components/editor/SyllabusForm.svelte';
 	import type { MetaKey } from '$lib/components/editor/types';
@@ -18,10 +19,10 @@
 {#if data.failed}
 	<div class="card p-6" role="alert">
 		<h1 class="text-xl font-semibold">{t.importAi.failedRow}</h1>
-		<a class="btn btn-secondary mt-4" href="/teach/{data.offeringId}/edit">{t.importAi.manualForm}</a>
+		<a class="btn btn-secondary mt-4" href={appPath(`/teach/${data.offeringId}/edit`)}>{t.importAi.manualForm}</a>
 	</div>
 {:else if doc}
-	<p class="text-sm text-ink-muted"><a href="/teach" class="underline">{t.nav.teach}</a> / <a href="/teach/{data.offeringId}/edit" class="underline">{data.course.code}</a></p>
+	<p class="text-sm text-ink-muted"><a href={appPath('/teach')} class="underline">{t.nav.teach}</a> / <a href={appPath(`/teach/${data.offeringId}/edit`)} class="underline">{data.course.code}</a></p>
 	<h1 class="mt-1 text-2xl font-semibold">{t.importAi.reviewTitle}</h1>
 	<p class="text-sm text-ink-muted">{data.course.code} {data.course.name_th} · {data.semester.label} · {t.importAi.notPublished}</p>
 

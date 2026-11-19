@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { inTray, toggleTray, tray, TRAY_MAX } from '$lib/compare-tray.svelte';
 	import EvalBar from '$lib/components/EvalBar.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -26,7 +27,7 @@
 		<div class="min-w-0">
 			<h2 class="font-heading text-[1.05rem] leading-snug font-semibold">
 				{#if card.published}
-					<a class="hover:text-brand-700" href="/courses/{card.code}/{semesterId}">{card.name_th}</a>
+					<a class="hover:text-brand-700" href={appPath(`/courses/${card.code}/${semesterId}`)}>{card.name_th}</a>
 				{:else}
 					{card.name_th}
 				{/if}
@@ -73,7 +74,7 @@
 		{:else}
 			<p class="text-sm text-ink-muted" data-testid="unpublished">{t.course.notPublished}</p>
 			{#if card.lastPublished}
-				<a class="text-sm font-medium text-brand-700 underline" href="/courses/{card.code}/{card.lastPublished.semesterId}">{t.course.lastPublished(card.lastPublished.label)}</a>
+				<a class="text-sm font-medium text-brand-700 underline" href={appPath(`/courses/${card.code}/${card.lastPublished.semesterId}`)}>{t.course.lastPublished(card.lastPublished.label)}</a>
 			{/if}
 		{/if}
 	</div>

@@ -9,8 +9,9 @@ import { defineConfig, devices } from '@playwright/test';
 
 if (existsSync('.env')) process.loadEnvFile('.env');
 
-export const DEMO_URL = 'http://localhost:4173';
-export const NO_DEMO_URL = 'http://localhost:4174';
+// the app is served under a base path (svelte.config.js), as on kbstudio.space/pa-courseplat
+export const DEMO_URL = 'http://localhost:4173/pa-courseplat';
+export const NO_DEMO_URL = 'http://localhost:4174/pa-courseplat';
 
 export default defineConfig({
 	testDir: 'tests/e2e',
@@ -20,10 +21,10 @@ export default defineConfig({
 	timeout: 45_000,
 	expect: { timeout: 10_000 },
 	reporter: [['list']],
-	use: { baseURL: DEMO_URL, locale: 'th-TH', timezoneId: 'Asia/Bangkok', trace: 'retain-on-failure' },
+	use: { baseURL: DEMO_URL + '/', locale: 'th-TH', timezoneId: 'Asia/Bangkok', trace: 'retain-on-failure' },
 	webServer: [
-		{ command: 'npx vite preview --port 4173 --strictPort', url: DEMO_URL, reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'true' } },
-		{ command: 'npx vite preview --port 4174 --strictPort', url: NO_DEMO_URL, reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'false', AI_TIER: 'paid' } }
+		{ command: 'npx vite preview --port 4173 --strictPort', url: DEMO_URL + '/', reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'true' } },
+		{ command: 'npx vite preview --port 4174 --strictPort', url: NO_DEMO_URL + '/', reuseExistingServer: false, timeout: 120_000, env: { PUBLIC_DEMO_MODE: 'false', AI_TIER: 'paid' } }
 	],
 	projects: [
 		{ name: 'chromium', use: { ...devices['Desktop Chrome'] } },

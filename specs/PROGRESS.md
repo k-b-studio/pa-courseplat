@@ -106,6 +106,7 @@
 ## Fixes
 
 - 2026-11-19 · Editor sidebar overflowed the page when the ข้อควรระวัง tab was open (every width; 1765 px at 1140): the sidebar grid's implicit `auto` column grew to a nowrap caution reason. Fixed with `minmax(0,1fr)` tracks, a 22rem sidebar, `min-w-0`, `wrap-anywhere`/`line-clamp` and a segmented tab bar; the same pattern fixed in the caution drawer, `/cautions` list, readiness panel and bottom sheet, and the diff list. Regression test `tests/e2e/layout.spec.ts` (5 widths × WebKit + Chromium, worst-case caution with a long Thai sentence and URL). Layout rule in DECISIONS.
+- 2026-11-19 · Deploy prep for kbstudio.space/pa-courseplat: base path `/pa-courseplat` with `appPath()` for every in-app URL, trailing slash on every page and endpoint, kbstudio.space as a trusted origin, OAuth return to the browser's origin, cookies scoped to `/pa-courseplat/`. `check:secrets` had been failing since P4 on supabase-js's own `sb_secret_` prefix check (no key present); it now matches the key shape. Pushed to GitHub `k-b-studio/pa-courseplat` after a full-history secret scan (no key in any blob or commit message).
 
 ## How to resume
 

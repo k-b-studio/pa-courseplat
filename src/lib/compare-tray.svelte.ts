@@ -1,3 +1,4 @@
+import { appPath } from '$lib/paths';
 /**
  * The compare tray (spec 04 R1/R3): up to three offerings, kept in localStorage (non-goal: saving
  * baskets on the server). Storage can be unavailable (private mode), so every access is guarded.
@@ -40,4 +41,4 @@ export function clearTray() {
 	persist();
 }
 
-export const compareHref = (ids: string[]) => `/compare?o=${ids.join(',')}`;
+export const compareHref = (ids: string[]) => appPath(`/compare?o=${ids.join(',')}`);

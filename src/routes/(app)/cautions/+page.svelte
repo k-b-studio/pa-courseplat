@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import Drawer from '$lib/components/caution/Drawer.svelte';
@@ -14,7 +15,7 @@
 	function href(patch: Record<string, string | null>) {
 		const q = new URLSearchParams(page.url.searchParams);
 		for (const [k, v] of Object.entries(patch)) (v === null ? q.delete(k) : q.set(k, v));
-		return `/cautions?${q}`;
+		return appPath(`/cautions?${q}`);
 	}
 	const toggleIn = (list: string[], v: string) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]).join(',');
 	const sevClass: Record<string, string> = { high: 'bg-danger-bg text-danger-ink', medium: 'bg-warning-bg text-warning-ink', info: 'bg-page text-ink-muted' };
@@ -134,7 +135,7 @@
 					<li class="card min-w-0 p-4 wrap-anywhere" data-course={o.code}>
 						<p class="font-medium">{o.code} {o.name}</p>
 						<p class="mt-1 text-sm text-ink-muted">{t.cautions.openCounts(o.high, o.medium)}</p>
-						<div class="mt-2 flex flex-wrap gap-2"><a class="btn btn-secondary px-2 text-xs" href="/teach/{o.id}/edit">{t.cautions.openEditor}</a><a class="btn btn-ghost px-2 text-xs" href={href({ offering: o.id })}>{t.cautions.list}</a></div>
+						<div class="mt-2 flex flex-wrap gap-2"><a class="btn btn-secondary px-2 text-xs" href={appPath(`/teach/${o.id}/edit`)}>{t.cautions.openEditor}</a><a class="btn btn-ghost px-2 text-xs" href={href({ offering: o.id })}>{t.cautions.list}</a></div>
 					</li>
 				{/each}
 			</ul>

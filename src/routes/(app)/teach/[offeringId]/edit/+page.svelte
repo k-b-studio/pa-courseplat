@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { deserialize, enhance } from '$app/forms';
 	import { goto, invalidateAll } from '$app/navigation';
 	import { page } from '$app/state';
@@ -54,7 +55,7 @@
 		runState = 'running';
 		let ok = false;
 		try {
-			const res = await fetch('/api/cautions/run', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ offeringId: data.offering.id, trigger }) });
+			const res = await fetch(appPath('/api/cautions/run'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ offeringId: data.offering.id, trigger }) });
 			const out = await res.json();
 			if (!res.ok) throw new Error(out.message);
 			runFound = out.produced ?? 0;
@@ -238,7 +239,7 @@
 			{:else}<p class="mt-3 text-sm text-ink-muted">{t.editor.noCautions}</p>{/if}
 			<div class="mt-3 flex flex-wrap items-center gap-2">
 				{#if doc}<button type="button" class="btn btn-secondary px-2 text-xs" onclick={() => runCheck('manual')} disabled={runState === 'running' || dirty} data-testid="run-check">{t.cautions.runCheck}</button>{/if}
-				<a class="text-sm text-accent underline" href="/cautions?offering={data.offering.id}">{t.editor.allCautions}</a>
+				<a class="text-sm text-accent underline" href={appPath(`/cautions?offering=${data.offering.id}`)}>{t.editor.allCautions}</a>
 			</div>
 		{/if}
 	</div>
@@ -247,7 +248,7 @@
 <svelte:head><title>{data.course.code} · {t.nav.teach}</title></svelte:head>
 
 <div class="pb-24 lg:pb-0">
-	<p class="text-sm text-ink-muted"><a href="/teach" class="underline">{t.nav.teach}</a> / {data.course.code} · {data.semester.label}</p>
+	<p class="text-sm text-ink-muted"><a href={appPath('/teach')} class="underline">{t.nav.teach}</a> / {data.course.code} · {data.semester.label}</p>
 	<div class="mt-1 flex flex-wrap items-center gap-3">
 		<h1 class="text-2xl font-semibold" data-testid="editor-title">{data.course.code} {data.course.name_th}</h1>
 		<span class="chip" data-testid="offering-status">{t.offeringStatus[data.offering.status]}</span>
@@ -257,8 +258,8 @@
 		<div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
 		<!-- R2: four ways to start -->
 		<section class="grid gap-3 sm:grid-cols-2" aria-label={t.editor.startTitle} data-testid="start-options">
-			<a class="card block p-5 hover:border-accent" href="/teach/{data.offering.id}/import"><p class="font-semibold">{t.editor.startUpload}</p><p class="text-sm text-ink-muted">{t.editor.startUploadHint}</p></a>
-			<a class="card block p-5 hover:border-accent" href="/teach/{data.offering.id}/import?tab=text"><p class="font-semibold">{t.editor.startPaste}</p></a>
+			<a class="card block p-5 hover:border-accent" href={appPath(`/teach/${data.offering.id}/import`)}><p class="font-semibold">{t.editor.startUpload}</p><p class="text-sm text-ink-muted">{t.editor.startUploadHint}</p></a>
+			<a class="card block p-5 hover:border-accent" href={appPath(`/teach/${data.offering.id}/import?tab=text`)}><p class="font-semibold">{t.editor.startPaste}</p></a>
 			<div class="card p-5">
 				<p class="font-semibold">{t.editor.startCopy}</p>
 				{#if data.history.length}

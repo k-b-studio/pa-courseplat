@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import Icon from '$lib/components/Icon.svelte';
 	import { DEMO_BUTTONS } from '$lib/domain/accounts';
 	import { t } from '$lib/i18n/th';
@@ -69,7 +70,7 @@
 						<div class="mt-3 grid gap-2">
 							{#each DEMO_BUTTONS as b (b.key)}
 								{@const look = roleLook[b.role]}
-								<form method="POST" action="/auth/demo">
+								<form method="POST" action={appPath('/auth/demo')}>
 									<input type="hidden" name="key" value={b.key} />
 									<button
 										class="group flex w-full items-center gap-3 rounded-xl border border-line bg-surface px-3 py-2.5 text-left transition hover:border-brand-300 hover:bg-brand-50"

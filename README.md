@@ -7,4 +7,4 @@
 - **Presentation script:** [specs/08-seed-data-and-demo-script.md](specs/08-seed-data-and-demo-script.md#demo-script-about-10-minutes)
 - **Real catalog data and its sources:** [data/README.md](data/README.md)
 
-Status: specification ready; not yet implemented. Prototype for presentation only; not an official Chulalongkorn University system.
+Status: phases P0–P5 are built (student pages, instructor editor, AI import, Content Caution); P6 (staff dashboard) and P7 (demo reset and script) are next. Served at **kbstudio.space/pa-courseplat** (the app lives under the base path `/pa-courseplat`; locally `npm run dev` → http://localhost:5173/pa-courseplat/). Every person, syllabus and caution in the demo is fictional. Prototype for presentation only; not an official Chulalongkorn University system.

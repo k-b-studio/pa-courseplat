@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { goto } from '$app/navigation';
 	import { t } from '$lib/i18n/th';
 	import { browserClient, downscale } from '$lib/supabase-browser';
@@ -54,11 +55,11 @@
 				body = { ...body, storagePath: path };
 			} else body = { ...body, text };
 			step = 1;
-			const res = await fetch('/api/extract', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+			const res = await fetch(appPath('/api/extract'), { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
 			const out = await res.json().catch(() => ({}));
 			if (!res.ok) throw Object.assign(new Error(out.message ?? t.importAi.failed), { manual: !!out.manual });
 			step = 3;
-			await goto(`/teach/${data.offering.id}/review/${out.extractionId}`);
+			await goto(appPath(`/teach/${data.offering.id}/review/${out.extractionId}`));
 		} catch (e) {
 			message = e instanceof Error ? e.message : t.importAi.failed;
 			manual = !!(e as { manual?: boolean }).manual;
@@ -69,7 +70,7 @@
 	}
 </script>
 
-<p class="text-sm text-ink-muted"><a href="/teach" class="underline">{t.nav.teach}</a> / <a href="/teach/{data.offering.id}/edit" class="underline">{data.offering.course_code}</a></p>
+<p class="text-sm text-ink-muted"><a href={appPath('/teach')} class="underline">{t.nav.teach}</a> / <a href={appPath(`/teach/${data.offering.id}/edit`)} class="underline">{data.offering.course_code}</a></p>
 <h1 class="mt-1 text-2xl font-semibold">{t.importAi.title}</h1>
 <p class="text-ink-muted">{data.offering.course_code} {data.offering.course.name_th} · {data.offering.semester.label}</p>
 
@@ -110,7 +111,7 @@
 	{#if message}
 		<div class="mt-4 rounded-lg bg-danger-bg px-4 py-3 text-sm text-danger-ink" role="alert" data-testid="import-error">
 			<p>{message}</p>
-			{#if manual}<a class="btn btn-secondary mt-3 text-sm" href="/teach/{data.offering.id}/edit" data-testid="manual-form">{t.importAi.manualForm}</a>{/if}
+			{#if manual}<a class="btn btn-secondary mt-3 text-sm" href={appPath(`/teach/${data.offering.id}/edit`)} data-testid="manual-form">{t.importAi.manualForm}</a>{/if}
 		</div>
 	{/if}
 </section>

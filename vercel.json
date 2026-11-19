@@ -1,3 +1,5 @@
 {
-	"regions": ["bom1"]
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"regions": ["bom1"],
+	"redirects": [{ "source": "/", "destination": "/pa-courseplat/", "permanent": false }]
 }

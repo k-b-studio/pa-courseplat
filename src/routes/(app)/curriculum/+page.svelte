@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { goto } from '$app/navigation';
 	import { curriculumYear } from '$lib/domain/curriculum';
 	import { t } from '$lib/i18n/th';
@@ -6,14 +7,14 @@
 	let { data } = $props();
 	const qs = (patch: Record<string, string>) => {
 		const p = new URLSearchParams({ semester: data.semester.id, tab: data.tab, ...patch });
-		return `/curriculum?${p}`;
+		return appPath(`/curriculum?${p}`);
 	};
 	const statusChip: Record<string, string> = { published: 'bg-success-bg text-success', draft: 'bg-warning-bg text-warning-ink', not_started: 'bg-page text-ink-muted' };
 </script>
 
 {#snippet courseLink(c: { code: string; name_th: string; status: string | null; managed: boolean })}
 	<li class="flex flex-wrap items-center gap-2 py-1">
-		{#if c.managed}<a class="hover:underline" href="/courses/{c.code}/{data.semester.id}">{c.code} {c.name_th}</a>{:else}<span>{c.code} {c.name_th}</span>{/if}
+		{#if c.managed}<a class="hover:underline" href={appPath(`/courses/${c.code}/${data.semester.id}`)}>{c.code} {c.name_th}</a>{:else}<span>{c.code} {c.name_th}</span>{/if}
 		{#if c.status}<span class="chip text-xs {statusChip[c.status] ?? ''}">{t.offeringStatus[c.status]}</span>{:else}<span class="text-xs text-ink-muted">{t.curriculum.notOffered}</span>{/if}
 	</li>
 {/snippet}
@@ -46,7 +47,7 @@
 			<tbody>
 				{#each data.matrix as row (row.code)}
 					<tr class="border-t border-line" data-course={row.code}>
-						<td class="truncate py-1.5"><a class="hover:underline" href="/courses/{row.code}">{row.code}</a> <span class="hidden text-ink-muted sm:inline">{row.name_th}</span></td>
+						<td class="truncate py-1.5"><a class="hover:underline" href={appPath(`/courses/${row.code}`)}>{row.code}</a> <span class="hidden text-ink-muted sm:inline">{row.name_th}</span></td>
 						{#each row.cells as c, i (i)}
 							<td class="text-center" aria-label="{row.code} {data.plos[i].code}: {c.official ? t.curriculum.official : ''} {c.covered ? t.curriculum.covered : ''}">
 								<span class="text-accent">{c.official ? '●' : ''}{c.covered ? '◐' : ''}</span>

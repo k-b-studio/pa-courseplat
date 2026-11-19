@@ -19,6 +19,9 @@ import { sniff } from '$lib/server/sniff';
 import { sectionsFor } from '$lib/server/student';
 import type { RequestHandler } from './$types';
 
+// every path ends in "/" (see $lib/paths)
+export const trailingSlash = 'always';
+
 export const config = { maxDuration: 120 };
 
 const UUID = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import Heatmap from '$lib/components/Heatmap.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import { evalColor } from '$lib/domain/eval-colors';
@@ -41,13 +42,13 @@
 	<div class="card mt-4 flex flex-col items-center gap-3 px-6 py-10 text-center">
 		<span class="grid size-14 place-items-center rounded-2xl bg-brand-50 text-brand-500"><Icon name="compare_arrows" size={28} /></span>
 		<p class="max-w-md text-ink-muted">{t.compare.empty}</p>
-		<a class="btn btn-primary" href="/courses"><Icon name="menu_book" size={18} />{t.nav.courses}</a>
+		<a class="btn btn-primary" href={appPath('/courses')}><Icon name="menu_book" size={18} />{t.nav.courses}</a>
 	</div>
 {:else}
 	<div class="mt-4 grid gap-3">
 		<div class="grid grid-cols-1 gap-3 {gridCols}">
 			{#each cols as c (c.offeringId)}
-				<a class="card card-hover block overflow-hidden" href="/courses/{c.course.code}/{c.semester.id}" data-testid="compare-column" data-course={c.course.code}>
+				<a class="card card-hover block overflow-hidden" href={appPath(`/courses/${c.course.code}/${c.semester.id}`)} data-testid="compare-column" data-course={c.course.code}>
 					<span class="block h-1.5" style="background:var(--color-level-{Math.min(4, Math.max(1, Number(c.course.code[4])))})" aria-hidden="true"></span>
 					<div class="p-4">
 					<p class="text-sm"><span class="font-heading font-medium tracking-wide text-brand-700">{c.course.code}</span> <span class="text-ink-muted">· {c.semester.label}</span></p>

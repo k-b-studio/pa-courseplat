@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { page } from '$app/state';
 	import { DEMO_BUTTONS, canTeach, homeRouteFor, isStaffRole } from '$lib/domain/accounts';
 	import Icon from '$lib/components/Icon.svelte';
@@ -21,13 +22,13 @@
 			] satisfies { href: string; label: string; icon: IconName; show: boolean }[]
 		).filter((i) => i.show)
 	);
-	const current = (href: string) => page.url.pathname === href || page.url.pathname.startsWith(href + '/');
+	const current = (href: string) => page.url.pathname.startsWith(appPath(href));
 	const displayName = $derived(selfName(profile));
 </script>
 
 <header class="bg-night text-white">
 	<div class="mx-auto flex max-w-6xl items-center gap-2.5 px-4 pt-3 pb-2 sm:gap-3">
-		<a href={homeRouteFor(profile)} class="flex shrink-0 items-center gap-2 font-heading font-semibold whitespace-nowrap text-white">
+		<a href={appPath(homeRouteFor(profile))} class="flex shrink-0 items-center gap-2 font-heading font-semibold whitespace-nowrap text-white">
 			<span class="grid size-8 place-items-center rounded-lg bg-linear-to-br from-brand-400 to-brand-700 shadow-md shadow-brand-900/40" aria-hidden="true"><Icon name="menu_book" size={18} /></span>
 			{t.appName}
 		</a>
@@ -45,11 +46,11 @@
 			</summary>
 			<div class="card absolute right-0 z-30 mt-2 w-72 max-w-[calc(100vw-2rem)] p-2 text-ink shadow-lg">
 				<p class="px-3 py-2 text-xs text-ink-muted">{t.auth.signedInAs} {profile.email}</p>
-				<a class="btn btn-ghost w-full justify-start" href="/profile"><Icon name="person" size={18} />{t.nav.profile}</a>
+				<a class="btn btn-ghost w-full justify-start" href={appPath('/profile')}><Icon name="person" size={18} />{t.nav.profile}</a>
 				{#if profile.is_demo && demoMode}
 					<p class="mt-2 border-t border-line px-3 pt-3 text-xs font-medium text-ink-muted">{t.nav.switchDemo}</p>
 					{#each DEMO_BUTTONS as b (b.key)}
-						<form method="POST" action="/auth/demo">
+						<form method="POST" action={appPath('/auth/demo')}>
 							<input type="hidden" name="key" value={b.key} />
 							<button class="btn btn-ghost w-full justify-start text-left text-sm" type="submit" disabled={b.email === profile.email} data-switch={b.key}>
 								{b.label}
@@ -57,7 +58,7 @@
 						</form>
 					{/each}
 				{/if}
-				<form method="POST" action="/auth/signout" class="mt-2 border-t border-line pt-2">
+				<form method="POST" action={appPath('/auth/signout')} class="mt-2 border-t border-line pt-2">
 					<button class="btn btn-ghost w-full justify-start" type="submit"><Icon name="logout" size={18} />{t.nav.signOut}</button>
 				</form>
 			</div>
@@ -68,7 +69,7 @@
 			{#each items as i (i.href)}
 				<li>
 					<a
-						href={i.href}
+						href={appPath(i.href)}
 						class="flex items-center gap-1.5 rounded-full px-3 py-1.5 whitespace-nowrap transition-colors {current(i.href)
 							? 'bg-brand-600 font-medium text-white shadow-sm shadow-brand-900/50'
 							: 'text-night-muted hover:bg-white/10 hover:text-white'}"

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { goto } from '$app/navigation';
 	import { initTray } from '$lib/compare-tray.svelte';
 	import CompareTray from '$lib/components/CompareTray.svelte';
@@ -56,7 +57,7 @@
 		</div>
 		<label class="grid gap-1 text-sm">
 			<span class="label">{t.course.semester}</span>
-			<select class="input" value={data.semester.id} onchange={(e) => goto(`/courses?semester=${e.currentTarget.value}`)} data-testid="semester-select">
+			<select class="input" value={data.semester.id} onchange={(e) => goto(appPath(`/courses?semester=${e.currentTarget.value}`))} data-testid="semester-select">
 				{#each data.semesters as s (s.id)}<option value={s.id}>{s.label} · {t.semesterStatus[s.status]}</option>{/each}
 			</select>
 		</label>

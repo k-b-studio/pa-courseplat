@@ -11,6 +11,7 @@ import { instructorsFor, plosMap } from '$lib/server/course-page';
 import { docxToHtml, sanitizeHtml } from '$lib/server/docx';
 import { courses, sectionsFor, semesters } from '$lib/server/student';
 import type { Actions, PageServerLoad } from './$types';
+import { appPath } from '$lib/paths';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 type SB = App.Locals['supabase'];
@@ -93,7 +94,7 @@ export const actions: Actions = {
 		const doc = mode === 'fill' && current.doc ? fillEmpty(current.doc, parsed.data) : parsed.data;
 		const { error: e } = await sb.rpc('save_syllabus', { p_offering: params.offeringId, p_doc: doc, p_expected_revision: current.revision });
 		if (e) return fail(400, { message: t.editor.saveFailed });
-		redirect(303, `/teach/${params.offeringId}/edit?run=import`); // spec 06 R4: a run after an accepted import
+		redirect(303, appPath(`/teach/${params.offeringId}/edit?run=import`)); // spec 06 R4: a run after an accepted import
 	},
 
 	/** R15: staff, or the instructor of that section, apply a section hint with one click */

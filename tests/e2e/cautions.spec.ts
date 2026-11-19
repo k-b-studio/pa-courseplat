@@ -15,18 +15,18 @@ test.afterAll(() => resetNotStarted());
 /** act 3: natthida uploads the sample, accepts, and the run finishes */
 async function uploadAndRun(page: import('@playwright/test').Page, signIn = true) {
 	if (signIn) await signInDemo(page, 'prof-natthida');
-	await page.goto(`/teach/${id429}/import`);
+	await page.goto(`./teach/${id429}/import`);
 	await page.getByTestId('file-input').setInputFiles('fixtures/samples/2404429-syllabus.docx');
 	await page.getByTestId('start-import').click();
 	await page.waitForURL(/\/review\//, { timeout: 20_000 });
 	await page.getByTestId('accept').click();
-	await page.waitForURL(/\/edit$/);
+	await page.waitForURL(/\/edit\/$/);
 	await expect(page.getByTestId('run-status')).toContainText('ตรวจเสร็จ', { timeout: 30_000 });
 }
 
 test('AC 3: staff see the seeded cautions with the right tiles, list and matrix', async ({ page }) => {
 	await signInDemo(page, 'staff');
-	await page.goto('/cautions?semester=2569-2');
+	await page.goto('./cautions?semester=2569-2');
 	await expect(page.getByTestId('scope')).toHaveText('ทั้งภาควิชา');
 	await expect(page.getByTestId('tile-high')).toContainText('1');
 	await expect(page.getByTestId('tile-medium')).toContainText('1');
@@ -44,13 +44,13 @@ test('AC 3: staff see the seeded cautions with the right tiles, list and matrix'
 test('AC 9 + AC 4: natthida starts empty; after the upload she has 1 high and 4 medium, incl. the Dye reading', async ({ page }) => {
 	test.setTimeout(120_000);
 	await signInDemo(page, 'prof-natthida');
-	await page.goto('/cautions');
+	await page.goto('./cautions');
 	await expect(page.getByTestId('cautions-empty')).toHaveText('ยังไม่มีข้อควรระวังสำหรับวิชาของคุณ');
 	await uploadAndRun(page, false);
-	await page.goto('/cautions');
+	await page.goto('./cautions');
 	await expect(page.getByTestId('tile-high')).toContainText('1');
 	await expect(page.getByTestId('tile-medium')).toContainText('4');
-	await expect(page.locator('[data-testid="my-courses"] [data-course="2404429"] a').first()).toHaveAttribute('href', `/teach/${id429}/edit`);
+	await expect(page.locator('[data-testid="my-courses"] [data-course="2404429"] a').first()).toHaveAttribute('href', `/pa-courseplat/teach/${id429}/edit/`);
 	const rows = await db()<{ kind: string; severity: string; reason_th: string; a_label: string; b_label: string; source: string }[]>`
 		select kind::text, severity::text, reason_th, a_label, b_label, source from courseplat.content_cautions where (a_offering_id = ${id429} or b_offering_id = ${id429}) and status = 'open'`;
 	const assignment = rows.find((r) => r.kind === 'assignment')!;
@@ -70,7 +70,7 @@ test('AC 5: thanakrit gets the badge, sees only cautions on his courses, and the
 	await signInDemo(tp, 'prof-thanakrit');
 	await expect(tp.getByTestId('caution-badge')).toBeVisible();
 	expect(Number(await tp.getByTestId('caution-badge').textContent())).toBeGreaterThanOrEqual(1);
-	await tp.goto('/cautions');
+	await tp.goto('./cautions');
 	const labels = await tp.getByTestId('caution-row').allTextContents();
 	expect(labels.length).toBeGreaterThan(0);
 	expect(labels.every((l) => /2404324|2404412|2404480/.test(l))).toBe(true);
@@ -81,7 +81,7 @@ test('AC 5: thanakrit gets the badge, sees only cautions on his courses, and the
 	await expect(tp.getByTestId('comments')).toContainText('options memo');
 	await other.close();
 
-	await page.goto('/cautions?status=open,coordinating');
+	await page.goto('./cautions?status=open,coordinating');
 	await page.getByTestId('caution-row').filter({ hasText: 'งาน' }).first().click();
 	await expect(page.getByTestId('comments')).toContainText('ขอปรับงานของ 2404429 เป็น options memo นะคะ');
 	await expect(page.getByTestId('drawer-status')).toHaveText('กำลังประสานงาน');
@@ -108,8 +108,8 @@ test('AC 6: changing week 2 and re-running dismisses that caution; the seeded in
 test('@student AC 7: no caution menu, redirect with a notice, no rows through the API, nothing on student pages', async ({ page }) => {
 	await signInDemo(page, 'student');
 	await expect(page.getByRole('navigation', { name: 'เมนู' }).getByRole('link', { name: 'ข้อควรระวังด้านเนื้อหา' })).toHaveCount(0);
-	await page.goto('/cautions');
-	await expect(page).toHaveURL(/\/courses$/);
+	await page.goto('./cautions');
+	await expect(page).toHaveURL(/\/courses\/$/);
 	await expect(page.getByTestId('flash')).toContainText('หน้านี้สำหรับอาจารย์และเจ้าหน้าที่ภาควิชาเท่านั้น');
 
 	const sb = createClient(process.env.PUBLIC_SUPABASE_URL!, process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY!, { auth: { persistSession: false }, db: { schema: 'courseplat' } });
@@ -125,7 +125,7 @@ test('@student AC 7: no caution menu, redirect with a notice, no rows through th
 	const versionRow = await db()<{ id: string }[]>`select v.id from courseplat.offering_versions v join courseplat.offerings o on o.id = v.offering_id where o.course_code = '2404324' and o.semester_id = '2568-2' limit 1`;
 	const routes = ['/courses', '/courses/2404436/2569-2', '/courses/2400114/2569-2', '/courses/2404317/2569-2', '/courses/2404416/2569-2', `/compare?o=${now.get('2400114')},${now.get('2404436')}`, '/curriculum', `/courses/2404324/versions/${versionRow[0].id}`, `/compare?o=${now.get('2404324')},${before.get('2404429')}`];
 	for (const r of routes) {
-		await page.goto(r);
+		await page.goto('.' + r);
 		const text = await page.locator('main, body').first().innerText();
 		for (const f of forbidden) expect(text.includes(f), `${r} shows "${f}"`).toBe(false);
 	}
@@ -133,7 +133,7 @@ test('@student AC 7: no caution menu, redirect with a notice, no rows through th
 
 test('AC 8 (editor): after a run whose AI part failed, the editor says only the basic checks ran', async ({ page }) => {
 	await signInDemo(page, 'prof-natthida');
-	await page.goto(`/teach/${id429}/edit`);
+	await page.goto(`./teach/${id429}/edit`);
 	await page.getByTestId('start-blank').click();
 	await expect(page.getByTestId('syllabus-form')).toBeVisible();
 	await db()`insert into courseplat.caution_runs (offering_id, trigger, status, error, offline) values (${id429}, 'manual', 'failed', 'Gemini quota (test)', false)`;
@@ -159,11 +159,11 @@ test.describe('AC 7 as a viewer (someone no longer in the staff directory)', () 
 		expect(((await (await direct()).from('content_cautions').select('id')).data ?? []).length).toBeGreaterThan(0);
 		try {
 			await sql`delete from courseplat.staff_directory where email = ${email}`;
-			await page.goto('/courses');
+			await page.goto('./courses');
 			await expect(page.getByTestId('role-chip')).toHaveText('ผู้เยี่ยมชม');
 			await expect(page.getByRole('navigation', { name: 'เมนู' }).getByRole('link', { name: 'ข้อควรระวังด้านเนื้อหา' })).toHaveCount(0);
-			await page.goto('/cautions');
-			await expect(page).toHaveURL(/\/courses$/);
+			await page.goto('./cautions');
+			await expect(page).toHaveURL(/\/courses\/$/);
 			await expect(page.getByTestId('flash')).toContainText('หน้านี้สำหรับอาจารย์และเจ้าหน้าที่ภาควิชาเท่านั้น');
 			// … and as a viewer none
 			const sb = await direct();
@@ -175,7 +175,7 @@ test.describe('AC 7 as a viewer (someone no longer in the staff directory)', () 
 				values (${email}, 'instructor', 'อ.ดร.', 'ณัฐธิดา แก้วมณี', 'Natthida Kaewmanee')
 				on conflict (email) do update set role = 'instructor'`;
 		}
-		await page.goto('/teach');
+		await page.goto('./teach');
 		await expect(page.getByTestId('role-chip')).toHaveText('อาจารย์');
 	});
 });

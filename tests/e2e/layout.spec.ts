@@ -5,6 +5,7 @@
  * sidebar tab must sit inside the viewport, and the drawer must not overflow its own box.
  */
 import type { Page } from '@playwright/test';
+import { NO_DEMO_URL } from '../../playwright.config';
 import { db, expect, offeringIds, signInDemo, test } from './fixtures';
 
 const WIDTHS = [390, 1024, 1140, 1280, 1440];
@@ -64,7 +65,7 @@ test('editor sidebar: every tab fits at 390–1440 px, with a long unbroken caut
 	await signInDemo(page, 'prof-thanakrit');
 	for (const w of WIDTHS) {
 		await page.setViewportSize({ width: w, height: 800 });
-		await page.goto(`/teach/${ids.get('2404324')}/edit`);
+		await page.goto(`./teach/${ids.get('2404324')}/edit`);
 		await expect(page.getByTestId('tab-cautions')).toBeVisible();
 		for (const tab of ['notes', 'history', 'cautions']) {
 			const where = `${w}px, tab ${tab}`;
@@ -88,7 +89,7 @@ test('/cautions: list, tiles and drawer fit at 390–1440 px; the matrix scrolls
 	for (const w of WIDTHS) {
 		const where = `${w}px, /cautions`;
 		await page.setViewportSize({ width: w, height: 800 });
-		await page.goto('/cautions?semester=2569-2');
+		await page.goto('./cautions?semester=2569-2');
 		await expect(page.getByTestId('tiles')).toBeVisible();
 		await expectNoPageOverflow(page, where);
 		await expectInsideViewport(page, '[data-testid^="tile-"]', where);

@@ -16,7 +16,7 @@ Kim's related project `~/Library/CloudStorage/OneDrive-Personal/Project/Local/cr
 
 ## Commands
 
-- `npm run dev` — local app on http://localhost:5173
+- `npm run dev` — local app on http://localhost:5173/pa-courseplat/ (base path `/pa-courseplat`; build in-app URLs with `appPath()` from `$lib/paths`)
 - `npm run check` — svelte-check (TypeScript strict)
 - `npm run test` — Vitest unit tests, including migrations/RLS/functions on PGlite (`tests/support/supabase-shim.sql`)
 - `npm run build && npm run check:secrets` — no secret in client assets; `.env`, `api.md`, `thaillm-api.md` untracked

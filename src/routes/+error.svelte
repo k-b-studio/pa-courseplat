@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import { page } from '$app/state';
 	import { t } from '$lib/i18n/th';
 
@@ -12,6 +13,6 @@
 		{#if page.error?.message && page.error.message !== title && page.status !== 404}
 			<p class="mt-2 text-ink-muted">{page.error.message}</p>
 		{/if}
-		<a class="btn btn-secondary mt-6" href="/">{t.auth.backHome}</a>
+		<a class="btn btn-secondary mt-6" href={appPath('/')}>{t.auth.backHome}</a>
 	</div>
 </main>

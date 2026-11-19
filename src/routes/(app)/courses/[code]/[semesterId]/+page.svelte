@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import CourseHeader from '$lib/components/CourseHeader.svelte';
 	import RelatedCourses from '$lib/components/RelatedCourses.svelte';
 	import SyllabusView from '$lib/components/syllabus/SyllabusView.svelte';
@@ -21,7 +22,7 @@
 			<h2 class="text-lg font-semibold">{data.state === 'unpublished' ? t.course.notPublished : t.course.notOffered}</h2>
 			{#if data.state === 'unpublished'}<p class="mt-1 text-ink-muted">{t.course.notPublishedLead}</p>{/if}
 			{#if data.state === 'unpublished' && data.lastPublished}
-				<a class="btn btn-secondary mt-4" href="/courses/{data.course.code}/versions/{data.lastPublished.versionId}">{t.course.lastPublished(data.lastPublished.label)}</a>
+				<a class="btn btn-secondary mt-4" href={appPath(`/courses/${data.course.code}/versions/${data.lastPublished.versionId}`)}>{t.course.lastPublished(data.lastPublished.label)}</a>
 			{/if}
 			{#if data.course.description_th}
 				<h3 class="label mt-5">{t.course.officialDescription}</h3>

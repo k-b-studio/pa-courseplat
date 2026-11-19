@@ -26,9 +26,12 @@ export { expect };
 export type DemoKey = 'student' | 'prof-natthida' | 'prof-thanakrit' | 'staff';
 
 export async function signInDemo(page: Page, key: DemoKey) {
-	await page.goto('/');
+	await page.goto('./');
 	await page.locator(`button[data-demo="${key}"]`).click();
-	await page.waitForURL((u) => u.pathname !== '/' && !u.pathname.startsWith('/auth'));
+	await page.waitForURL((u) => {
+		const p = u.pathname.replace(/^\/pa-courseplat/, '');
+		return p !== '/' && !p.startsWith('/auth');
+	});
 }
 
 let sql: ReturnType<typeof postgres> | null = null;

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { appPath } from '$lib/paths';
 	import Icon from '$lib/components/Icon.svelte';
 	import { t, thaiDate } from '$lib/i18n/th';
 
@@ -33,7 +34,7 @@
 				{#each g.offerings.filter(match) as o (o.id)}
 					<li class="card card-hover relative overflow-hidden p-4 pl-5">
 						<span class="absolute inset-y-0 left-0 w-1.5 {stripeClass[o.status]}" aria-hidden="true"></span>
-						<a href="/teach/{o.id}/edit" class="group block" data-course={o.course_code} data-semester={g.semester.id}>
+						<a href={appPath(`/teach/${o.id}/edit`)} class="group block" data-course={o.course_code} data-semester={g.semester.id}>
 							<span class="flex items-center justify-between gap-2 font-heading text-sm font-medium tracking-wide text-brand-700">{o.course_code}<Icon name="edit" size={18} class="text-ink-muted transition group-hover:text-brand-600" /></span>
 							<span class="block font-heading font-semibold leading-snug">{o.course?.name_th}</span>
 							<span class="mt-2 flex flex-wrap items-center gap-2">
@@ -42,13 +43,13 @@
 							</span>
 						</a>
 						{#if data.cautionCounts[o.id]}
-							<a class="mt-2 inline-flex flex-wrap gap-1.5 text-xs" href="/cautions?offering={o.id}" data-testid="caution-counts" aria-label={t.editor.openCautions}>
+							<a class="mt-2 inline-flex flex-wrap gap-1.5 text-xs" href={appPath(`/cautions?offering=${o.id}`)} data-testid="caution-counts" aria-label={t.editor.openCautions}>
 								{#if data.cautionCounts[o.id].high}<span class="chip bg-danger-bg text-danger-ink">{t.cautions.severity.high} {data.cautionCounts[o.id].high}</span>{/if}
 								{#if data.cautionCounts[o.id].medium}<span class="chip bg-warning-bg text-warning-ink">{t.cautions.severity.medium} {data.cautionCounts[o.id].medium}</span>{/if}
 							</a>
 						{/if}
 						{#if data.imports[o.id]?.status === 'running'}<p class="chip mt-2 bg-info-bg text-info">{t.importAi.running}…</p>{/if}
-						{#if data.imports[o.id]?.status === 'succeeded' && o.status === 'not_started'}<a class="mt-2 inline-block text-sm text-accent underline" href="/teach/{o.id}/review/{data.imports[o.id].id}">{t.importAi.reviewLink}</a>{/if}
+						{#if data.imports[o.id]?.status === 'succeeded' && o.status === 'not_started'}<a class="mt-2 inline-block text-sm text-accent underline" href={appPath(`/teach/${o.id}/review/${data.imports[o.id].id}`)}>{t.importAi.reviewLink}</a>{/if}
 					</li>
 				{/each}
 			</ul>

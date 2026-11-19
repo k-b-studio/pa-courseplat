@@ -1,6 +1,6 @@
 /**
- * npm run check:secrets — spec 02 AC 6. After `npm run build`: no secret value and no `sb_secret`
- * in any client asset, and git tracks neither .env nor the key notes. Prints names, never values.
+ * npm run check:secrets — spec 02 AC 6. After `npm run build`: no secret value and no Supabase secret
+ * key (`sb_secret_…`) in any client asset, and git tracks neither .env nor the key notes. Prints names, never values.
  */
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -16,6 +16,9 @@ function walk(dir: string): string[] {
 	});
 }
 
+// a secret key, not the bare prefix: supabase-js itself ships `startsWith('sb_secret_')` to the browser
+const SECRET_KEY_SHAPE = /sb_secret_[A-Za-z0-9_-]{16,}/;
+
 let failed = false;
 const roots = ['.svelte-kit/output/client', '.vercel/output/static'].filter(existsSync);
 if (!roots.length) {
@@ -27,8 +30,8 @@ for (const root of roots) {
 	for (const file of walk(root)) {
 		scanned++;
 		const body = readFileSync(file);
-		if (body.includes('sb_secret')) {
-			console.error(`FOUND "sb_secret" in ${file}`);
+		if (SECRET_KEY_SHAPE.test(body.toString('latin1'))) {
+			console.error(`FOUND a Supabase secret key (sb_secret_…) in ${file}`);
 			failed = true;
 		}
 		for (const [name, value] of secrets) {
@@ -39,7 +42,7 @@ for (const root of roots) {
 		}
 	}
 }
-console.log(`scanned ${scanned} client files for sb_secret and ${secrets.map(([n]) => n).join(', ') || '(no secrets set)'}`);
+console.log(`scanned ${scanned} client files for sb_secret_ keys and ${secrets.map(([n]) => n).join(', ') || '(no secrets set)'}`);
 
 const tracked = execSync('git ls-files', { encoding: 'utf-8' }).split('\n');
 for (const f of ['.env', 'api.md', 'thaillm-api.md']) {

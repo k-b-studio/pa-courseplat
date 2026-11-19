@@ -1,9 +1,12 @@
 /** Browser client, used only to upload a syllabus file with the user's own session (spec 05 R12). */
 import { createBrowserClient } from '@supabase/ssr';
 import { PUBLIC_SUPABASE_PUBLISHABLE_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
+import { appPath } from '$lib/paths';
 
 let client: ReturnType<typeof createBrowserClient> | null = null;
-export const browserClient = () => (client ??= createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY));
+// same cookie path as the server client (hooks.server.ts), so a refreshed session never lands at "/"
+export const browserClient = () =>
+	(client ??= createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLISHABLE_KEY, { cookieOptions: { path: appPath('/') } }));
 
 /** Downscale a photo to a 2,000 px long edge before upload (spec 05 R11). */
 export async function downscale(file: File, max = 2000): Promise<Blob> {

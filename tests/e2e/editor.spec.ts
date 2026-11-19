@@ -10,7 +10,7 @@ test.afterAll(() => resetNotStarted());
 
 const openEditor = async (page: import('@playwright/test').Page) => {
 	await signInDemo(page, 'prof-natthida');
-	await page.goto(`/teach/${id429}/edit`);
+	await page.goto(`./teach/${id429}/edit`);
 };
 const copy2568 = async (page: import('@playwright/test').Page) => {
 	await page.getByTestId('copy-version').filter({ hasText: '2/2568' }).click();
@@ -71,7 +71,7 @@ test('AC 6: two tabs on one draft get the conflict dialog; nothing is lost silen
 	await copy2568(page);
 	await expect(page.getByTestId('save-status')).not.toContainText('กำลังบันทึก');
 	const second = await context.newPage();
-	await second.goto(`/teach/${id429}/edit`);
+	await second.goto(`./teach/${id429}/edit`);
 	await expect(second.getByTestId('syllabus-form')).toBeVisible();
 
 	await page.locator('#f-focus').fill('ฉบับแท็บแรก: ภาคการศึกษานี้เน้นเทคนิคการวิเคราะห์นโยบายอย่างเป็นขั้นตอนและการเขียน options memo');
@@ -87,7 +87,7 @@ test('AC 6: two tabs on one draft get the conflict dialog; nothing is lost silen
 test('AC 11 + R8: the history panel diffs 2404324 2/2568 against the current draft', async ({ page }) => {
 	const ids = await offeringIds();
 	await signInDemo(page, 'prof-thanakrit');
-	await page.goto(`/teach/${ids.get('2404324')}/edit`);
+	await page.goto(`./teach/${ids.get('2404324')}/edit`);
 	await page.getByTestId('tab-history').click();
 	await page.getByTestId('history').getByTestId('compare-version').first().click();
 	const diff = page.getByTestId('diff');
