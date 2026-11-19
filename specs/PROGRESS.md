@@ -103,6 +103,10 @@
 
 **Passed:** unit (138): AC 1, 2, 10, the generic-topic rule, clip, dashboard numbers (AC 3), items parity with the SQL function on PGlite. DB tests on the shared project (`npm run test:db`, 6 passed): AC 8 with ThaiLLM mocked down → Gemini corpus finds the policy-brief pair; both failing → Stage 1 kept, earlier AI cautions kept open, run `failed` with the error. E2E Chromium + WebKit + iPhone 13 (94 passed, 2 skipped by design, 16.6 min): AC 3, AC 9 + AC 4 (empty state, then 1 high with "ไม่เกิน 1 สัปดาห์", 4 medium incl. Dye, 1 info; วิชาของฉัน links to the editor), AC 5 (badge, scope, coordination thread reaches natthida), AC 6 (week 2 change → auto-dismissed; the seeded intentional caution unchanged), AC 7 (student on iPhone too, and a viewer: menu absent, redirect + toast, no rows through the publishable key, crawl of student routes finds no caution text or labels), AC 8 in the editor.
 
+## Fixes
+
+- 2026-11-19 · Editor sidebar overflowed the page when the ข้อควรระวัง tab was open (every width; 1765 px at 1140): the sidebar grid's implicit `auto` column grew to a nowrap caution reason. Fixed with `minmax(0,1fr)` tracks, a 22rem sidebar, `min-w-0`, `wrap-anywhere`/`line-clamp` and a segmented tab bar; the same pattern fixed in the caution drawer, `/cautions` list, readiness panel and bottom sheet, and the diff list. Regression test `tests/e2e/layout.spec.ts` (5 widths × WebKit + Chromium, worst-case caution with a long Thai sentence and URL). Layout rule in DECISIONS.
+
 ## How to resume
 
 1. `npm install` (node_modules is a symlink to `~/.cache/pa-courseplat/node_modules`, outside OneDrive), then `npm run check && npm run test`.

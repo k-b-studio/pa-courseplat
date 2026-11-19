@@ -8,7 +8,7 @@
 	const d = $derived(diffDocs(from, to));
 </script>
 
-<div class="grid gap-2 text-sm" data-testid="diff">
+<div class="grid grid-cols-[minmax(0,1fr)] gap-2 text-sm wrap-anywhere" data-testid="diff">
 	{#if isEmptyDiff(d)}<p class="text-ink-muted">{t.editor.diffNone}</p>{/if}
 	{#if d.focusChanged}<p>• {t.editor.diffFocus}</p>{/if}
 	{#each d.weeks.added as w (w.week)}<p class="text-success">+ {t.editor.diffWeekAdded(w.week, w.topic)}</p>{/each}

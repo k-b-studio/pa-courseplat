@@ -11,8 +11,8 @@
 
 {#snippet body()}
 	<div class="flex items-center justify-between gap-2">
-		<h2 class="font-semibold">{t.editor.readiness}</h2>
-		<span class="chip {ready ? 'bg-success-bg text-success' : 'bg-danger-bg text-danger-ink'}" data-testid="readiness-status">{ready ? t.editor.ready : t.editor.issuesN(issues.length)}</span>
+		<h2 class="min-w-0 font-semibold">{t.editor.readiness}</h2>
+		<span class="chip shrink-0 {ready ? 'bg-success-bg text-success' : 'bg-danger-bg text-danger-ink'}" data-testid="readiness-status">{ready ? t.editor.ready : t.editor.issuesN(issues.length)}</span>
 	</div>
 	{#if issues.length}
 		<ul class="mt-2 grid max-h-72 gap-1 overflow-y-auto text-sm" data-testid="readiness-list">
@@ -23,9 +23,9 @@
 	{#if published}<p class="mt-2 text-xs text-ink-muted">{t.editor.publishedNote}</p>{/if}
 {/snippet}
 
-<div class="card hidden p-4 lg:block" data-testid="readiness">{@render body()}</div>
+<div class="card hidden min-w-0 p-4 wrap-anywhere lg:block" data-testid="readiness">{@render body()}</div>
 
-<div class="fixed inset-x-0 bottom-0 z-30 border-t border-line-strong bg-surface p-3 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] lg:hidden">
+<div class="fixed inset-x-0 bottom-0 z-30 max-h-[70dvh] overflow-y-auto border-t border-line-strong bg-surface p-3 wrap-anywhere shadow-[0_-4px_12px_rgba(0,0,0,0.08)] lg:hidden" data-testid="readiness-sheet">
 	{#if sheetOpen}<div class="mb-3">{@render body()}</div>{/if}
 	<button type="button" class="flex w-full items-center justify-between text-sm font-medium" aria-expanded={sheetOpen} onclick={() => (sheetOpen = !sheetOpen)}>
 		<span>{t.editor.readiness}</span>

@@ -313,7 +313,7 @@ export const t = {
 		start: 'เริ่ม',
 		end: 'สิ้นสุด',
 		sectionSaved: 'บันทึกตอนเรียนแล้ว',
-		sidebar: { notes: 'บันทึกส่งต่อ', history: 'ประวัติ', cautions: 'ข้อควรระวังด้านเนื้อหา' },
+		sidebar: { notes: 'บันทึกส่งต่อ', history: 'ประวัติ', cautions: 'ข้อควรระวังด้านเนื้อหา', cautionsShort: 'ข้อควรระวัง' },
 		addNote: 'เพิ่มบันทึกส่งต่อ',
 		notePlaceholder: 'สิ่งที่อาจารย์ผู้สอนครั้งถัดไปควรรู้เกี่ยวกับรายวิชานี้',
 		newNote: 'ใหม่',

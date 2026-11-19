@@ -86,7 +86,7 @@
 			<h2 class="font-semibold">{t.cautions.matrix}</h2>
 			<p class="text-xs text-ink-muted">{t.cautions.matrixHint}</p>
 			{#if data.matrix.rows.length}
-				<div class="mt-3 overflow-x-auto">
+				<div class="mt-3 overflow-x-auto" data-allow-scroll>
 					<table class="text-xs">
 						<thead><tr><th></th>{#each data.matrix.cols as k (k)}<th class="px-1 font-normal text-ink-muted [writing-mode:vertical-rl]">{k}</th>{/each}</tr></thead>
 						<tbody>
@@ -131,10 +131,10 @@
 			<h2 id="mine-title" class="font-semibold">{t.cautions.myCourses}</h2>
 			<ul class="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3" data-testid="my-courses">
 				{#each data.mine as o (o.id)}
-					<li class="card p-4" data-course={o.code}>
+					<li class="card min-w-0 p-4 wrap-anywhere" data-course={o.code}>
 						<p class="font-medium">{o.code} {o.name}</p>
 						<p class="mt-1 text-sm text-ink-muted">{t.cautions.openCounts(o.high, o.medium)}</p>
-						<div class="mt-2 flex gap-2"><a class="btn btn-secondary px-2 text-xs" href="/teach/{o.id}/edit">{t.cautions.openEditor}</a><a class="btn btn-ghost px-2 text-xs" href={href({ offering: o.id })}>{t.cautions.list}</a></div>
+						<div class="mt-2 flex flex-wrap gap-2"><a class="btn btn-secondary px-2 text-xs" href="/teach/{o.id}/edit">{t.cautions.openEditor}</a><a class="btn btn-ghost px-2 text-xs" href={href({ offering: o.id })}>{t.cautions.list}</a></div>
 					</li>
 				{/each}
 			</ul>
@@ -142,7 +142,7 @@
 	{/if}
 
 	<!-- the list -->
-	<section class="card mt-4 p-4" aria-labelledby="list-title">
+	<section class="card mt-4 min-w-0 p-4 wrap-anywhere" aria-labelledby="list-title">
 		<h2 id="list-title" class="font-semibold">{t.cautions.list}</h2>
 		{#if data.cautions.length === 0}
 			<p class="mt-2 text-sm text-ink-muted">{t.cautions.emptyFiltered}</p>
@@ -151,9 +151,9 @@
 				{#each data.cautions as c (c.id)}
 					{@const [mineLabel, otherLabel] = ownFirst(c)}
 					<li>
-						<button type="button" class="grid w-full gap-1 py-3 text-left hover:bg-page sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-3" onclick={() => (selected = c.id)} data-testid="caution-row" data-severity={c.severity} data-status={c.status}>
+						<button type="button" class="grid w-full grid-cols-[minmax(0,1fr)] gap-1 py-3 text-left hover:bg-page sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center sm:gap-3" onclick={() => (selected = c.id)} data-testid="caution-row" data-severity={c.severity} data-status={c.status}>
 							<span class="flex gap-1.5"><span class="chip {sevClass[c.severity]}">{t.cautions.severity[c.severity]}</span><span class="chip">{t.cautions.kind[c.kind]}</span></span>
-							<span class="min-w-0 text-sm"><span class="font-medium">{short(mineLabel)} ↔ {short(otherLabel)}</span><span class="block truncate text-ink-muted">{t.cautions.relation[c.relation]} · {c.reason_th}</span></span>
+							<span class="min-w-0 text-sm"><span class="font-medium">{short(mineLabel)} ↔ {short(otherLabel)}</span><span class="mt-0.5 line-clamp-2 text-ink-muted" data-testid="caution-reason">{t.cautions.relation[c.relation]} · {c.reason_th}</span></span>
 							<span class="flex flex-wrap items-center gap-2 text-xs text-ink-muted"><span class="chip">{t.cautions.status[c.status]}</span>{#if c.comments.length}<span>{t.cautions.comments(c.comments.length)}</span>{/if}<span>{thaiDateTime(c.updated_at)}</span></span>
 						</button>
 					</li>

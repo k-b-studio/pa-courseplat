@@ -23,20 +23,20 @@
 </script>
 
 <div class="fixed inset-0 z-40 flex justify-end bg-black/30" role="presentation" onclick={(e) => e.target === e.currentTarget && onclose()}>
-	<div class="h-full w-full max-w-2xl overflow-y-auto bg-surface p-5 shadow-xl" role="dialog" aria-modal="true" aria-labelledby="drawer-title" data-testid="caution-drawer">
+	<div class="h-full w-full max-w-2xl overflow-y-auto bg-surface p-5 wrap-anywhere shadow-xl" role="dialog" aria-modal="true" aria-labelledby="drawer-title" data-testid="caution-drawer">
 		<div class="flex items-start justify-between gap-3">
-			<div class="flex flex-wrap items-center gap-2">
+			<div class="flex min-w-0 flex-wrap items-center gap-2">
 				<span class="chip {sevClass[c.severity]}">{t.cautions.severityLong[c.severity]}</span>
 				<span class="chip">{t.cautions.kind[c.kind]}</span>
 				<span class="chip" data-testid="drawer-status">{t.cautions.status[c.status]}</span>
 			</div>
-			<button type="button" class="btn btn-ghost" onclick={onclose} aria-label={t.cautions.close}>✕</button>
+			<button type="button" class="btn btn-ghost shrink-0" onclick={onclose} aria-label={t.cautions.close}>✕</button>
 		</div>
 		<h2 id="drawer-title" class="mt-3 text-lg font-semibold">{left.label.split(':')[0]} ↔ {right.label.split(':')[0]}</h2>
 
-		<div class="mt-4 grid gap-3 sm:grid-cols-2">
+		<div class="mt-4 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
 			{#each [[t.cautions.drawerThis, left], [t.cautions.drawerOther, right]] as const as [title, side] (title)}
-				<div class="rounded-lg border border-line p-3">
+				<div class="min-w-0 rounded-lg border border-line p-3">
 					<p class="label">{title}</p>
 					<p class="mt-1 font-medium">{side.label}</p>
 					{#if side.people.length}<p class="mt-1 text-sm text-ink-muted">{side.people.join(', ')}</p>{/if}
@@ -44,7 +44,7 @@
 			{/each}
 		</div>
 
-		<dl class="mt-4 grid gap-2 text-sm sm:grid-cols-[8rem_1fr]">
+		<dl class="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2 text-sm sm:grid-cols-[8rem_minmax(0,1fr)]">
 			<dt class="text-ink-muted">{t.cautions.relationLabel}</dt>
 			<dd>{t.cautions.relation[c.relation]}</dd>
 			<dt class="text-ink-muted">{t.cautions.similarity}</dt>
@@ -75,7 +75,7 @@
 
 		<section class="mt-4" aria-label={t.cautions.thread}>
 			<h3 class="label">{t.cautions.thread}</h3>
-			<ul class="mt-2 grid gap-2" data-testid="comments">
+			<ul class="mt-2 grid grid-cols-[minmax(0,1fr)] gap-2" data-testid="comments">
 				{#each c.comments as m (m.id)}
 					<li class="rounded-lg border border-line p-2 text-sm"><p class="text-xs text-ink-muted">{m.author ?? t.common.deletedUser} · {thaiDateTime(m.created_at)}</p><p class="mt-0.5 whitespace-pre-line">{m.body}</p></li>
 				{/each}
@@ -83,8 +83,8 @@
 			{#if c.status === 'coordinating' || showComment || c.comments.length}
 				<form method="POST" action="{action}?/comment" class="mt-2 flex gap-2" use:enhance={refresh}>
 					<input type="hidden" name="id" value={c.id} />
-					<input class="input flex-1 text-sm" name="body" maxlength="2000" placeholder={t.cautions.commentPlaceholder} required data-testid="comment-input" />
-					<button class="btn btn-primary text-sm" type="submit" data-testid="comment-send">{t.cautions.send}</button>
+					<input class="input min-w-0 flex-1 text-sm" name="body" maxlength="2000" placeholder={t.cautions.commentPlaceholder} required data-testid="comment-input" />
+					<button class="btn btn-primary shrink-0 text-sm" type="submit" data-testid="comment-send">{t.cautions.send}</button>
 				</form>
 			{/if}
 		</section>

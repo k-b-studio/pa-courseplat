@@ -17,7 +17,7 @@
 	<h1 class="text-3xl font-semibold tracking-tight">{t.profile.title}</h1>
 	<dl class="card mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 p-5 text-sm">
 		<dt class="text-ink-muted">{t.profile.email}</dt>
-		<dd class="break-all">{p.email}</dd>
+		<dd class="wrap-anywhere">{p.email}</dd>
 		<dt class="text-ink-muted">{t.profile.role}</dt>
 		<dd>{t.roles[p.role]}</dd>
 		{#if p.role === 'student' && p.cohort != null}

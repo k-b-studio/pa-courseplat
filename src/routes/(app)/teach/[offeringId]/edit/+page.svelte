@@ -169,10 +169,20 @@
 </script>
 
 {#snippet sidebar()}
-	<div class="card p-4">
-		<div class="flex gap-1" role="tablist">
-			{#each [['notes', t.editor.sidebar.notes], ['history', t.editor.sidebar.history], ['cautions', t.editor.sidebar.cautions]] as const as [id, label] (id)}
-				<button type="button" role="tab" aria-selected={tab === id} class="btn flex-1 px-2 text-xs {tab === id ? 'btn-primary' : 'btn-ghost'}" onclick={() => (tab = id)} data-testid="tab-{id}">{label}</button>
+	<div class="card min-w-0 p-4 wrap-anywhere">
+		<div class="grid grid-cols-3 gap-1 rounded-xl bg-page p-1" role="tablist">
+			{#each [['notes', t.editor.sidebar.notes, t.editor.sidebar.notes], ['history', t.editor.sidebar.history, t.editor.sidebar.history], ['cautions', t.editor.sidebar.cautionsShort, t.editor.sidebar.cautions]] as const as [id, label, full] (id)}
+				<button
+					type="button"
+					role="tab"
+					aria-selected={tab === id}
+					aria-label={id === 'cautions' && openCautions.length ? `${full} ${openCautions.length}` : full}
+					title={full}
+					class="flex min-w-0 items-center justify-center gap-1 rounded-lg px-1.5 py-1.5 text-center text-xs leading-tight transition-colors {tab === id ? 'bg-surface font-semibold text-brand-800 shadow-sm' : 'text-ink-muted hover:text-ink'}"
+					onclick={() => (tab = id)}
+					data-testid="tab-{id}"
+					><span class="min-w-0">{label}</span>{#if id === 'cautions' && openCautions.length}<span class="shrink-0 rounded-full bg-danger px-1.5 text-[0.7rem] leading-4 font-semibold text-white">{openCautions.length}</span>{/if}</button
+				>
 			{/each}
 		</div>
 
@@ -216,10 +226,11 @@
 				<ul class="mt-3 grid gap-2" data-testid="editor-cautions">
 					{#each openCautions as c (c.id)}
 						<li>
-							<button type="button" class="w-full rounded-lg border border-line p-2 text-left text-sm hover:border-accent" onclick={() => (selectedCaution = c.id)} data-severity={c.severity}>
+							<button type="button" class="block w-full min-w-0 rounded-lg border border-line p-2 text-left text-sm hover:border-accent" onclick={() => (selectedCaution = c.id)} data-severity={c.severity}>
 								<span class="chip text-xs {c.severity === 'high' ? 'bg-danger-bg text-danger-ink' : c.severity === 'medium' ? 'bg-warning-bg text-warning-ink' : ''}">{t.cautions.severity[c.severity]}</span>
 								<span class="mt-1 block">{(c.a_offering_id === data.offering.id ? c.b_label : c.a_label).split(':')[0]}</span>
-								<span class="block truncate text-xs text-ink-muted">{c.reason_th}</span>
+								<!-- wraps (up to three lines) instead of a nowrap line whose width would size the sidebar -->
+								<span class="mt-0.5 line-clamp-3 text-xs text-ink-muted" data-testid="editor-caution-reason">{c.reason_th}</span>
 							</button>
 						</li>
 					{/each}
@@ -243,7 +254,7 @@
 	</div>
 
 	{#if !doc}
-		<div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+		<div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
 		<!-- R2: four ways to start -->
 		<section class="grid gap-3 sm:grid-cols-2" aria-label={t.editor.startTitle} data-testid="start-options">
 			<a class="card block p-5 hover:border-accent" href="/teach/{data.offering.id}/import"><p class="font-semibold">{t.editor.startUpload}</p><p class="text-sm text-ink-muted">{t.editor.startUploadHint}</p></a>
@@ -267,7 +278,7 @@
 				<button class="w-full text-left" type="submit" data-testid="start-blank"><span class="font-semibold">{t.editor.startBlank}</span></button>
 			</form>
 		</section>
-		<aside class="grid gap-4">{@render sidebar()}</aside>
+		<aside class="grid min-w-0 grid-cols-[minmax(0,1fr)] content-start gap-4">{@render sidebar()}</aside>
 		</div>
 	{:else}
 		<div class="sticky top-0 z-20 -mx-4 mt-3 flex flex-wrap items-center gap-3 border-b border-line bg-page/95 px-4 py-2 backdrop-blur">
@@ -282,7 +293,7 @@
 		</div>
 		{#if message && status !== 'error'}<p class="mt-3 rounded-lg bg-danger-bg px-4 py-2 text-sm text-danger-ink" role="alert">{message}</p>{/if}
 
-		<div class="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+		<div class="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
 			<div class="min-w-0">
 				{#if preview}
 					<SyllabusView ctx={{ doc, course: data.course, semester: data.semester, sections: data.sections, instructors: data.instructors, plos: data.plos }} />
@@ -295,7 +306,7 @@
 				{/if}
 			</div>
 
-			<aside class="grid gap-4 lg:sticky lg:top-16">
+			<aside class="grid min-w-0 grid-cols-[minmax(0,1fr)] content-start gap-4 lg:sticky lg:top-16">
 				<ReadinessPanel {issues} onpublish={publish} {busy} {published} {dirty} />
 
 				{@render sidebar()}
