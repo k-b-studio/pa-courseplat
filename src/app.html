@@ -5,6 +5,14 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="light" />
+		<!-- Home Screen: open as its own app window, not in the browser; the bar matches the dark header -->
+		<meta name="theme-color" content="#2a1d26" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content="CoursePlat" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="manifest" href="%sveltekit.assets%/manifest.webmanifest" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/icons/apple-touch-icon.png" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
