@@ -31,7 +31,7 @@ export const DEMO_BUTTONS = [
 	{ key: 'student', email: 'student.pa67@courseplat.test', label: 'นิสิตตัวอย่าง (PA ปี 3)', role: 'student' },
 	{ key: 'prof-natthida', email: 'natthida.k@courseplat.test', label: 'อ.ดร.ณัฐธิดา แก้วมณี', role: 'instructor' },
 	{ key: 'prof-thanakrit', email: 'thanakrit.w@courseplat.test', label: 'ผศ.ดร.ธนกฤต วงศ์ประเสริฐ', role: 'instructor' },
-	{ key: 'staff', email: 'onuma.j@courseplat.test', label: 'คุณอรอุมา ใจงาม (เจ้าหน้าที่ภาควิชา)', role: 'staff' }
+	{ key: 'staff', email: 'onuma.j@courseplat.test', label: 'คุณอรอุมา ใจงาม (เจ้าหน้าที่)', role: 'staff' }
 ] as const satisfies readonly { key: string; email: string; label: string; role: Role }[];
 
 export type DemoKey = (typeof DEMO_BUTTONS)[number]['key'];
